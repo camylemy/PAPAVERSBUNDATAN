@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 * {
@@ -53,10 +52,20 @@ body {
   margin-top: 20px;
 }
 
-/* Responsive layout - make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width:768px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%; width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+@media only screen and (max-width:800px) {
+  /* For tablets: */
+  .main {
+    width: 80%;
+    padding: 0;
+  }
+  .right {
+    width: 100%;
+  }
+}
+@media only screen and (max-width:500px) {
+  /* For mobile phones: */
+  .menu, .main, .right {
+    width: 100%;
   }
 }
   
