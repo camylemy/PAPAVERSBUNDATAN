@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html>
 <head>
 <style>
@@ -12,8 +12,52 @@ body {
   padding: 10px;
   background-image: url("9NRAeU.gif");
   background-repeat: no repeat;
+  background-size: 100%;
+}
+    
+    
+    
+    
+/* Header/Papa Ver's Bundatan */
+.header {
+  padding: 20px;
+  text-align: center;
+  background: #E8BD24;
+  background-repeat: no repeat;
   background-size: cover;
 }
+
+.header h1 {
+  font-size: 60px;
+  font-style: italic;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: center;
+  display: block;
+  color: #E65C08;
+  text-align: center;
+  padding: 15px 20px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+    
+    
+    
+    
+    
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
@@ -32,7 +76,9 @@ body {
 /* Add a card effect for articles */
 .card1 {
   background-image: url("table.jpg");
-  background-size: cover;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
   width:100%;
   padding: 0px;
   margin-top: 20px;
@@ -40,30 +86,51 @@ body {
 
 .card2 {
   background-image: url("menuuu.jpg");
-  background-size: cover;
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
   width:100%;
   padding: 0px;
   margin-top: 20px;
 }
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width:800px) {
-  .leftcolumn, .rightcolumn {
-    width: 100%;
-  }
-}
+
+    a:link, a:visited {
+        background-color: sandybrown;
+        color: white;
+        padding: 14px 25px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block
+    }
+    
+    
+    
+    a:hover, a:active {
+        background-color: orangered;
+    }
   
 </style>
 </head>
 <body>
 
+    
+    <div class="header">
+  <h1>PAPA VER'S BUNDATAN</h1>
+</div>
+    
+    <div class="topnav">
+  <a href="index.html" style="float: center; font-style: bold;">HOME</a>
+    </div>
+    
+    
     <div class="row">
   <div class="leftcolumn">
     <div class="card2">
       <div class="fakeimg2" style="height:750px;"></div>
     </div>
   </div>
-
+   
   <div class="rightcolumn">
     <div class="card1">
       <div class="fakeimg1" style="height:750px;"></div>
@@ -71,5 +138,9 @@ body {
   </div>  
     </div>
 
+    <a href="index.html">back</a>
+    
+    
+    
 </body>
 </html>
