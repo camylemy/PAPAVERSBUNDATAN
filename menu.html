@@ -102,8 +102,14 @@ font-weight:300;
  padding:0 30px 30px;
  color:white;
  visibility:hidden;
+ transition:transform 0.3s, top 0.3s;
 }
 
+.open-popup {
+ visibility:visible;
+ top:50%;
+ transform: translate(-50%,-50%) scale(1);
+}
 .popup h2 {
  font-size:30px;
  font-weight:600;
@@ -163,17 +169,28 @@ font-weight:300;
 
 <div class = "form-row">
 <input type = "number" placeholder = "HOW MANY PEOPLE?" min = "1"> <br>
-<button type= "submit" class= "button">BOOK NOW</button>
-<div class="popup">
+<button type= "submit" class= "button" onclick="openPopup()>BOOK NOW</button>
+<div class="popup" id="popup">
 <h2>SUCCESS!</h2>
 <p>Your details have been submitted. We will make sure to give you an update soon.</p>
-<button type="button">OKAY</button>
+<button type="button" onclick="closePopup()>OKAY</button>
 </div>
 </div>
 </form>
 </div>
 </div>
 </section>
+
+<script>
+
+ let popup = document.getElementById("popup");
+ function openPopup(){
+ popup.classList.add("open-popup");
+ }
+ function closePopup(){
+ popup.classList.remove("open-popup");
+ }
+</script>
 </body>
 </html>
  
