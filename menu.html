@@ -93,20 +93,28 @@
             font-weight: 300;
         }
 
-       .popup {
-    background: #FF711A;
+      .popup {
+    background: #E8BD24;
     border-radius: 5px;
-    position: fixed; /* changed to fixed for viewport-centered position */
+    position: fixed;
     padding: 0 30px 30px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Center the popup horizontally and vertically */
+    transform: translate(-50%, -50%);
     text-align: center;
     color: black;
-    display: none; /* initially hidden */
+    display: none;
+    animation: fadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
 }
 
-
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start with opacity 0 (fully transparent) */
+    }
+    to {
+        opacity: 1; /* Fade to opacity 1 (fully opaque) */
+    }
+}
 
         .popup h2 {
             font-size: 30px;
