@@ -1,199 +1,201 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Reservation</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
-<style>
+    <title>Reservation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
 
-*{
-box-sizing:
-border-box:
-padding:0;
-margin:0;
+        body {
+            font-family: 'Barlow Semi Condensed';
+            font-style: bold;
+            background: #E8BD24;
+        }
+
+        .banner {
+            min-height: 100vh;
+            background: #E8BD24;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: black;
+            padding-bottom: 20px;
+        }
+
+        .banner h1 {
+            padding-bottom: 40px;
+            margin-bottom: 40px;
+            font-size: 8vw;
+        }
+
+        .card-content {
+            background: #FFD53E;
+            border: 3px solid; /* corrected: added solid */
+            border-radius: 5px;
+            height: 370px;
+        }
+
+        .card-content h2 {
+            text-align: center;
+            color: black;
+            padding: 25px 0 10px 0;
+            font-size: 26px;
+            font-weight: 500;
+        }
+
+        .form-row {
+            display: flex;
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        form select,
+        form input {
+            display: block;
+            width: 100%;
+            margin: 15px 12px;
+            padding: 15px;
+            font-size: 13px;
+            font-family: 'Barlow Semi Condensed';
+            outline: none;
+            border: 3px solid; /* corrected: added solid */
+            border-bottom: 1px solid #FFD53E;
+            border-radius: 5px;
+            font-weight: 300;
+        }
+
+        form input[type='text'],
+        form input[type='number'],
+        form input::placeholder,
+        select {
+            color: black;
+        }
+
+        .button {
+            cursor: pointer;
+            background: #FF711A;
+            display: block;
+            width: 100%;
+            margin: 15px 12px;
+            padding: 15px;
+            font-size: 13px;
+            font-family: 'Barlow Semi Condensed';
+            outline: none;
+            border: 3px solid; /* corrected: added solid */
+            border-bottom: 1px solid #FFD53E;
+            border-radius: 5px;
+            font-weight: 300;
+        }
+
+       .popup {
+    background: #E8BD24;
+    border-radius: 5px;
+    position: fixed; /* changed to fixed for viewport-centered position */
+    padding: 0 30px 30px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the popup horizontally and vertically */
+    text-align: center;
+    color: black;
+    display: none; /* initially hidden */
 }
 
-body {
-font-family: 'Barlow Semi Condensed';
-font-style: bold;
-background: #E8BD24;
-}
 
-.banner{
-min-height:100vh;
-background: #E8BD24;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-color:black;
-padding-bottom:20px;
-}
 
-.banner h1{
-padding-bottom:40px;
-margin-bottom:40x;
-}
+        .popup h2 {
+            font-size: 30px;
+            font-weight: 600;
+            margin: 30px 0 10px;
+        }
 
-.card-content {
-background: #FFD53E;
-border:3px;
-border-radius:5px;
-height: 370px;
-}
+        .popup button {
+            width: 100%;
+            margin-top: 50px;
+            padding: 10px 0;
+            background: #E8BD24;
+            color: black;
+            border: 0;
+            outline: none;
+            font-size: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.card-content h2 {
-text-align:center;
-color: black;
-padding: 25px 0 10px 0;
-font-size: 26px;
-font-weight:500;
-}
+        .popup button:hover {
+            color: #FF711A;
+        }
 
-.form-row {
-display:flex;
-width:90%;
-margin:0 auto;
-}
-
-form select, form input {
-display: block;
-width:100%;
-margin: 15px 12px;
-padding:15px;
-font-size:13px;
-font-family:'Barlow Semi Condensed';
-outline:none;
-border:3px;
-border-bottom:1px solid #FFD53E;
-border-radius: 5px;
-font-weight:300;
-}
-
-form input [type = text], form input[type = number],form input::placeholder,select{
-color:black;
-}
-
-.button {
-cursor:pointer;
-background:#FF711A;
-display: block;
-width:100%;
-margin: 15px 12px;
-padding:15px;
-font-size:13px;
-font-family:'Barlow Semi Condensed';
-outline:none;
-border:3px;
-border-bottom:1px solid #FFD53E;
-border-radius: 5px;
-font-weight:300;
-}
-
-.popup {
- background: #E8BD24;
- border-radius:5px;
- position:absolute;
- top:0;
- left:50%;
- transform: translate(-50%,-50%) scale(0.1);
- text-align:center;
- padding:0 30px 30px;
- color:white;
- visibility:hidden;
- transition:transform 0.3s, top 0.3s;
-}
-
-.open-popup {
- visibility:visible;
- top:50%;
- transform: translate(-50%,-50%) scale(1);
-}
-.popup h2 {
- font-size:30px;
- font-weight:600;
- margin:30px 0 10px
-}
-
-.popup button {
- width:100%;
- margin-top:50px;
- padding:10px 0;
- background: #E8BD24;
- color:white;
- border:0;
- outline:none;
- font-size:10px;
- border-radius:5px;
- cursor:pointer;
- 
-</style>
+    </style>
 </head>
 <body>
 
-<section class = "banner">
- <h1 style="font-size:8vw;">BOOK YOUR TABLE NOW! </h1> <br> <br>
+<section class="banner">
+    <h1>BOOK YOUR TABLE NOW!</h1>
+    <br>
+    <br>
 
- <div class = "card-content">
- <h2> RESERVATION </h2>
-    <form>
-      <div class = "form-row">
-           <select name = "days"> 
-           <option value = "day-select">SELECT DAY</option>
-<option value = "sunday">SUNDAY</option>
-<option value = "monday">MONDAY</option>
-<option value = "tuesday">TUESDAY</option>
-<option value = "wednesday">WEDNESDAY</option>
-<option value = "thursday">THURSDAY</option>
-<option value = "friday">FRIDAY</option>
-<option value = "saturday">SATURDAY</option>
-</select>
+    <div class="card-content">
+        <h2>RESERVATION</h2>
+        <form>
+            <div class="form-row">
+                <select name="days">
+                    <option value="day-select">SELECT DAY</option>
+                    <option value="sunday">SUNDAY</option>
+                    <option value="monday">MONDAY</option>
+                    <option value="tuesday">TUESDAY</option>
+                    <option value="wednesday">WEDNESDAY</option>
+                    <option value="thursday">THURSDAY</option>
+                    <option value="friday">FRIDAY</option>
+                    <option value="saturday">SATURDAY</option>
+                </select>
 
-        <select name = "hours">
-        <option value = "hour-select">SELECT HOUR</option>
-<option value = "5">5:00 PM</option>
-<option value = "5">6:00 PM</option>
-<option value = "5">7:00 PM</option>
-<option value = "5">8:00 PM</option>
-<option value = "5">9:00 PM</option>
-<option value = "5">10:00 PM</option>
-<option value = "5">11:00 PM</option>
-</select>
-</div>
+                <select name="hours">
+                    <option value="hour-select">SELECT HOUR</option>
+                    <option value="5">5:00 PM</option>
+                    <option value="6">6:00 PM</option>
+                    <option value="7">7:00 PM</option>
+                    <option value="8">8:00 PM</option>
+                    <option value="9">9:00 PM</option>
+                    <option value="10">10:00 PM</option>
+                    <option value="11">11:00 PM</option>
+                </select>
+            </div>
 
-<div class = "form-row">
-<input type = "text" placeholder = "FULL NAME">
-<input type = "text" placeholder = "PHONE NUMBER">
-</div>
+            <div class="form-row">
+                <input type="text" placeholder="FULL NAME">
+                <input type="text" placeholder="PHONE NUMBER">
+            </div>
 
-<div class = "form-row">
-<input type = "number" placeholder = "HOW MANY PEOPLE?" min = "1"> <br>
-<button type= "submit" class= "button" onclick="openPopup()>BOOK NOW</button>
-<div class="popup" id="popup">
-<h2>SUCCESS!</h2>
-<p>We have received your reservation. We will make sure to give you an update soon.</p>
-<button type="button" onclick="closePopup()>OKAY</button>
-</div>
-</div>
-</form>
-</div>
-</div>
+            <div class="form-row">
+                <input type="number" placeholder="HOW MANY PEOPLE?" min="1"> <br>
+                <button type="button" class="button" onclick="openPopup()">BOOK NOW</button>
+                <div class="popup" id="popup">
+                    <h2>SUCCESS!</h2>
+                    <p>We have received your reservation. We will make sure to give you an update soon.</p>
+                    <button type="button" onclick="closePopup()">OKAY</button>
+                </div>
+            </div>
+        </form>
+    </div>
 </section>
 
 <script>
+    let popup = document.getElementById("popup");
 
- let popup = document.getElementById("popup");
- function openPopup(){
- popup.classList.add("open-popup");
- }
- function closePopup(){
- popup.classList.remove("open-popup");
- }
+    function openPopup() {
+        popup.style.display = "block"; // corrected: change classList to style.display
+    }
+
+    function closePopup() {
+        popup.style.display = "none"; // corrected: change classList to style.display
+    }
+
 </script>
 </body>
 </html>
- 
-     
-
-
-
