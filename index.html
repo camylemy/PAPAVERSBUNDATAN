@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
 <style>
-
 body {
   font-family: 'Barlow Semi Condensed';
   font-style: bold;
@@ -27,25 +26,44 @@ body {
   padding-top: 80px;
 }
 
-.sidebar a {
+.menu-item {
+  position: relative;
+}
+
+.submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.menu-title {
   padding: 8px 8px 8px 32px;
-  font-size: 25px;
-  TEXT-DECORATION:NONE;
+  font-size: 20px;
   color: black;
   display: block;
-  transition: 0.5s;
+  cursor: pointer;
 }
 
-.sidebar a:hover {
-  color: #FF711A;
+.menu-title:hover {
+  background-color: #FF711A;
 }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0px;
-  right: 15px;
-  font-size: 50px;
-  margin-left: 50px;
+.sidebar .submenu span {
+  padding: 8px 8px 8px 48px;
+  font-size: 16px;
+  color: black;
+  display: block;
+}
+
+.sidebar a.active {
+  background-color: #FF711A;
+}
+
+.sidebar a.active:hover {
+  background-color: #FF711A;
+}
+
+.sidebar a.active + .submenu {
+  display: block;
 }
 
 .openbtn {
@@ -61,7 +79,6 @@ body {
 .openbtn:hover {
   background-color: #E8BD24;
   transition: 0.3s;
-  
 }
 
 .button {
@@ -79,25 +96,24 @@ body {
 }
 
 .button1 {
-width: 40%;
-margin-bottom: 20px;
-border-radius: 5px;
+  width: 40%;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
-
 .button1:hover {
-background-color: #FF711A;
-transition: 0.3s;
+  background-color: #FF711A;
+  transition: 0.3s;
 }
 
 .button2 {
-width: 40%;
-border-radius: 5px;
+  width: 40%;
+  border-radius: 5px;
 }
 
 .button2:hover {
-background-color: #FF711A;
-transition: 0.3s;
+  background-color: #FF711A;
+  transition: 0.3s;
 }
 
 #main {
@@ -110,20 +126,31 @@ transition: 0.3s;
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
-
 </style>
 </head>
 <body>
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-  <a href="#";>ABOUT US</a>
-  <a href="#";>CONTACT US</a>
-  <a href="#";>FIND US</a>
+  <div class="menu-item">
+    <span class="menu-title">ABOUT US</span>
+    <div class="submenu">
+      <span>History</span>
+      <span>Mission</span>
+      <span>Team</span>
+    </div>
+  </div>
+  <div class="menu-item">
+    <span class="menu-title">CONTACT US</span>
+  </div>
+  <div class="menu-item">
+    <span class="menu-title">FIND US</span>
+  </div>
 </div>
 
 <div id="main">
-  <button class="openbtn" onclick="openNav()">LEARN MORE</button> <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
+  <button class="openbtn" onclick="openNav()">LEARN MORE</button>
+  <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
 </div>
 <button class="button button1" onclick="window.location.href = '#';">MENU</button>
 <button class="button button2" onclick= "window.location.href = 'menu.html';">RESERVATION</button>
@@ -141,4 +168,4 @@ function closeNav() {
 </script>
    
 </body>
-</html> 
+</html>
