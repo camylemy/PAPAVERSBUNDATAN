@@ -1,146 +1,140 @@
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
+<title>Reservation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
 <style>
 
-* {
-  box-sizing: border-box;
+*{
+box-sizing:
+border-box:
+padding:0;
+margin:0;
 }
 
 body {
-  font-family: Arial;
-  padding: 10px;
-  background-image: url("9NRAeU.gif");
-  background-repeat: no repeat;
-  background-size: 100%;
-}
-    
-    
-    
-    
-/* Header/Papa Ver's Bundatan */
-.header {
-  padding: 20px;
-  text-align: center;
-  background: #E8BD24;
-  background-repeat: no repeat;
-  background-size: cover;
+font-family: 'Barlow Semi Condensed';
+font-style: bold;
+background: #E8BD24;
 }
 
-.header h1 {
-  font-size: 60px;
-  font-style: italic;
+.banner{
+min-height:100vh;
+background: #E8BD24;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:black;
+padding-bottom:20px;
 }
 
-/* Style the top navigation bar */
-.topnav {
-  overflow: hidden;
-  background: #333;
+.banner h2{
+padding-bottom:40px;
+margin-bottom:40x;
 }
 
-/* Style the topnav links */
-.topnav a {
-  float: center;
-  display: block;
-  color: #E65C08;
-  text-align: center;
-  padding: 15px 20px;
-  text-decoration: none;
+.card-content {
+background: #FFD53E;
+height: 330px;
 }
 
-/* Change color on hover */
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-    
-    
-    
-    
-    
-
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {   
-  float: left;
-  width: 70%;
+.card-content h3 {
+text-align:center;
+color: black;
+padding: 25px 0 10px 0;
+font-size: 26px;
+font-weight:500;
 }
 
-/* Right column */
-.rightcolumn {
-  float: left;
-  width: 30%;
-  padding-left: 10px;
+.form-row {
+display:flex;
+width:90%;
+margin:0 auto;
 }
 
-/* Add a card effect for articles */
-.card1 {
-  background-image: url("table.jpg");
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  width:100%;
-  padding: 0px;
-  margin-top: 20px;
+form select, form input {
+display: block;
+width:100%;
+margin: 15px 12px;
+padding:15px;
+font-size:15px;
+font-family:'Barlow Semi Condensed';
+outline:none;
+border:none;
+border-bottom:1px solid #FFD53E;
+font-weight:300;
 }
 
-.card2 {
-  background-image: url("menuuu.jpg");
-  background-size: 90%;
-  background-repeat: no-repeat;
-  background-position: center;
-  width:100%;
-  padding: 0px;
-  margin-top: 20px;
+form input [type = text], form input[type = number],form input::placeholder,select{
+color:black;
 }
 
+form input[type = submit]{
+color:black;
+background: #FF711A;
+padding: 12px 0;
+border-radius:4px;
+cursor:pointer;
+}
 
-    a:link, a:visited {
-        background-color: sandybrown;
-        color: white;
-        padding: 14px 25px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block
-    }
-    
-    
-    
-    a:hover, a:active {
-        background-color: orangered;
-    }
-  
+form input[type = submit]:hover{
+opacity:0.9;
+
+
 </style>
 </head>
 <body>
 
-    
-    <div class="header">
-  <h1>PAPA VER'S BUNDATAN</h1>
-</div>
-    
-    <div class="topnav">
-  <a href="index.html" style="float: center; font-style: bold;">HOME</a>
-    </div>
-    
-    
-    <div class="row">
-  <div class="leftcolumn">
-    <div class="card2">
-      <div class="fakeimg2" style="height:750px;"></div>
-    </div>
-  </div>
-   
-  <div class="rightcolumn">
-    <div class="card1">
-      <div class="fakeimg1" style="height:750px;"></div>
-    </div>
-  </div>  
-    </div>
+<section class = "banner">
+ <h1 style="font-size:8vw;">BOOK YOUR TABLE NOW! </h1> <br> <br>
 
-    <a href="index.html">back</a>
-    
-    
-    
+ <div class = "card-content">
+ <h3> RESERVATION </h3>
+    <form>
+      <div class = "form-row">
+           <select name = "days"> 
+           <option value = "day-select">SELECT DAY</option>
+<option value = "sunday">SUNDAY</option>
+<option value = "monday">MONDAY</option>
+<option value = "tuesday">TUESDAY</option>
+<option value = "wednesday">WEDNESDAY</option>
+<option value = "thursday">THURSDAY</option>
+<option value = "friday">FRIDAY</option>
+<option value = "saturday">SATURDAY</option>
+</select>
+
+        <select name = "hours">
+        <option value = "hour-select">SELECT HOUR</option>
+<option value = "5">5:00</option>
+<option value = "5">6:00</option>
+<option value = "5">7:00</option>
+<option value = "5">8:00</option>
+<option value = "5">9:00</option>
+<option value = "5">10:00</option>
+<option value = "5">11:00</option>
+<option value = "5">12:00</option>
+</select>
+</div>
+
+<div class = "form-row">
+<input type = "text" placeholder = "FULL NAME">
+<input type = "text" placeholder = "PHONE NUMBER">
+</div>
+
+<div class = "form-row">
+<input type = "number" placeholder = "HOW MANY PEOPLE?" min = "1">
+<input type = "submit" value = "BOOK TABLE">
+</div>
+</form>
+</div>
+</div>
+</section>
 </body>
 </html>
+ 
+     
+
+
+
