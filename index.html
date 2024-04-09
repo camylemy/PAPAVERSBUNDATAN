@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
 <style>
+
 body {
   font-family: 'Barlow Semi Condensed';
   font-style: bold;
@@ -22,48 +23,29 @@ body {
   left: 0;
   background-color: #FFD53E;
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 0.8s;
   padding-top: 80px;
 }
 
-.menu-item {
-  position: relative;
-}
-
-.submenu {
-  display: none;
-  padding-left: 20px;
-}
-
-.menu-title {
+.sidebar a {
   padding: 8px 8px 8px 32px;
-  font-size: 20px;
+  font-size: 25px;
+  TEXT-DECORATION:NONE;
   color: black;
   display: block;
-  cursor: pointer;
+  transition: 0.8s;
 }
 
-.menu-title:hover {
-  background-color: #FF711A;
+.sidebar a:hover {
+  color: #FF711A;
 }
 
-.sidebar .submenu span {
-  padding: 8px 8px 8px 48px;
-  font-size: 16px;
-  color: black;
-  display: block;
-}
-
-.sidebar a.active {
-  background-color: #FF711A;
-}
-
-.sidebar a.active:hover {
-  background-color: #FF711A;
-}
-
-.sidebar a.active + .submenu {
-  display: block;
+.sidebar .closebtn {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  font-size: 50px;
+  margin-left: 50px;
 }
 
 .openbtn {
@@ -79,10 +61,10 @@ body {
 .openbtn:hover {
   background-color: #E8BD24;
   transition: 0.3s;
+  
 }
 
 .button {
-  font-family: 'Barlow Semi Condensed';
   border: 3px solid;
   background-color: #E8BD24;
   padding: 10px;
@@ -96,24 +78,25 @@ body {
 }
 
 .button1 {
-  width: 40%;
-  margin-bottom: 20px;
-  border-radius: 5px;
+width: 40%;
+margin-bottom: 20px;
+border-radius: 5px;
 }
 
+
 .button1:hover {
-  background-color: #FF711A;
-  transition: 0.3s;
+background-color: #FF711A;
+transition: 0.3s;
 }
 
 .button2 {
-  width: 40%;
-  border-radius: 5px;
+width: 40%;
+border-radius: 5px;
 }
 
 .button2:hover {
-  background-color: #FF711A;
-  transition: 0.3s;
+background-color: #FF711A;
+transition: 0.3s;
 }
 
 #main {
@@ -126,39 +109,37 @@ body {
   .sidebar {padding-top: 15px;}
   .sidebar a {font-size: 18px;}
 }
+
 </style>
 </head>
 <body>
 
 <div id="mySidebar" class="sidebar">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-  <div class="menu-item">
-    <span class="menu-title">ABOUT US</span>
-    <div class="submenu">
-      <span>History</span>
-      <span>Mission</span>
-      <span>Team</span>
-    </div>
-  </div>
-  <div class="menu-item">
-    <span class="menu-title">CONTACT US</span>
-  </div>
-  <div class="menu-item">
-    <span class="menu-title">FIND US</span>
-  </div>
+<div class="popup" id="popup-1">
+<div class="overlay"></div>
+<div class="content">
+<div class="close-btn">&times;</div>
+<h1>tite</h2>
+<p>hbxdvcudvcdhcdhcvdh</p>
+</div>
+</div>
+
+<button onclick="togglePopup()">Show Popup</button>
+
 </div>
 
 <div id="main">
-  <button class="openbtn" onclick="openNav()">LEARN MORE</button>
-  <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
+  <button class="openbtn" onclick="openNav()">LEARN MORE</button> <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
 </div>
-<button class="button button1" onclick="window.location.href = '#';">MENU</button>
-<button class="button button2" onclick= "window.location.href = 'menu.html';">RESERVATION</button>
-  
+<a href
+<button class="button button1" style="font-family: 'Barlow Semi Condensed';";>MENU</button>
+<button class="button button2" style="font-family: 'Barlow Semi Condensed';">RESERVATION</button>
+
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
-  document.getElementById("main").style.marginLeft = "300px";
+  document.getElementById("main").style.marginLeft = "0px";
 }
 
 function closeNav() {
@@ -168,4 +149,4 @@ function closeNav() {
 </script>
    
 </body>
-</html>
+</html> 
