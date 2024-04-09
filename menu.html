@@ -104,15 +104,15 @@
     text-align: center;
     color: black;
     display: none;
-    animation: fadeIn 0.5s ease-in-out forwards; /* Fade-in animation */
+    animation: slideIn 0.3s ease-in-out forwards; /* Slide-in animation */
 }
 
-@keyframes fadeIn {
+@keyframes slideIn {
     from {
-        opacity: 0; /* Start with opacity 0 (fully transparent) */
+        transform: translateY(-100%); /* Start off the screen above */
     }
     to {
-        opacity: 1; /* Fade to opacity 1 (fully opaque) */
+        transform: translateY(0); /* Slide in to its final position */
     }
 }
 
@@ -126,7 +126,7 @@
             width: 50%;
             margin-top: 50px;
             padding: 10px 0;
-            background: #E8BD24;
+            background: #FFD53E;
             color: black;
             border: 0;
             outline: none;
