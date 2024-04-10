@@ -195,6 +195,19 @@ body {
     margin: 20% auto;
   }
 }
+
+  .image-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; /* Adjust as needed */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+}
+  
 </style>
 </head>
 <body>
@@ -212,6 +225,15 @@ body {
   <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
   <button class="button button1" onclick="window.location.href = 'menu.html';">MENU</button>
   <button class="button button2" onclick= "window.location.href = 'reservation.html';">RESERVATION</button>
+</div>
+  <div class="image-container">
+    <img src="contacts.jpg" alt="Image 1">
+    <img src="contacts.jpg" alt="Image 2">
+    <img src="contacts.jpg" alt="Image 3">
+    <img src="contacts.jpg" alt="Image 4">
+    <img src="contacts.jpg" alt="Image 5">
+    <img src="contacts.jpg" alt="Image 6">
+  </div>
 </div>
   
 <div id="aboutPopup" class="modal">
