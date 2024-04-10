@@ -4,6 +4,8 @@
 <title>Papa Ver's Bundatan</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
 
 body {
@@ -15,6 +17,7 @@ body {
 * {box-sizing: border-box;}
 
 .sidebar {
+  cursor:pointer;
   height: 100%;
   width: 0;
   position: fixed;
@@ -25,6 +28,14 @@ body {
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
+}
+
+.sidebar-logo {
+  border-radius:50%;
+  width: 80%; /* Adjust the width of the logo */
+  height: auto; /* Maintain aspect ratio */
+  margin: 20px auto; /* Center the logo horizontally with some top margin */
+  display: block; /* Ensure the logo behaves as a block element */
 }
 
 .sidebar a {
@@ -49,7 +60,7 @@ body {
 }
 
 .openbtn {
-  font-size: PX;
+  font-size:20px;
   font-family: 'Barlow Semi Condensed';
   cursor: pointer;
   background-color: #FF711A;
@@ -61,7 +72,6 @@ body {
 .openbtn:hover {
   background-color: #E8BD24;
   transition: 0.3s;
-  
 }
 
 .button {
@@ -79,25 +89,24 @@ body {
 }
 
 .button1 {
-width: 40%;
-margin-bottom: 20px;
-border-radius: 5px;
+  width: 40%;
+  margin-bottom: 20px;
+  border-radius: 5px;
 }
 
-
 .button1:hover {
-background-color: #FF711A;
-transition: 0.3s;
+  background-color: #FF711A;
+  transition: 0.3s;
 }
 
 .button2 {
-width: 40%;
-border-radius: 5px;
+  width: 40%;
+  border-radius: 5px;
 }
 
 .button2:hover {
-background-color: #FF711A;
-transition: 0.3s;
+  background-color: #FF711A;
+  transition: 0.3s;
 }
 
 #main {
@@ -105,29 +114,144 @@ transition: 0.3s;
   padding: 0px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidebar {padding-top: 15px;}
-  .sidebar a {font-size: 18px;}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  border:3px;
+  border-radius:5px;
+  padding-top: 60px;
 }
 
+.modal-content {
+  background-color: #E8BD24;
+  margin: 5% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.close {
+  color: black;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #FF711A;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+.contact-number {
+  font-size: 20px;
+  color: black;
+  text-decoration: none; /* Remove underline */
+  
+}
+
+.contact-number:hover {
+  color: #FF711A; /* Change color on hover */
+}
+
+.contact-info {
+  font-size: 20px;
+  color: black;
+  text-decoration: none; /* Remove underline */
+}
+
+.contact-info:hover {
+  color: #FF711A; /* Change color on hover */
+}
+
+/* Responsive layout for modals */
+@media screen and (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .modal-content {
+    width: 95%;
+    margin: 15% auto;
+  }
+}
+
+/* Adjust the modal content size and margin for smaller screens */
+@media screen and (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    margin: 20% auto;
+  }
+}
 </style>
 </head>
 <body>
 
 <div id="mySidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-  <a href="#";>ABOUT US</a>
-  <a href="#";>CONTACT US</a>
-  <a href="#";>FIND US</a>
+ <img src="logoo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
+  <a href="#" class="closebtn" onclick="closeNav()">x</a>
+  <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
+  <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
+  <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
 </div>
 
 <div id="main">
-  <button class="openbtn" onclick="openNav()">LEARN MORE</button> <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
+  <button class="openbtn" onclick="openNav()">LEARN MORE</button>
+  <h1 style="font-size:8vw; text-align:center;">PAPA VER'S BUNDATAN</h1>
+  <button class="button button1" onclick="window.location.href = '#';">MENU</button>
+  <button class="button button2" onclick= "window.location.href = 'menu.html';">RESERVATION</button>
 </div>
-<button class="button button1" onclick="window.location.href = '#';">MENU</button>
-<button class="button button2" onclick= "window.location.href = 'menu.html';">RESERVATION</button>
-  
+
+<!-- Modal content -->
+<div id="aboutPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('aboutPopup')">&times;</span>
+    <h1> OUR STORY </h1>
+    <p>         Papa Ver’s Bundatan is a fast-food restaurant and can be also called Tapsilogan. Tapsilogan is an eatery that specializes in serving Tapsilog, a popular meal consisting of marinated beef, fried rice, and fried egg. It’s a common and affordable meal option in the country. In Papa Ver’s Bundatan, they are not only selling Tapsilog but also other dishes such as Pork Sisig, Chicksilog, Porter House Sizzling, Tuna Sizzling, Buttered Chicken, and more.
+<br> <br>          Papa Ver’s Bundatan started in April 25, 2022, and is currently located at 2531 San Pedro St. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, its name was derived from his loving father’s name. Mr. Clemente started thinking about how much people in the country love rice, which became the basis for his idea. At first, the eatery was not very popular until it continued and gained recognition. Papa Ver’s Bundatan is a small eatery that often goes unnoticed due to its limited space. However, despite this, the business thrives as customers consistently return. It’s not just the tasty food that keeps them coming back; the excellent customer service offered by the staff also plays a significant role. The inviting ambiance and personalized care ensure that customers feel valued and appreciated, creating a special bond that makes them want to return time and time again.
+</p>
+  </div>
+</div>
+
+<div id="contactPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('contactPopup')">&times;</span>
+    <h1>REACH OUT TO US!<h1>
+    <a href="tel:+639453746617" class="contact-number">
+      <i class="fas fa-phone"></i> +63 908 963 0064
+    </a> <br>
+    <a href="mailto:your-email@example.com" class="contact-info">
+      <i class="fas fa-envelope"></i> dino.clemente06@gmail.com
+    </a>
+  </div>
+</div>
+
+<div id="findPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('findPopup')">&times;</span>
+    <h1>WE ARE LOCATED AT 2531 SAN PEDRO ST. BALUT, TONDO, MANILA</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15441.674945473336!2d120.95205534952568!3d14.6321559737249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b597745f66b7%3A0x3c6003c1fad73020!2sSan%20Pedro%20St%2C%20Tondo%2C%20Manila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1712705484054!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</div>
+
+<div id="menuPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('menuPopup')">&times;</span>
+    <p>Menu Popup Content</p>
+  </div>
+</div>
+
 <script>
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
@@ -138,7 +262,17 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
   document.getElementById("main").style.marginLeft= "0";
 }
+
+function openPopup(popupId) {
+  var modal = document.getElementById(popupId);
+  modal.style.display = "block";
+}
+
+function closePopup(popupId) {
+  var modal = document.getElementById(popupId);
+  modal.style.display = "none";
+}
 </script>
-   
+
 </body>
-</html> 
+</html>
