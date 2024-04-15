@@ -120,7 +120,7 @@
 <div class="reservation-form">
     <img class="logo-img" src="logoo.jpg" alt="Logo">
     <h2>RESERVATION FORM</h2> <br> <br>
-    <form action="https://formsubmit.co/tudacamillered@gmail.com" method="POST"/>
+    <form id="reservation-form" action="https://formsubmit.co/tudacamillered@gmail.com" method="POST"/>
 
         <div class="form-group">
             <label for="name">Name:</label>
@@ -156,7 +156,7 @@
 
 <script>
     document.getElementById('reservation-form').addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
         var submitButton = document.querySelector('input[type="submit"]');
         submitButton.value = "Submitting...";
         setTimeout(function() {
