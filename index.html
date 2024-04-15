@@ -316,21 +316,25 @@ body {
 <div id="galleryPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('galleryPopup')">&times;</span>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;>GALLERY</h1>
+    <div id="galleryPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('galleryPopup')">&times;</span>
     <h1>GALLERY</h1>
     <div class="image-section">
       <h2>Section 1</h2>
       <div class="image-container">
-        <img src="contacts.jpg" alt="Image 1">
-        <img src="contacts.jpg" alt="Image 2">
-        <img src="contacts.jpg" alt="Image 3">
+        <img src="image1.jpg" alt="Image 1" onclick="openImageModal('image1.jpg')">
+        <img src="image2.jpg" alt="Image 2" onclick="openImageModal('image2.jpg')">
+        <img src="image3.jpg" alt="Image 3" onclick="openImageModal('image3.jpg')">
       </div>
     </div>
     <div class="image-section">
       <h2>Section 2</h2>
       <div class="image-container">
-        <img src="contacts.jpg" alt="Image 4">
-        <img src="contacts.jpg" alt="Image 5">
-        <img src="contacts.jpg" alt="Image 6">
+        <img src="image4.jpg" alt="Image 4" onclick="openImageModal('image4.jpg')">
+        <img src="image5.jpg" alt="Image 5" onclick="openImageModal('image5.jpg')">
+        <img src="image6.jpg" alt="Image 6" onclick="openImageModal('image6.jpg')">
       </div>
     </div>
   </div>
@@ -355,6 +359,10 @@ function openPopup(popupId) {
 function closePopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "none";
+}
+
+function openImageModal(imagePath) {
+  console.log("Clicked image path:", imagePath);
 }
 
 </script>
