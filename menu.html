@@ -24,26 +24,22 @@
             margin-bottom: 20px;
         }
 
-        section {
-    padding: 20px;
-    margin: 20px auto;
-    background-color: #FFD53E;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: calc(50% - 40px);
-    display: inline-block;
-    vertical-align: top;
-    box-sizing: border-box;
-    margin-right: 20px;
-    margin-bottom: 20px;
-}
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Center the sections horizontally */
+        }
 
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 0 20px;
-}
+        section {
+            flex: 1; /* Each section takes equal space */
+            padding: 20px;
+            margin: 20px;
+            background-color: #FFD53E;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Limit the maximum width of each section */
+            box-sizing: border-box;
+        }
 
         h2 {
             color: black;
@@ -85,26 +81,26 @@
         }
 
         .back-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.back-button button {
-    text-align: center;
-    background-color: #FF711A;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 15px;
-    font-family: 'Barlow Semi Condensed';
-    transition: background-color 0.3s ease;
-}
+        .back-button button {
+            text-align: center;
+            background-color: #FF711A;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            font-family: 'Barlow Semi Condensed';
+            transition: background-color 0.3s ease;
+        }
 
-.back-button button:hover {
-    background-color: #E8BD24;
-}
+        .back-button button:hover {
+            background-color: #E8BD24;
+        }
     </style>
 </head>
 <body>
@@ -116,56 +112,54 @@
 </div>
 
 <div class="container">
-<section id="appetizers">
-    <h2>PARES
-/MAMI</h2>
-    <ul>
-        <li>Beef Pares - ₱90.00</li>
-        <li>Lechon Pares - ₱100.00</li>
-        <li>Pares Overload - ₱120.00</li>
-        <li>Egg Pares - ₱35.00</li>
-        <li>Mami - ₱60.00</li>
-    </ul>
-</section>
+    <section id="appetizers">
+        <h2>PARES / MAMI</h2>
+        <ul>
+            <li>Beef Pares - ₱90.00</li>
+            <li>Lechon Pares - ₱100.00</li>
+            <li>Pares Overload - ₱120.00</li>
+            <li>Egg Pares - ₱35.00</li>
+            <li>Mami - ₱60.00</li>
+        </ul>
+    </section>
 
-<section id="main-courses">
-    <h2>RICE MEAL
-/TOPPINGS</h2>
-    <ul>
-        <li>Chicken - ₱100.00</li>
-        <li>Porkchop - ₱90.00</li>
-        <li>Tapa w/ Egg - ₱100.00</li>
-        <li>Liempo - ₱90.00</li>
-        <li>Lechon - ₱90.00</li>
-        <li>Hungarian - ₱70.00</li>
-        <li>Bulaklak - ₱80.00</li>
-    </ul>
-</section>
+    <section id="main-courses">
+        <h2>RICE MEAL / TOPPINGS</h2>
+        <ul>
+            <li>Chicken - ₱100.00</li>
+            <li>Porkchop - ₱90.00</li>
+            <li>Tapa w/ Egg - ₱100.00</li>
+            <li>Liempo - ₱90.00</li>
+            <li>Lechon - ₱90.00</li>
+            <li>Hungarian - ₱70.00</li>
+            <li>Bulaklak - ₱80.00</li>
+        </ul>
+    </section>
 
-<section id="extras">
-    <h2>EXTRAS</h2>
-    <ul>
-        <li>Extra Rice - ₱15.00</li>
-        <li>Egg - ₱15.00</li>
-    </ul>
-</section>
+    <section id="extras">
+        <h2>EXTRAS</h2>
+        <ul>
+            <li>Extra Rice - ₱15.00</li>
+            <li>Egg - ₱15.00</li>
+        </ul>
+    </section>
 
-<section id="short-orders">
-    <h2>SHORT ORDER</h2>
-    <ul>
-        <li>Sisig - ₱120.00</li>
-        <li>Bulaklak - ₱120.00</li>
-    </ul>
-</section>
+    <section id="short-orders">
+        <h2>SHORT ORDER</h2>
+        <ul>
+            <li>Sisig - ₱120.00</li>
+            <li>Bulaklak - ₱120.00</li>
+        </ul>
+    </section>
 
-<section id="drinks">
-    <h2>DRINKS</h2>
-    <ul>
-        <li>Bottled Water - ₱15.00</li>
-        <li>Royal - ₱15.00</li>
-        <li>Coke - ₱15.00</li>
-    </ul>
-</section>
+    <section id="drinks">
+        <h2>DRINKS</h2>
+        <ul>
+            <li>Bottled Water - ₱15.00</li>
+            <li>Royal - ₱15.00</li>
+            <li>Coke - ₱15.00</li>
+        </ul>
+    </section>
 </div>
 
 <div class="back-button">
@@ -180,3 +174,4 @@
 
 </body>
 </html>
+
