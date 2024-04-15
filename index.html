@@ -272,9 +272,9 @@ body {
   <video width="100%" autoplay muted loop>
     <source src="GO6a3xkJeTIO7lgDAAmeYe32AiFnbmdjAAAF.mp4" type="video/mp4">
     Welcome to Papa Ver's Bundatan.
-  </video> <br> <br>
-    
-<button class="button button3" onclick="window.location.href = '#';">GALLERY</button>
+  </video> <br> <br> <br>
+
+<button class="button button3" onclick="openGalleryModal()">GALLERY</button>
   
 <div id="aboutPopup" class="modal">
   <div class="modal-content">
@@ -336,7 +336,7 @@ window.dfMessenger = window.dfMessenger || {};
 window.dfMessenger.settings = {
   botId: 'papaversbundatan-pyqf',
   lang: 'en',
-}
+};
 
 function openChatbot() {
   window.dfMessenger.openChat();
