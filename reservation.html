@@ -111,52 +111,6 @@
             right: 20px;
         }
 
-        .alert-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.alert-box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    text-align: center;
-}
-
-.alert-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.alert-message {
-    font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.alert-button {
-    background-color: #FF711A;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.alert-button:hover {
-    background-color: #FFD53E;
-}
-
     </style>
 </head>
 <body>
@@ -166,7 +120,7 @@
 <div class="reservation-form">
     <img class="logo-img" src="logoo.jpg" alt="Logo">
     <h2>RESERVATION FORM</h2> <br> <br>
-    <form id="reservation-form" action="https://formsubmit.co/tudacamillered@gmail.com" method="POST"/>
+    <form action="https://formsubmit.co/tudacamillered@gmail.com" method="POST"/>
 
         <div class="form-group">
             <label for="name">Name:</label>
@@ -186,13 +140,13 @@
         </div>
         <div class="form-group">
             <label for="guests">Number of Guests:</label>
-            <input type="number" id="guests" name="guests" min="1" max="15" required>
+            <input type="number" id="guests" name="guests" min="1" max="25" required>
         </div>
         <div class="form-group">
             <label for="message">Special Requests:</label>
             <textarea id="message" name="message" rows="4"></textarea>
         </div>
-        <input type="submit" id="submit-button" value="Submit">
+        <input type="submit" value="Submit">
     </form>
 </div>
 
@@ -200,44 +154,16 @@
     <button onclick="goBack()">BACK</button>
 </div>
 
-    <script>
-document.getElementById('reservation-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    var submitButton = document.getElementById('submit-button');
-    submitButton.value = "Submitting...";
-    submitButton.disabled = true;
-    
-    setTimeout(function() {
-        var overlay = document.createElement('div');
-        overlay.classList.add('alert-overlay');
-
-        var alertBox = document.createElement('div');
-        alertBox.classList.add('alert-box');
-
-        var title = document.createElement('div');
-        title.classList.add('alert-title');
-        title.innerText = "Success!";
-
-        var message = document.createElement('div');
-        message.classList.add('alert-message');
-        message.innerText = "We have received your reservation and will update you soon. <br> Thanks for choosing Papa Ver's Bundatan. <br> See you there!";
-
-        var closeButton = document.createElement('button');
-        closeButton.classList.add('alert-button');
-        closeButton.innerText = "Close";
-        closeButton.addEventListener('click', function() {
-            document.body.removeChild(overlay);
-            submitButton.value = "Submit";
-            submitButton.disabled = false;
-        });
-        alertBox.appendChild(title);
-        alertBox.appendChild(message);
-        alertBox.appendChild(closeButton);
-        overlay.appendChild(alertBox);
-        document.body.appendChild(overlay);
-    }, 2000);
-});
+<script>
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        var submitButton = document.querySelector('input[type="submit"]');
+        submitButton.value = "Submitting...";
+        setTimeout(function() {
+            submitButton.value = "Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you there!";
+            submitButton.disabled = true;
+        }, 2000);
+    });
 </script>
 
 
