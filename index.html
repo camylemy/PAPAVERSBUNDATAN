@@ -280,6 +280,16 @@ body {
   margin-top: 10px;
 }
 
+.button-gallery {
+  width: 40%;
+  margin-bottom: 20px;
+  border-radius: 1px;
+}
+
+.button-gallery:hover {
+  background-color: #E8BD24;
+  transition: 0.3s;
+}
 
 </style>
 
@@ -296,10 +306,9 @@ body {
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">LEARN MORE</button>
-  <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Papa Ver's Bundatan</h1>
   <button class="button button1" onclick="window.location.href = 'menu.html';">MENU</button>
   <button class="button button2" onclick= "window.location.href = 'reservation.html';">RESERVATION</button>
-
+  <button class="button button-gallery" onclick="openPopup('galleryPopup')">GALLERY</button>
   </div> <br> <br> 
   <video width="100%" autoplay muted loop>
     <source src="GO6a3xkJeTIO7lgDAAmeYe32AiFnbmdjAAAF.mp4" type="video/mp4">
