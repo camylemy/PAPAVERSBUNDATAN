@@ -155,6 +155,19 @@
 </div>
 
 <script>
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+        var submitButton = document.querySelector('input[type="submit"]');
+        submitButton.value = "Submitting...";
+        setTimeout(function() {
+            submitButton.value = "Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you there!";
+            submitButton.disabled = true;
+        }, 2000);
+    });
+</script>
+
+
+<script>
     function goBack() {
         window.history.back();
     }
