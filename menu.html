@@ -12,12 +12,12 @@
             margin: 0;
             padding: 0;
             color: black;
+            text-align: center; /* Center align the content */
         }
 
         h1 {
             font-family: 'Style Script', cursive;
             font-size: 8vw;
-            text-align: center;
             color: #FF711A;
             text-shadow: 2px 2px 4px #000000;
             margin-top: 20px;
@@ -30,10 +30,9 @@
             background-color: #FFD53E;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            max-width: 300px; /* Adjust as needed */
+            display: inline-block; /* Change from grid to inline-block */
+            vertical-align: top; /* Align sections to the top */
         }
 
         h2 {
@@ -85,9 +84,7 @@
             cursor: pointer;
             font-size: 15px;
             transition: background-color 0.3s ease;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
+            margin-top: 20px; /* Add margin to separate from sections */
         }
 
         .back-button button:hover {
