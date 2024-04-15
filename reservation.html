@@ -154,16 +154,23 @@
     <button onclick="goBack()">BACK</button>
 </div>
 
-<script>
-    document.getElementById('reservation-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        var submitButton = document.getElementById('submit-button');
-        submitButton.value = "Submitting..."; 
-        setTimeout(function() {
-            alert("Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you!");
-            submitButton.disabled = true; 
-        }, 2000);
-        });
+    <script>
+document.getElementById('reservation-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    var submitButton = document.getElementById('submit-button');
+    submitButton.value = "Submitting...";
+    submitButton.disabled = true;
+    
+    setTimeout(function() {
+        alert("Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you!");
+    }, 2000);
+
+    setTimeout(function() {
+        submitButton.value = "Submit";
+        submitButton.disabled = false;
+    }, 4000);
+});
 </script>
 
 
