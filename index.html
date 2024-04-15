@@ -289,8 +289,6 @@ body {
   <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
   <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
   <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
-<a href="#" onclick="openChatbot()">CHATBOT</a>
-</div>
 
 <div id="main">
   <button class="openbtn" onclick="openNav()">LEARN MORE</button>
@@ -402,20 +400,6 @@ function openImageModal(imagePath) {
 }
 
 </script>
-
-<script>
-window.dfMessenger = window.dfMessenger || {};
-window.dfMessenger.settings = {
-  botId: 'papaversbundatan-pyqf',
-  lang: 'en',
-};
-
-function openChatbot() {
-  window.dfMessenger.openChat();
-}
-</script>
-
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 
 </head>
 </body>
