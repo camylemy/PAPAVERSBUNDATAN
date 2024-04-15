@@ -250,10 +250,7 @@ body {
   height: auto;
 }
 
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-
-</style>
-</head>
+</style>
 <body>
 
 <div id="mySidebar" class="sidebar">
@@ -262,6 +259,7 @@ body {
   <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
   <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
   <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
+<a href="#" onclick="openChatbot()">CHATBOT</a>
 </div>
 
 <div id="main">
@@ -329,7 +327,25 @@ function closePopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "none";
 }
+
 </script>
 
+<script>
+
+window.dfMessenger = window.dfMessenger || {};
+window.dfMessenger.settings = {
+  botId: 'your-bot-id',
+  lang: 'en', // Language code (e.g., en, es, fr)
+};
+
+function openChatbot() {
+  window.dfMessenger.openChat();
+}
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+
+
+</script>
+</head>
 </body>
 </html>
