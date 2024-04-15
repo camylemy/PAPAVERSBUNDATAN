@@ -111,6 +111,52 @@
             right: 20px;
         }
 
+        .alert-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.alert-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.alert-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.alert-message {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.alert-button {
+    background-color: #FF711A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.alert-button:hover {
+    background-color: #FFD53E;
+}
+
     </style>
 </head>
 <body>
@@ -163,13 +209,34 @@ document.getElementById('reservation-form').addEventListener('submit', function(
     submitButton.disabled = true;
     
     setTimeout(function() {
-        alert("Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you!");
-    }, 2000);
+        var overlay = document.createElement('div');
+        overlay.classList.add('alert-overlay');
 
-    setTimeout(function() {
-        submitButton.value = "Submit";
-        submitButton.disabled = false;
-    }, 4000);
+        var alertBox = document.createElement('div');
+        alertBox.classList.add('alert-box');
+
+        var title = document.createElement('div');
+        title.classList.add('alert-title');
+        title.innerText = "Reservation Received";
+
+        var message = document.createElement('div');
+        message.classList.add('alert-message');
+        message.innerText = "Success! We have received your reservation and will update you soon. Thanks for choosing Papa Ver's Bundatan and see you!";
+
+        var closeButton = document.createElement('button');
+        closeButton.classList.add('alert-button');
+        closeButton.innerText = "Close";
+        closeButton.addEventListener('click', function() {
+            document.body.removeChild(overlay);
+            submitButton.value = "Submit";
+            submitButton.disabled = false;
+        });
+        alertBox.appendChild(title);
+        alertBox.appendChild(message);
+        alertBox.appendChild(closeButton);
+        overlay.appendChild(alertBox);
+        document.body.appendChild(overlay);
+    }, 2000);
 });
 </script>
 
