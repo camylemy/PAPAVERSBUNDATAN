@@ -1,419 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Home</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Barlow Semi Condensed';
+            background-color: #E8BD24;
+            margin: 0;
+            padding: 0;
+            color: black;
+            text-align: center; /* Center align the content */
+        }
 
-body {
-  font-family: 'Barlow Semi Condensed';
-  font-style: bold;
-  background: #E8BD24;
-}
+        h1 {
+            font-family: 'Style Script', cursive;
+            font-size: 8vw;
+            color: #FF711A;
+            text-shadow: 2px 2px 4px #000000;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-* {box-sizing: border-box;}
+        section {
+            padding: 20px;
+            margin: 20px auto;
+            background-color: #FFD53E;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px; /* Adjust as needed */
+            display: inline-block; /* Change from grid to inline-block */
+            vertical-align: top; /* Align sections to the top */
+        }
 
-.sidebar {
-  cursor:pointer;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #FFD53E;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 80px;
-}
+        h2 {
+            color: black;
+            margin-top: 0;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
 
-.sidebar-logo {
-  border-radius:50%;
-  width: 80%; 
-  height: auto;
-  margin: 20px auto;
-  display: block;
-}
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  font-size: 25px;
-  TEXT-DECORATION:NONE;
-  color: black;
-  display: block;
-  transition: 0.5s;
-}
+        li {
+            margin-bottom: 10px;
+            font-size: 18px;
+            line-height: 1.5;
+            display: flex;
+            justify-content: space-between;
+        }
 
-.sidebar a:hover {
-  color: #FF711A;
-}
+        .reservation-button, .back-button {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0px;
-  right: 15px;
-  font-size: 50px;
-  margin-left: 50px;
-}
+        .reservation-button a {
+            background-color: #FF711A;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+        }
 
-.openbtn {
-  font-size:20px;
-  font-family: 'Barlow Semi Condensed';
-  cursor: pointer;
-  background-color: #FF711A;
-  color: white;
-  padding: 10px 15px;
-  border: #FFD53E;
-}
+        .reservation-button a:hover {
+            background-color: #E8BD24;
+        }
 
-.openbtn:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
+        .back-button button {
+            background-color: #FF711A;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+            transition: background-color 0.3s ease;
+            margin-top: 20px; /* Add margin to separate from sections */
+        }
 
-.button {
-  font-family: 'Barlow Semi Condensed';
-  background-color: #FF711A;
-  padding: 10px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 100%;
-  margin: auto;
-  border: black;
-  cursor: pointer;
-  opacity:1;
-}
+        .back-button button:hover {
+            background-color: #E8BD24;
+        }
 
-.button1 {
-  color:white;
-  width: 40%;
-  margin-bottom: 20px;
-  border-radius: 1px;
-}
-
-.button1:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-.button2 {
-  color:white;
-  width: 40%;
-  border-radius: 1px;
-}
-
-.button2:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-.button3 {
-  color:white;
-  width: 40%;
-  margin-top: 20px;
-  border-radius: 1px;
-  background-color: #FF711A;
-  padding: 10px; 
-  font-size: 20px; 
-  text-align: center; 
-  cursor: pointer; 
-  display: block;
-  margin: auto;
-}
-
-.button3:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-#main {
-  transition: margin-left .3s; 
-  padding: 0px;
-}
-
-.column {
-  width: 30%; 
-  background-color: #FFD53E;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 5px;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  border:3px;
-  border-radius:5px;
-  padding-top: 60px;
-}
-
-.modal-content {
-  background-color: #E8BD24;
-  margin: 5% auto;
-  padding: 20px;
-  width: 80%;
-}
-
-.close {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #FF711A;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-.contact-number {
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-  
-}
-
-.contact-number:hover {
-  color: #FF711A;
-}
-
-.contact-info {
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-}
-
-.contact-info:hover {
-  color: #FF711A;
-}
-
-@media screen and (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    margin: 10% auto;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .modal-content {
-    width: 95%;
-    margin: 15% auto;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .modal-content {
-    width: 98%;
-    margin: 20% auto;
-  }
-}
-
-  #main video {
-  display: block;
-  border: 3px;
-  border-radius: 5px;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 100%;
-  margin-bottom: 20px;
-    }
-
-  .image-section {
-  margin-top: 20px;
-}
-
-.image-section h2 {
-  margin-bottom: 10px;
-  color: black;
-}
-
-.image-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
-
-.card-section {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-}
-
-.card {
-  background-color: #FFD53E;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  flex-basis: calc(50% - 20px);
-}
-
-.card h2 {
-  color: #FF711A;
-  font-size: 20px;
-}
-
-.card p {
-  font-size: 16px;
-  margin-top: 10px;
-}
-
-
-</style>
+    </style>
+</head>
 <body>
 
-<div id="mySidebar" class="sidebar">
- <img src="logoo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
-  <a href="#" class="closebtn" onclick="closeNav()">x</a>
-  <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
-  <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
-  <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
-<a href="#" onclick="openChatbot()">CHATBOT</a>
+<h1>Menu</h1>
+
+<section id="appetizers">
+    <h2>PARES/MAMI</h2>
+    <ul>
+        <li>Beef Pares - ₱90.00</li>
+        <li>Lechon Pares - ₱100.00</li>
+        <li>Pares Overload - ₱120.00</li>
+        <li>Egg Pares - ₱35.00</li>
+        <li>Mami - ₱60.00</li>
+    </ul>
+</section>
+
+<section id="main-courses">
+    <h2>RICE MEAL/TOPPINGS</h2>
+    <ul>
+        <li>Chicken - ₱100.00</li>
+        <li>Porkchop - ₱90.00</li>
+        <li>Tapa w/ Egg - ₱100.00</li>
+        <li>Liempo - ₱90.00</li>
+        <li>Lechon - ₱90.00</li>
+        <li>Hungarian - ₱70.00</li>
+        <li>Bulaklak - ₱80.00</li>
+    </ul>
+</section>
+
+<section id="extras">
+    <h2>EXTRAS</h2>
+    <ul>
+        <li>Extra Rice - ₱15.00</li>
+        <li>Egg - ₱15.00</li>
+    </ul>
+</section>
+
+<section id="short-orders">
+    <h2>SHORT ORDER</h2>
+    <ul>
+        <li>Sisig - ₱120.00</li>
+        <li>Bulaklak - ₱120.00</li>
+    </ul>
+</section>
+
+<section id="drinks">
+    <h2>DRINKS</h2>
+    <ul>
+        <li>Bottled Water - ₱15.00</li>
+        <li>Royal - ₱15.00</li>
+        <li>Coke - ₱15.00</li>
+    </ul>
+</section>
+
+<div class="reservation-button">
+    <a href="reservation.html">BOOK A TABLE NOW!</a>
 </div>
 
-<div id="main">
-  <button class="openbtn" onclick="openNav()">LEARN MORE</button>
-  <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Papa Ver's Bundatan</h1>
-  <button class="button button1" onclick="window.location.href = 'menu.html';">MENU</button>
-  <button class="button button2" onclick= "window.location.href = 'reservation.html';">RESERVATION</button>
-
-  </div> <br> <br> 
-  <video width="100%" autoplay muted loop>
-    <source src="GO6a3xkJeTIO7lgDAAmeYe32AiFnbmdjAAAF.mp4" type="video/mp4">
-    Welcome to Papa Ver's Bundatan.
-  </video> <br> <br> <br>
-
-<button class="button button3" onclick="openPopup('galleryPopup')">GALLERY</button>
-
-<div id="aboutPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('aboutPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
-    <p>         Papa Ver’s Bundatan is a fast-food restaurant and can be also called Tapsilogan. Tapsilogan is an eatery that specializes in serving Tapsilog, a popular meal consisting of marinated beef, fried rice, and fried egg. It’s a common and affordable meal option in the country. In Papa Ver’s Bundatan, they are not only selling Tapsilog but also other dishes such as Pork Sisig, Chicksilog, Porter House Sizzling, Tuna Sizzling, Buttered Chicken, and more.
-<br> <br>          Papa Ver’s Bundatan started in April 25, 2022, and is currently located at 2531 San Pedro St. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, its name was derived from his loving father’s name. Mr. Clemente started thinking about how much people in the country love rice, which became the basis for his idea. At first, the eatery was not very popular until it continued and gained recognition. Papa Ver’s Bundatan is a small eatery that often goes unnoticed due to its limited space. However, despite this, the business thrives as customers consistently return. It’s not just the tasty food that keeps them coming back; the excellent customer service offered by the staff also plays a significant role. The inviting ambiance and personalized care ensure that customers feel valued and appreciated, creating a special bond that makes them want to return time and time again.
-</p>
-  </div>
-</div>
-
-<div id="contactPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('contactPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Reach out to us!<h1>
-    <a href="tel:+639453746617" class="contact-number">
-      <i class="fas fa-phone"></i> +63 908 963 0064
-    </a> <br>
-    <a href="mailto:your-email@example.com" class="contact-info">
-      <i class="fas fa-envelope"></i> dino.clemente06@gmail.com
-    </a>
-  </div>
-</div>
-
-<div id="findPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('findPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">We are located at 2531 San Pedro St. Balut, Tondo, Manila</h1>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15441.674945473336!2d120.95205534952568!3d14.6321559737249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b597745f66b7%3A0x3c6003c1fad73020!2sSan%20Pedro%20St%2C%20Tondo%2C%20Manila%2C%20Metro%20Manila!5e0!3m2!1sen!2sph!4v1712705484054!5m2!1sen!2sph" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-
-    <div id="galleryPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('galleryPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Gallery</h1>
-    <div class="image-section">
-      <h2>DISHES</h2>
-      <div class="image-container">
-        <img src="contacts.jpg" alt="Image 1" onclick="openImageModal('contacts.jpg')">
-        <img src="contacts.jpg" alt="Image 2" onclick="openImageModal('contacts.jpg')">
-        <img src="contacts.jpg" alt="Image 3" onclick="openImageModal('contacts.jpg')">
-      </div>
-    </div>
-    <div class="image-section">
-      <h2>POPULAR POSTS</h2>
-      <div class="image-container">
-        <img src="contacts.jpg" alt="Image 4" onclick="openImageModal('contacts.jpg')">
-        <img src="contacts.jpg" alt="Image 5" onclick="openImageModal('contacts.jpg')">
-        <img src="contacts.jpg" alt="Image 6" onclick="openImageModal('contacts.jpg')">
-      </div>
-    </div>
-</div>
-</div>
-<div class="card-section">
-      <div class="card">
-        <h2>Special Offer</h2>
-        <p>Get 10% off on all orders above $50. Limited time offer!</p>
-      </div>
-      <div class="card">
-        <h2>Join Our Loyalty Program</h2>
-        <p>Earn points with every purchase and redeem them for exciting rewards.</p>
-      </div>
-    </div>
-  </div>
+<div class="back-button">
+    <button onclick="goBack()">BACK</button>
 </div>
 
 <script>
-function openNav() {
-  document.getElementById("mySidebar").style.width = "300px";
-  document.getElementById("main").style.marginLeft = "0px";
-}
-
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
-}
-
-function openPopup(popupId) {
-  var modal = document.getElementById(popupId);
-  modal.style.display = "block";
-}
-
-function closePopup(popupId) {
-  var modal = document.getElementById(popupId);
-  modal.style.display = "none";
-}
-
-function openImageModal(imagePath) {
-  console.log("Clicked image path:", imagePath);
-}
-
+    function goBack() {
+        window.history.back();
+    }
 </script>
 
-<script>
-window.dfMessenger = window.dfMessenger || {};
-window.dfMessenger.settings = {
-  botId: 'papaversbundatan-pyqf',
-  lang: 'en',
-};
-
-function openChatbot() {
-  window.dfMessenger.openChat();
-}
-</script>
-
-<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-
-</head>
 </body>
 </html>
