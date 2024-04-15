@@ -256,6 +256,31 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.card-section {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card {
+  background-color: #FFD53E;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  flex-basis: calc(50% - 20px);
+}
+
+.card h2 {
+  color: #FF711A;
+  font-size: 20px;
+}
+
+.card p {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+
 </style>
 <body>
 
@@ -331,6 +356,16 @@ body {
         <img src="contacts.jpg" alt="Image 4" onclick="openImageModal('contacts.jpg')">
         <img src="contacts.jpg" alt="Image 5" onclick="openImageModal('contacts.jpg')">
         <img src="contacts.jpg" alt="Image 6" onclick="openImageModal('contacts.jpg')">
+      </div>
+    </div>
+<div class="card-section">
+      <div class="card">
+        <h2>Special Offer</h2>
+        <p>Get 10% off on all orders above $50. Limited time offer!</p>
+      </div>
+      <div class="card">
+        <h2>Join Our Loyalty Program</h2>
+        <p>Earn points with every purchase and redeem them for exciting rewards.</p>
       </div>
     </div>
   </div>
