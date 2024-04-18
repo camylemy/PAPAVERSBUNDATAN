@@ -3,19 +3,22 @@
 <head>
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-<link href='https://fonts.googleapis.com/css?family=Barlow Semi Condensed' rel='stylesheet'>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 <style>
 
 body {
-  font-family: 'Barlow Semi Condensed';
-  font-style: bold;
-  background: #FEBA4F;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 400;
+  background: #FFA600;
+  margin: 10px;
+  overflow-x: hidden;
 }
 
-* {box-sizing: border-box;}
+*{box-sizing: border-box;}
 
 .sidebar {
   cursor:pointer;
@@ -25,7 +28,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FFA600;
+  background-color: #F78702;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
@@ -42,14 +45,14 @@ body {
 .sidebar a {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
-  TEXT-DECORATION:NONE;
+  text-decoration:none;
   color: black;
   display: block;
   transition: 0.5s;
 }
 
 .sidebar a:hover {
-  color: #FF711A;
+  color: #FFA600;
 }
 
 .sidebar .closebtn {
@@ -62,84 +65,18 @@ body {
 
 .openbtn {
   font-size: 20px;
-  font-family: 'Barlow Semi Condensed';
+  font-family: 'Barlow Condensed';
+  font-weight: 400;
   cursor: pointer;
-  background-color: #FF711A;
+  background-color: #F78702;
   color: white;
-  margin-top: 10px;
   padding: 10px 15px;
-  border: #FFD53E;
+  border: none;
 }
 
 .openbtn:hover {
-  background-color: #E8BD24;
+  color: #FFA600;
   transition: 0.3s;
-}
-
-.button {
-  font-family: 'Barlow Semi Condensed';
-  background-color: #FF711A;
-  padding: 10px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 100%;
-  margin: auto;
-  border: black;
-  cursor: pointer;
-  opacity:1;
-}
-
-.button1 {
-  color:white;
-  width: 40%;
-  margin-bottom: 20px;
-}
-
-.button1:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-.button2 {
-  color:white;
-  width: 40%;
-}
-
-.button2:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-.button3 {
-  color:white;
-  width: 40%;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding: 10px; 
-  font-size: 20px; 
-  text-align: center; 
-  cursor: pointer; 
-  display: block;
-}
-
-.button3:hover {
-  background-color: #E8BD24;
-  transition: 0.3s;
-}
-
-#main {
-  transition: margin-left .3s; 
-  padding: 0px;
-}
-
-.column {
-  width: 30%; 
-  background-color: #FFA600;
-  padding: 20px;
-  box-sizing: border-box;
-  border-radius: 5px;
 }
 
 .modal {
@@ -152,18 +89,32 @@ body {
   height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
-  border:3px;
-  border-radius:5px;
-  padding-top: 60px;
+  border: 3px;
+  border-radius: 5px;
+  padding-top: 100px;
+  animation: bounceIn 0.5s ease-in-out;
 }
 
 .modal-content {
-  background-color: #FFA600;
+  background-color: #FEBA4F;
   margin: 5% auto;
   padding: 20px;
   width: 80%;
 }
 
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .close {
   color: black;
   float: right;
@@ -178,12 +129,11 @@ body {
   cursor: pointer;
 }
 
-
 .contact-number {
   font-size: 20px;
   color: black;
   text-decoration: none;
-  
+
 }
 
 .contact-number:hover {
@@ -221,36 +171,9 @@ body {
   }
 }
 
-  #main video {
-  display: block;
-  border: 3px;
-  border-radius: 5px;
-  margin: 0 auto;
-  width: 80%;
-  max-width: 100%;
-  margin-bottom: 20px;
-    }
-
-  .image-section {
-  margin-top: 20px;
-}
-
-.image-section h2 {
-  margin-bottom: 10px;
-  color: black;
-}
-
-.image-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+.main-content {
+  transition: margin-left 0.5s;
+  padding: 16px;
 }
 
 .card-section {
@@ -260,7 +183,7 @@ body {
 }
 
 .card {
-  background-color: #FFA600;
+  background-color: #FEBA4F;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
@@ -268,7 +191,7 @@ body {
 }
 
 .card h2 {
-  color: #FF711A;
+  color: #F78702;
   font-size: 20px;
 }
 
@@ -277,24 +200,55 @@ body {
   margin-top: 10px;
 }
 
+@media screen and (max-width: 768px) {
+  .card-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+.button {
+  font-family: 'Barlow Condensed';
+  font-weight: 400;
+  background-color: #F78702;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  width: 40%;
+  border: black;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: auto;
+}
+
+.button: hover {
+
+
 </style>
+</head>
 <body>
 
+<button class="openbtn" onclick="openNav()">LEARN MORE</button>
+
+<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Papa Ver's Bundatan</h1>
+
+<button class="button" onclick= "window.location.href = '#';">PRE-ORDER</button>
+
 <div id="mySidebar" class="sidebar">
- <img src="logoo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
-  <a href="#" class="closebtn" onclick="closeNav()">x</a>
+ <img src="logo.png" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
+  <a href="#" class="closebtn" onclick="closeNav()">&times;</a>
   <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
   <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
   <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
 </div>
-
-<div id="main">
-  <button class="openbtn" onclick="openNav()">LEARN MORE</button>
-<h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Papa Ver's Bundatan</h1>
-
-<button class="button button2" onclick= "window.location.href = 'reservation.html';">PRE-ORDER</button>
-  </div>
-<button class="button button3" onclick="openPopup('galleryPopup')">GALLERY</button>
 
 <div id="aboutPopup" class="modal">
   <div class="modal-content">
@@ -326,22 +280,7 @@ body {
   </div>
 </div>
 
-    <div id="galleryPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('galleryPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 6vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Gallery</h1>
-    <div class="image-section">
-      <div class="image-container">
-        <img src="Picsart_24-04-10_21-26-37-081.jpg" alt="Image 4" onclick="openImageModal('Picsart_24-04-10_21-26-37-081.jpg')">
-        <img src="Picsart_24-04-10_21-27-06-843.jpg" alt="Image 5" onclick="openImageModal('Picsart_24-04-10_21-27-06-843.jpg')">
-        <img src="Picsart_24-04-10_21-27-23-889.jpg" alt="Image 6" onclick="openImageModal('Picsart_24-04-10_21-27-23-889.jpg')">
-<img src="Picsart_24-04-10_21-27-47-783.jpg" alt="Image 3" onclick="openImageModal('Picsart_24-04-10_21-27-47-783.jpg')">
-        <img src="Picsart_24-04-10_21-28-17-113.jpg" alt="Image 3" onclick="openImageModal('Picsart_24-04-10_21-28-17-113.jpg')">
-        <img src="Picsart_24-04-10_21-28-40-174.jpg" alt="Image 3" onclick="openImageModal('Picsart_24-04-10_21-28-40-174.jpg')">
-      </div>
-    </div>
-</div>
-</div>
+<div class="main-content">
 <div class="card-section">
       <div class="card">
         <h2>Food Quality</h2>
@@ -353,6 +292,7 @@ body {
       </div>
     </div>
   </div>
+</div>
 </div>
 
 <script>
@@ -376,11 +316,7 @@ function closePopup(popupId) {
   modal.style.display = "none";
 }
 
-function openImageModal(imagePath) {
-  console.log("Clicked image path:", imagePath);
-}
-
 </script>
-</head>
+
 </body>
-</html>
+      </html>
