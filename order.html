@@ -220,8 +220,8 @@
         <p>Price: ₱120.00</p>
         <div class="quantity-container">
           <input type="number" class="quantity-input" id="quantity9" name="quantity9" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity8')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity8')">-</button>
+          <button class="quantity-button" onclick="incrementQuantity('quantity9')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity9')">-</button>
         </div>
         <button onclick="addToCart('Buttered Chicken', document.getElementById('quantity9').value)">ADD</button>
 <button onclick="removeFromCart('Buttered Chicken')">REMOVE</button>
@@ -349,8 +349,8 @@ function updateCart() {
   cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
 
   document.getElementById("cart-items").value = JSON.stringify(cartItems);
-}
-
+    }
+    
       function getItemPrice(itemName) {
   switch(itemName) {
     case "Chicken":
