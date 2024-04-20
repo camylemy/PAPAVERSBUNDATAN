@@ -22,9 +22,27 @@
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
-    .menu-item {
+
+    .card {
       margin-bottom: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+
+    .menu-item {
+      padding: 20px;
+      border-bottom: 1px solid #ccc;
+    }
+
+    .menu-item:last-child {
+      border-bottom: none;
+    }
+
+    .reservation-form {
+      padding: 20px;
+    }
+    
     label {
       display: block;
       font-weight: bold;
@@ -96,7 +114,8 @@
   </style>
 </head>
 <body>
-  <div class="container">
+    <div class="container">
+    <div class="card">
     <h2>SELECT AVAILABLE ITEMS</h2>
     <div class="menu-container">
       <div class="menu-item">
@@ -225,11 +244,11 @@
         <button onclick="addToCart('Extra Rice', document.getElementById('quantity7').value)">ADD</button>
 <button onclick="removeFromCart('Extra Rice')">REMOVE</button>
       </div>
-
+    </div>
 <br> <br>
 
+      <div class="card">
 <h2> PLACE AN ORDER (PICK-UP ONLY) </h2>
-    </div>
     <div id="cart"></div>
     <form id="reservation-form" action="https://formsubmit.co/ff85c7cccae7a1753c541ef3ef4fca99" method="POST">
 
@@ -258,6 +277,9 @@
       <input type="submit" value="Submit">
     </form>
   </div>
+    </div>
+    </div>
+    </div>
 
   <script>
     var cartItems = [];
