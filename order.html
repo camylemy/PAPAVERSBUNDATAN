@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place an Order</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 400;
+      background-color: #FFA600;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #F78702;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .menu-item {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="time"],
+    input[type="tel"],
+    input[type="email"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    input[type="submit"] {
+      background-color: #F78702;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #FFA600;
+    }
+    #cart {
+      margin-bottom: 20px;
+    }
+    .menu-container {
+    margin-bottom: 20px;
+    }
+    .menu-item {
+      border: 1px solid #ccc;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .menu-item:hover {
+      background-color: #F78702;
+    }
+    .quantity-container {
+      display: flex;
+      align-items: center;
+    }
+    .quantity-input {
+      flex: 1;
+      margin-right: 10px;
+    }
+    .quantity-button {
+      background-color: #F78702;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+      cursor: pointer;
+    }
+    .quantity-button:hover {
+      background-color: #FFA600;
+    }
+.quantity-button.minus {
+  background-color: #F78702;
+  margin-right: 1px;
+}
+.quantity-button.minus:hover {
+  background-color: #FFA600;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>SELECT AVAILABLE ITEMS</h2>
+    <div class="menu-container">
+      <div class="menu-item">
+        <h3>Chicken (5)</h3>
+        <p>Rice Meal</p>
+        <p>Price: ₱110.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity1" name="quantity 1" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity1')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity1')">-</button>
+        </div>
+        <button onclick="addToCart('Chicken', document.getElementById('quantity1').value)">ADD</button>
+<button onclick="removeFromCart('Chicken')">REMOVE</button>
+      </div>
+      <div class="menu-item">
+        <h3>Tapa w/ Egg (5) </h3>
+        <p>Rice Meal</p>
+        <p>Price: ₱100.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity2" name="quantity2" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity2')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity2')">-</button>
+        </div>
+        <button onclick="addToCart('Tapa w/ Egg', document.getElementById('quantity2').value)">ADD</button>
+<button onclick="removeFromCart('Beef Pares')">REMOVE</button>
+      </div>
+<div class="menu-item">
+        <h3>Beef Pares (5) </h3>
+        <p>Pares</p>
+        <p>Price: ₱90.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity3" name="quantity3" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity3')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity3')">-</button>
+        </div>
+        <button onclick="addToCart('Beef Pares', document.getElementById('quantity3').value)">ADD</button>
+<button onclick="removeFromCart('Beef Pares')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Lechon Pares (5)</h3>
+        <p>Pares</p>
+        <p>Price: ₱100.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity4" name="quantity4" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity4')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity4')">-</button>
+        </div>
+        <button onclick="addToCart('Lechon Pares', document.getElementById('quantity4').value)">ADD</button>
+<button onclick="removeFromCart('Lechon Pares')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Mami (5)</h3>
+        <p>Price: ₱60.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity5" name="quantity5" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity5')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity5')">-</button>
+        </div>
+        <button onclick="addToCart('Mami', document.getElementById('quantity4').value)">ADD</button>
+<button onclick="removeFromCart('Mami')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Egg Pares (5)</h3>
+        <p>Pares</p>
+        <p>Price: ₱35.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity6" name="quantity6" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity6')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity6')">-</button>
+        </div>
+        <button onclick="addToCart('Egg Pares', document.getElementById('quantity4').value)">ADD</button>
+<button onclick="removeFromCart('Egg Pares')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Chicharon Bulaklak (3)</h3>
+        <p>Short Order</p>
+        <p>Price: ₱120.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity7" name="quantity7" min="1" max="3" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity7')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity7')">-</button>
+        </div>
+        <button onclick="addToCart('Chicharon Bulaklak', document.getElementById('quantity7').value)">ADD</button>
+<button onclick="removeFromCart('Chicharon Bulaklak')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Sisig (5)</h3>
+        <p>Short Order</p>
+        <p>Price: ₱120.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity8" name="quantity8" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity8')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity8')">-</button>
+        </div>
+        <button onclick="addToCart('Sisig', document.getElementById('quantity8').value)">ADD</button>
+<button onclick="removeFromCart('Sisig')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3> Buttered Chicken (5)</h3>
+        <p>Short Order</p>
+        <p>Price: ₱120.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity9" name="quantity9" min="1" max="5" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity8')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity8')">-</button>
+        </div>
+        <button onclick="addToCart('Buttered Chicken', document.getElementById('quantity9').value)">ADD</button>
+<button onclick="removeFromCart('Buttered Chicken')">REMOVE</button>
+      </div>
+
+<div class="menu-item">
+        <h3>Extra Rice</h3>
+        <p>Extras</p>
+        <p>Price: ₱15.00</p>
+        <div class="quantity-container">
+          <input type="number" class="quantity-input" id="quantity10" name="quantity10" min="1" max="20" value="1">
+          <button class="quantity-button" onclick="incrementQuantity('quantity10')">+</button>
+<button class="quantity-button minus" onclick="decrementQuantity('quantity10')">-</button>
+        </div>
+        <button onclick="addToCart('Extra Rice', document.getElementById('quantity7').value)">ADD</button>
+<button onclick="removeFromCart('Extra Rice')">REMOVE</button>
+      </div>
+
+<br> <br>
+
+<h2> PLACE AN ORDER (PICK-UP ONLY) </h2>
+    </div>
+    <div id="cart"></div>
+    <form id="reservation-form" action="https://formsubmit.co/ff85c7cccae7a1753c541ef3ef4fca99" method="POST">
+
+<input type="hidden" name="_autoresponse" id="autoresponse" value="">
+      <div class="form-group">
+        <label for="name">NAME:</label>
+        <input type="text" id="name" name="Name" required>
+      </div> <br>
+<div class="form-group">
+        <label for="address">ADDRESS:</label>
+        <input type="text" id="address" name="Address" required>
+      </div> <br>
+      <div class="form-group">
+        <label for="phone">PHONE NUMBER:</label>
+        <input type="tel" id="phone" name="Phone Number" pattern="[0-9]{11}" maxlength="11" required>
+      </div> <br>
+      <div class="form-group">
+        <label for="email">EMAIL:</label>
+        <input type="email" id="email" name="email" required>
+      </div> <br>
+      <div class="form-group">
+        <label for="pickup-time">PICK-UP TIME (3:00 PM - 11:30 PM):</label>
+        <input type="time" id="pickup-time" name="Pick-up Time" min="15:00" max="23:30" required>
+      </div> <br>
+      <input type="hidden" id="cart-items" name="Orders">
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <script>
+    var cartItems = [];
+
+function incrementQuantity(quantityInputId) {
+  var quantityInput = document.getElementById(quantityInputId);
+  if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+  }
+}
+
+function decrementQuantity(quantityInputId) {
+  var quantityInput = document.getElementById(quantityInputId);
+  if (parseInt(quantityInput.value) > 1) {
+    quantityInput.value = parseInt(quantityInput.value) - 1;
+    addToCart(quantityInputId.substring(9), quantityInput.value);
+  }
+}
+function addToCart(itemName, quantity) {
+  var existingItemIndex = cartItems.findIndex(function(item) {
+    return item.name === itemName;
+  });
+
+  if (existingItemIndex !== -1) {
+    cartItems[existingItemIndex].quantity = quantity;
+  } else {
+    cartItems.push({ name: itemName, quantity: quantity });
+  }
+
+  updateCart();
+}
+
+function updateCart() {
+  var cartElement = document.getElementById("cart");
+  cartElement.innerHTML = "<p>ITEMS:</p>";
+  var ul = document.createElement("ul");
+
+  var totalItems = 0;
+  var totalPrice = 0;
+
+  cartItems.forEach(function(item) {
+    var li = document.createElement("li");
+    li.textContent = item.name + " (Quantity: " + item.quantity + ")";
+    ul.appendChild(li);
+
+    totalItems += parseInt(item.quantity);
+    totalPrice += parseInt(item.quantity) * getItemPrice(item.name); // Corrected the price calculation
+  });
+
+  cartElement.appendChild(ul);
+  cartElement.innerHTML += "<p>Total Items: " + totalItems + "</p>";
+  cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
+
+  document.getElementById("cart-items").value = JSON.stringify(cartItems);
+}
+
+      function getItemPrice(itemName) {
+  switch(itemName) {
+    case "Chicken":
+      return 110.00;
+    case "Tapa w/ Egg":
+      return 100.00;
+    case "Beef Pares":
+      return 90.00;
+    case "Lechon Pares":
+      return 100.00;
+    case "Mami":
+      return 60.00;
+    case "Egg Pares":
+      return 35.00;
+    case "Chicharon Bulaklak":
+      return 120.00;
+    case "Sisig":
+      return 120.00;
+    case "Buttered Chicken":
+      return 120.00;
+    case "Extra Rice":
+      return 15.00;
+    default:
+      return 0;
+  }
+}
+
+document.getElementById("reservation-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var totalItems = 0;
+  var totalPrice = 0;
+
+  cartItems.forEach(function(item) {
+    totalItems += parseInt(item.quantity);
+    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+  });
+
+  var autoresponseMessage = "We have received your order and is now processing. ";
+  autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
+  autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
+  autoresponseMessage += "We'll give you an update shortly. Thank you for choosing Papa Ver's Bundatan!";
+
+  document.getElementById("autoresponse").value = autoresponseMessage;
+
+  this.submit();
+});
+  </script>
+</body>
+    </html>
