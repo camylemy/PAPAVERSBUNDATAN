@@ -291,10 +291,10 @@ function decrementQuantity(quantityInputId) {
   var quantityInput = document.getElementById(quantityInputId);
   if (parseInt(quantityInput.value) > 1) {
     quantityInput.value = parseInt(quantityInput.value) - 1;
-    addToCart(quantityInputId.substring(9), quantityInput.value);
   }
-}
-function addToCart(itemName, quantity) {
+    }
+    
+    function addToCart(itemName, quantity) {
   var existingItemIndex = cartItems.findIndex(function(item) {
     return item.name === itemName;
   });
