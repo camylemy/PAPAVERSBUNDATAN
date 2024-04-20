@@ -15,7 +15,7 @@
       padding: 0;
     }
     .container {
-      max-width: 600px;
+      max-width: 90%;
       margin: 20px auto;
       padding: 20px;
       background-color: #FEBA4F;
@@ -34,6 +34,7 @@
 
     .reservation-form {
       padding: 20px;
+      align-items: center;
     }
     
     label {
@@ -45,7 +46,7 @@
     input[type="time"],
     input[type="tel"],
     input[type="email"] {
-      width: 80%;
+      width: 40%;
       padding: 10px;
       border-radius: 5px;
       border: 3px solid black;
@@ -104,15 +105,27 @@
 .quantity-button.minus:hover {
   background-color: #FFA600;
 }
+
+@media (min-width: 768px) {
+      .menu-container {
+        display: flex;
+        justify-content: space-between;
+      }
+      .menu-column {
+        width: calc(50% - 20px);
+      }
+    }
+
   </style>
 </head>
 <body>
 
 <h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
-<h3 style="font-size: 3vw; font-weight: 400; color: #F78702;">Note: The only available option for ordering is pick-up. You'll have to visit the store to get what you ordered and pay.</h3>
+<h3 style="font-size: 2vw; font-weight: 400; color: black; text-decoration: underline; text-align: center; opacity: 0.5;">The only available option for ordering is pick-up. <br> You'll have to visit the store to get what you ordered and pay.</h3>
     <div class="container">
     <h2>SELECT AVAILABLE ITEMS</h2>
     <div class="menu-container">
+<div class="menu-column">
       <div class="menu-item">
         <h3>Chicken</h3>
         <p>Rice Meal</p>
@@ -165,6 +178,7 @@
 
 <div class="menu-item">
         <h3>Mami</h3>
+        <p>Mami</p>
         <p>Price: ₱60.00</p>
         <div class="quantity-container">
           <input type="number" class="quantity-input" id="quantity5" name="quantity5" min="1" max="5" value="1">
@@ -174,7 +188,9 @@
         <button onclick="addToCart('Mami', document.getElementById('quantity5').value)">ADD</button>
 <button onclick="removeFromCart('Mami')">REMOVE</button>
       </div> <br>
+</div>
 
+<div class="menu-column">
 <div class="menu-item">
         <h3>Egg Pares</h3>
         <p>Pares</p>
@@ -241,6 +257,7 @@
       </div>
     </div>
 <br> <br>
+</div>
 
       <div class="card">
 <h2> PLACE AN ORDER (PICK-UP ONLY) </h2>
