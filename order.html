@@ -303,6 +303,9 @@ function decrementQuantity(quantityInputId) {
     cartItems.push({ name: itemName, quantity: quantity });
   }
 
+  updateCart();
+    }
+
     function removeFromCart(itemName) {
   console.log("Removing item: " + itemName);
   
