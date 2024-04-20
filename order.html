@@ -306,13 +306,19 @@ function decrementQuantity(quantityInputId) {
   }
 
     function removeFromCart(itemName) {
+  console.log("Removing item: " + itemName);
+  
   var itemIndex = cartItems.findIndex(function(item) {
     return item.name === itemName;
   });
 
   if (itemIndex !== -1) {
+    console.log("Item found at index: " + itemIndex);
     cartItems.splice(itemIndex, 1);
     updateCart();
+    console.log("Item removed from cart");
+  } else {
+    console.log("Item not found in cart");
   }
     }
 
