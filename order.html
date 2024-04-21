@@ -349,6 +349,25 @@
     </div>
 
   <script>
+
+document.getElementById("pickup-time").addEventListener("change", function() {
+  var pickupTime = this.value;
+  var minTime = "15:00";
+  var maxTime = "23:30";
+
+  var selectedTime = new Date("2000-01-01T" + pickupTime + ":00");
+
+  var minTimeDate = new Date("2000-01-01T" + minTime + ":00");
+  var maxTimeDate = new Date("2000-01-01T" + maxTime + ":00");
+
+  if (selectedTime < minTimeDate || selectedTime > maxTimeDate) {
+ 
+    alert("Pick-up time must be between 3:00 PM and 11:30 PM.");
+
+    this.value = "";
+  }
+});
+
     var cartItems = [];
 
 function incrementQuantity(quantityInputId) {
