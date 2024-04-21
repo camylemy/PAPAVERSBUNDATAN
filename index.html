@@ -212,6 +212,24 @@ body {
   }
 }
 
+.mySlides {
+  display: none;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 .button {
   font-family: 'Barlow Condensed';
   font-weight: 400;
@@ -316,18 +334,35 @@ The business started in April 25, 2022, and is currently located at 2531 San Ped
 <div class="main-content">
 <div class="card-section">
       <div class="card">
-        <h2>Why choose us?</h2>
+        <h2>WHY CHOOSE US?</h2>
 <video width="100%" controls loop>
     <source src="Messenger_creation_555c9055-2c5d-4b18-b3b2-15deb5ac8680.mp4" type="video/mp4"></video>
         <p>In the realm of fast food, Papa Ver's Bundatan stands out by offering quick, convenient meals without compromising on quality. Our efficient service ensures you get delicious dishes promptly, made with the freshest ingredients for a satisfying dining experience on the go.</p>
 </div>
-      <div class="card">
-        <h2>Service Quality</h2>
+      <div class="card" id="serviceQualityCard">
+  <h2>WHAT MAKES US SPECIAL?</h2>
+  <div class="slideshow-container">
+    <div class="mySlides fade">
+      <img src="1712749606591.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="1712749609324.jpg" style="width:100%">
+    </div>
+
+    <div class="mySlides fade">
+      <img src="1712749612641.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="1712749622612.jpg" style="width:100%">
+    </div>
+    <div class="mySlides fade">
+      <img src="1712749632444.jpg" style="width:100%">
+    </div>
         <p>Service quality at Papa Ver's Bundatan is paramount. Our attentive staff ensures that every guest feels welcomed and well taken care of from the moment they step in. With a friendly demeanor and swift service, we strive to exceed expectations, making every visit memorable and enjoyable.</p>
       </div>
     </div>
   </div>
-</div>
 </div>
 
 <script>
@@ -349,6 +384,25 @@ function openPopup(popupId) {
 function closePopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "none";
+}
+
+</script>
+
+<script>
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 2000);
 }
 
 </script>
