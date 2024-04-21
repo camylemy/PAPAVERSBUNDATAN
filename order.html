@@ -350,24 +350,6 @@
 
   <script>
 
-document.getElementById("pickup-time").addEventListener("change", function() {
-  var pickupTime = this.value;
-  var minTime = "15:00";
-  var maxTime = "23:30";
-
-  var selectedTime = new Date("2000-01-01T" + pickupTime + ":00");
-
-  var minTimeDate = new Date("2000-01-01T" + minTime + ":00");
-  var maxTimeDate = new Date("2000-01-01T" + maxTime + ":00");
-
-  if (selectedTime < minTimeDate || selectedTime > maxTimeDate) {
- 
-    alert("Pick-up time must be between 3:00 PM and 11:30 PM.");
-
-    this.value = "";
-  }
-});
-
     var cartItems = [];
 
 function incrementQuantity(quantityInputId) {
@@ -472,6 +454,67 @@ document.getElementById("reservation-form").addEventListener("submit", function(
     totalItems += parseInt(item.quantity);
     totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
   });
+
+function addToCart(itemName, quantity) {
+  var existingItemIndex = cartItems.findIndex(function(item) {
+    return item.name === itemName;
+  });
+
+  if (existingItemIndex !== -1) {
+    cartItems[existingItemIndex].quantity = quantity;
+  } else {
+    cartItems.push({ name: itemName, quantity: quantity });
+  }
+
+  updateCart();
+
+  var totalPreparationTime = 0;
+  cartItems.forEach(function(item) {
+    totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
+  });
+
+  var currentTime = new Date();
+  var estimatedPickupTime = new Date(currentTime.getTime() + totalPreparationTime * 60000); // Convert minutes to milliseconds
+
+  var pickupTimeInput = document.getElementById("pickup-time");
+  pickupTimeInput.value = formatTime(estimatedPickupTime);
+}
+
+function formatTime(date) {
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'PM' : 'AM';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // Handle midnight (0 hours)
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  return strTime;
+}
+
+function getItemPreparationTime(itemName) {
+  switch(itemName) {
+    case "Chicken":
+      return 20;
+    case "Tapa w/ Egg":
+      return 20;
+    case "Lechon Pares":
+      return 30;
+    case "Beef Pares":
+      return 30;
+    case "Mami":
+      return 15;
+    case "Egg Pares":
+      return 15;
+    case "Chicharon Bulaklak":
+      return 40;
+    case "Sisig":
+      return 20;
+    case "Buttered Chicken":
+      return 30;
+    default:
+      return 15; 
+  }
+}
 
   var autoresponseMessage = "We have received your order and is now processing. ";
   autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
