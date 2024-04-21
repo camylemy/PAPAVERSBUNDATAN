@@ -454,6 +454,8 @@ updateCart();
 document.getElementById("form").addEventListener("submit", function(event) {
   event.preventDefault();
 
+if (confirm("Are you sure you want to place this order?")) {
+
   var totalItems = 0;
   var totalPrice = 0;
 
@@ -470,6 +472,10 @@ document.getElementById("form").addEventListener("submit", function(event) {
   document.getElementById("autoresponse").value = autoresponseMessage;
 
   this.submit();
+} else {
+  
+    alert("Order placement canceled.");
+  }
 });
 
   </script>
