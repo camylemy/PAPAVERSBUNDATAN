@@ -459,6 +459,9 @@ document.getElementById("reservation-form").addEventListener("submit", function(
   var pickupTime = document.getElementById("pickup-time").value;
   var estimatedPickupTime = addMinutesToTime(pickupTime, totalPreparationTime);
 
+console.log("Autoresponse message:", autoresponseMessage);
+console.log("Hidden input field:", document.getElementById("autoresponse"));
+
   var autoresponseMessage = "We have received your order and is now processing. ";
   autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
   autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
