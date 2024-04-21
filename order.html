@@ -448,21 +448,60 @@ document.getElementById("reservation-form").addEventListener("submit", function(
 
   var totalItems = 0;
   var totalPrice = 0;
+  var totalPreparationTime = 0;
 
   cartItems.forEach(function(item) {
     totalItems += parseInt(item.quantity);
     totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+    totalPreparationTime += getItemPreparationTime(item.name) * parseInt(item.quantity);
   });
+
+  var pickupTime = document.getElementById("pickup-time").value;
+  var estimatedPickupTime = addMinutesToTime(pickupTime, totalPreparationTime);
 
   var autoresponseMessage = "We have received your order and is now processing. ";
   autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
   autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
+  autoresponseMessage += "Your order will be ready for pickup at approximately " + estimatedPickupTime + ". ";
   autoresponseMessage += "We'll give you an update shortly. Thank you for choosing Papa Ver's Bundatan!";
 
   document.getElementById("autoresponse").value = autoresponseMessage;
 
   this.submit();
 });
+
+function getItemPreparationTime(itemName) {
+  switch(itemName) {
+    case "Chicken":
+      return 20;
+    case "Tapa w/ Egg":
+      return 20;
+    case "Lechon Pares":
+      return 30;
+    case "Beef Pares":
+      return 20;
+    case "Mami":
+      return 15;
+    case "Egg Pares":
+      return 15;
+    case "Chicharon Bulaklak":
+      return 30;
+    case "Sisig":
+      return 30;
+    case "Buttered Chicken":
+      return 20;
+    default:
+      return 0;
+  }
+}
+
+function addMinutesToTime(time, minutes) {
+  var [hours, mins] = time.split(":").map(Number);
+  var totalMins = hours * 60 + mins + minutes;
+  var newHours = Math.floor(totalMins / 60);
+  var newMins = totalMins % 60;
+  return `${newHours.toString().padStart(2, "0")}:${newMins.toString().padStart(2, "0")}`;
+}
   </script>
 </body>
                          </html>
