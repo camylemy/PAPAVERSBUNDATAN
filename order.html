@@ -368,20 +368,20 @@
 
   function addToCart(itemName, quantity) {
     var existingItemIndex = cartItems.findIndex(function(item) {
-      return item.name === itemName;
+        return item.name === itemName;
     });
 
     if (existingItemIndex !== -1) {
-      cartItems[existingItemIndex].quantity = quantity;
+        cartItems[existingItemIndex].quantity = quantity;
     } else {
-      cartItems.push({ name: itemName, quantity: quantity });
+        cartItems.push({ name: itemName, quantity: quantity });
     }
 
     updateCart();
 
     var totalPreparationTime = 0;
     cartItems.forEach(function(item) {
-      totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
+        totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
     });
 
     var currentTime = new Date();
@@ -389,7 +389,7 @@
 
     var pickupTimeInput = document.getElementById("pickup-time");
     pickupTimeInput.value = formatTime(estimatedPickupTime);
-  }
+}
 
   function formatTime(date) {
     var hours = date.getHours();
