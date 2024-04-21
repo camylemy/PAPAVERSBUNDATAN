@@ -350,181 +350,168 @@
 
   <script>
 
-    var cartItems = [];
+  var cartItems = [];
 
-function incrementQuantity(quantityInputId) {
-  var quantityInput = document.getElementById(quantityInputId);
-  if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
-    quantityInput.value = parseInt(quantityInput.value) + 1;
+  function incrementQuantity(quantityInputId) {
+    var quantityInput = document.getElementById(quantityInputId);
+    if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+    }
   }
-}
 
-function decrementQuantity(quantityInputId) {
-  var quantityInput = document.getElementById(quantityInputId);
-  if (parseInt(quantityInput.value) > 1) {
-    quantityInput.value = parseInt(quantityInput.value) - 1;
+  function decrementQuantity(quantityInputId) {
+    var quantityInput = document.getElementById(quantityInputId);
+    if (parseInt(quantityInput.value) > 1) {
+      quantityInput.value = parseInt(quantityInput.value) - 1;
+    }
   }
-}
 
-function addToCart(itemName, quantity) {
-  var existingItemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
-  });
+  function addToCart(itemName, quantity) {
+    var existingItemIndex = cartItems.findIndex(function(item) {
+      return item.name === itemName;
+    });
 
-  if (existingItemIndex !== -1) {
-    cartItems[existingItemIndex].quantity = quantity;
-  } else {
-    cartItems.push({ name: itemName, quantity: quantity });
+    if (existingItemIndex !== -1) {
+      cartItems[existingItemIndex].quantity = quantity;
+    } else {
+      cartItems.push({ name: itemName, quantity: quantity });
+    }
+
+    updateCart();
+
+    var totalPreparationTime = 0;
+    cartItems.forEach(function(item) {
+      totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
+    });
+
+    var currentTime = new Date();
+    var estimatedPickupTime = new Date(currentTime.getTime() + totalPreparationTime * 60000);
+
+    var pickupTimeInput = document.getElementById("pickup-time");
+    pickupTimeInput.value = formatTime(estimatedPickupTime);
+  }
+
+  function formatTime(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return strTime;
+  }
+
+  function getItemPreparationTime(itemName) {
+    switch(itemName) {
+      case "Chicken":
+        return 20;
+      case "Tapa w/ Egg":
+        return 20;
+      case "Lechon Pares":
+        return 30;
+      case "Beef Pares":
+        return 30;
+      case "Mami":
+        return 15;
+      case "Egg Pares":
+        return 15;
+      case "Chicharon Bulaklak":
+        return 40;
+      case "Sisig":
+        return 20;
+      case "Buttered Chicken":
+        return 30;
+      default:
+        return 15; 
+    }
+  }
+
+  function removeFromCart(itemName) {
+    var itemIndex = cartItems.findIndex(function(item) {
+      return item.name === itemName;
+    });
+
+    if (itemIndex !== -1) {
+      cartItems.splice(itemIndex, 1);
+      updateCart();
+    }
+  }
+
+  function updateCart() {
+    var cartElement = document.getElementById("cart");
+    cartElement.innerHTML = "";
+    var ul = document.createElement("ul");
+
+    var totalItems = 0;
+    var totalPrice = 0;
+
+    cartItems.forEach(function(item) {
+      var li = document.createElement("li");
+      li.textContent = item.name + " (Quantity: " + item.quantity + ")";
+      ul.appendChild(li);
+
+      totalItems += parseInt(item.quantity);
+      totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+    });
+
+    cartElement.appendChild(ul);
+    cartElement.innerHTML += "<p>Total Items: " + totalItems + "</p>";
+    cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
+
+    document.getElementById("cart-items").value = JSON.stringify(cartItems);
+  }
+
+  function getItemPrice(itemName) {
+    switch(itemName) {
+      case "Chicken":
+        return 110.00;
+      case "Tapa w/ Egg":
+        return 100.00;
+      case "Beef Pares":
+        return 90.00;
+      case "Lechon Pares":
+        return 100.00;
+      case "Mami":
+        return 60.00;
+      case "Egg Pares":
+        return 35.00;
+      case "Chicharon Bulaklak":
+        return 120.00;
+      case "Sisig":
+        return 120.00;
+      case "Buttered Chicken":
+        return 120.00;
+      case "Extra Rice":
+        return 15.00;
+      default:
+        return 0;
+    }
   }
 
   updateCart();
-}
 
-function removeFromCart(itemName) {
-  var itemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
+  document.getElementById("reservation-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var totalItems = 0;
+    var totalPrice = 0;
+
+    cartItems.forEach(function(item) {
+      totalItems += parseInt(item.quantity);
+      totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+    });
+
+    var autoresponseMessage = "We have received your order and is now processing. ";
+    autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
+    autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
+    autoresponseMessage += "We'll give you an update shortly. Thank you for choosing Papa Ver's Bundatan!";
+
+    document.getElementById("autoresponse").value = autoresponseMessage;
+
+    this.submit();
   });
 
-  if (itemIndex !== -1) {
-    cartItems.splice(itemIndex, 1);
-    updateCart();
-  }
-}
-
-function updateCart() {
-  var cartElement = document.getElementById("cart");
-  cartElement.innerHTML = "";
-  var ul = document.createElement("ul");
-
-  var totalItems = 0;
-  var totalPrice = 0;
-
-  cartItems.forEach(function(item) {
-    var li = document.createElement("li");
-    li.textContent = item.name + " (Quantity: " + item.quantity + ")";
-    ul.appendChild(li);
-
-    totalItems += parseInt(item.quantity);
-    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-  });
-
-  cartElement.appendChild(ul);
-  cartElement.innerHTML += "<p>Total Items: " + totalItems + "</p>";
-  cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
-
-  document.getElementById("cart-items").value = JSON.stringify(cartItems);
-}
-
-function getItemPrice(itemName) {
-  switch(itemName) {
-    case "Chicken":
-      return 110.00;
-    case "Tapa w/ Egg":
-      return 100.00;
-    case "Beef Pares":
-      return 90.00;
-    case "Lechon Pares":
-      return 100.00;
-    case "Mami":
-      return 60.00;
-    case "Egg Pares":
-      return 35.00;
-    case "Chicharon Bulaklak":
-      return 120.00;
-    case "Sisig":
-      return 120.00;
-    case "Buttered Chicken":
-      return 120.00;
-    case "Extra Rice":
-      return 15.00;
-    default:
-      return 0;
-  }
-}
-
-updateCart();
-
-  var totalPreparationTime = 0;
-  cartItems.forEach(function(item) {
-    totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
-  });
-
-  var currentTime = new Date();
-  var estimatedPickupTime = new Date(currentTime.getTime() + totalPreparationTime * 60000); // Convert minutes to milliseconds
-
-  var pickupTimeInput = document.getElementById("pickup-time");
-  pickupTimeInput.value = formatTime(estimatedPickupTime);
-}
-
-function formatTime(date) {
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'PM' : 'AM';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // Handle midnight (0 hours)
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-  return strTime;
-}
-
-function getItemPreparationTime(itemName) {
-  switch(itemName) {
-    case "Chicken":
-      return 20;
-    case "Tapa w/ Egg":
-      return 20;
-    case "Lechon Pares":
-      return 30;
-    case "Beef Pares":
-      return 30;
-    case "Mami":
-      return 15;
-    case "Egg Pares":
-      return 15;
-    case "Chicharon Bulaklak":
-      return 40;
-    case "Sisig":
-      return 20;
-    case "Buttered Chicken":
-      return 30;
-    default:
-      return 15; 
-  }
-}
-
-
-
-document.getElementById("reservation-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var totalItems = 0;
-  var totalPrice = 0;
-
-  cartItems.forEach(function(item) {
-    totalItems += parseInt(item.quantity);
-    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-  });
-
-function addToCart(itemName, quantity) {
-  var existingItemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
-  });
-
-  if (existingItemIndex !== -1) {
-    cartItems[existingItemIndex].quantity = quantity;
-  } else {
-    cartItems.push({ name: itemName, quantity: quantity });
-  }
-
-  var autoresponseMessage = "We have received your order and is now processing. ";
-  autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
-  autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
-  autoresponseMessage += "We'll give you an update shortly. Thank you for choosing Papa Ver's Bundatan!";
-
-  document.getElementById("autoresponse").value = autoresponseMessage;
-
-  this.submit();
-});
-  </script>
+</script>
 </body>
     </html>
