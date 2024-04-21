@@ -317,7 +317,9 @@
 <p> The only available option for ordering is pick-up. <br> You'll have to visit the store to get what you ordered and pay.</h3>
 
     <div id="cart"></div>
-    <form id="reservation-form" action="https://formsubmit.co/ff85c7cccae7a1753c541ef3ef4fca99" method="POST">
+    <form id="reservation-form" action="https://formsubmit.co/ff85c7cccae7a1753c541ef3ef4fca99" method="POST">
+
+<input type="hidden" name="_autoresponse" id="autoresponse" value="">
       <div class="form-group">
         <label for="name">NAME:</label>
         <input type="text" id="name" name="Name" required>
@@ -334,13 +336,38 @@
         <label for="email">EMAIL:</label>
         <input type="email" id="email" name="Email" required>
       </div> <br>
-      <input type="hidden" name="_autoresponse" id="autoresponse" value="">
+      <div class="form-group">
+        <label for="pickup-time">PICK-UP TIME (3:00 PM - 11:30 PM):</label>
+        <input type="time" id="pickup-time" name="Pick-up Time" min="15:00" max="23:30" required>
+      </div> <br>
       <input type="hidden" id="cart-items" name="Orders">
       <input type="submit" value="Submit">
     </form>
   </div>
+    </div>
+    </div>
+    </div>
 
   <script>
+
+document.getElementById("pickup-time").addEventListener("change", function() {
+  var pickupTime = this.value;
+  var minTime = "15:00";
+  var maxTime = "23:30";
+
+  var selectedTime = new Date("2000-01-01T" + pickupTime + ":00");
+
+  var minTimeDate = new Date("2000-01-01T" + minTime + ":00");
+  var maxTimeDate = new Date("2000-01-01T" + maxTime + ":00");
+
+  if (selectedTime < minTimeDate || selectedTime > maxTimeDate) {
+ 
+    alert("Pick-up time must be between 3:00 PM and 11:30 PM.");
+
+    this.value = "";
+  }
+});
+
     var cartItems = [];
 
 function incrementQuantity(quantityInputId) {
@@ -437,64 +464,24 @@ updateCart();
 
 document.getElementById("reservation-form").addEventListener("submit", function(event) {
   event.preventDefault();
-  console.log("Submitted!");
 
   var totalItems = 0;
   var totalPrice = 0;
-  var totalPreparationTime = 0;
 
   cartItems.forEach(function(item) {
     totalItems += parseInt(item.quantity);
     totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-    totalPreparationTime += getItemPreparationTime(item.name) * parseInt(item.quantity);
   });
 
   var autoresponseMessage = "We have received your order and is now processing. ";
   autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
   autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
-  autoresponseMessage += "Your order will be ready for pickup at approximately " + estimatedPickupTime + ". ";
   autoresponseMessage += "We'll give you an update shortly. Thank you for choosing Papa Ver's Bundatan!";
 
   document.getElementById("autoresponse").value = autoresponseMessage;
 
-console.log("Autoresponse message:", autoresponseMessage);
-console.log("Hidden input field:", document.getElementById("autoresponse"));
-
   this.submit();
 });
-
-function getItemPreparationTime(itemName) {
-  switch(itemName) {
-    case "Chicken":
-      return 20;
-    case "Tapa w/ Egg":
-      return 20;
-    case "Lechon Pares":
-      return 30;
-    case "Beef Pares":
-      return 20;
-    case "Mami":
-      return 15;
-    case "Egg Pares":
-      return 15;
-    case "Chicharon Bulaklak":
-      return 30;
-    case "Sisig":
-      return 30;
-    case "Buttered Chicken":
-      return 20;
-    default:
-      return 0;
-  }
-}
-
-function addMinutesToTime(time, minutes) {
-  var [hours, mins] = time.split(":").map(Number);
-  var totalMins = hours * 60 + mins + minutes;
-  var newHours = Math.floor(totalMins / 60);
-  var newMins = totalMins % 60;
-  return `${newHours.toString().padStart(2, "0")}:${newMins.toString().padStart(2, "0")}`;
-}
   </script>
 </body>
-                         </html>
+            </html>
