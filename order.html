@@ -337,19 +337,16 @@
         <label for="email">EMAIL:</label>
         <input type="email" id="email" name="email" required>
       </div> <br>
-      <div class="form-group">
-        <label for="pickup-time">PICK-UP TIME (3:00 PM - 11:30 PM):</label>
-        <input type="time" id="pickup-time" name="Pick-up Time" min="15:00" max="23:30" required>
-      </div> <br>
       <input type="hidden" id="cart-items" name="Orders">
       <input type="submit" value="Submit">
     </form>
   </div>
-  <script>
+ 
+ <script>
 
     var cartItems = [];
 
-  function incrementQuantity(quantityInputId) {
+function incrementQuantity(quantityInputId) {
   var quantityInput = document.getElementById(quantityInputId);
   if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
     quantityInput.value = parseInt(quantityInput.value) + 1;
@@ -464,4 +461,4 @@ document.getElementById("form").addEventListener("submit", function(event) {
 
   </script>
 </body>
-            </html>
+</html>
