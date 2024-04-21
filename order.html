@@ -444,30 +444,6 @@ function getItemPrice(itemName) {
 
 updateCart();
 
-document.getElementById("reservation-form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-  var totalItems = 0;
-  var totalPrice = 0;
-
-  cartItems.forEach(function(item) {
-    totalItems += parseInt(item.quantity);
-    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-  });
-
-function addToCart(itemName, quantity) {
-  var existingItemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
-  });
-
-  if (existingItemIndex !== -1) {
-    cartItems[existingItemIndex].quantity = quantity;
-  } else {
-    cartItems.push({ name: itemName, quantity: quantity });
-  }
-
-  updateCart();
-
   var totalPreparationTime = 0;
   cartItems.forEach(function(item) {
     totalPreparationTime += getItemPreparationTime(item.name) * item.quantity;
@@ -515,6 +491,30 @@ function getItemPreparationTime(itemName) {
       return 15; 
   }
 }
+
+document.getElementById("reservation-form").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  var totalItems = 0;
+  var totalPrice = 0;
+
+  cartItems.forEach(function(item) {
+    totalItems += parseInt(item.quantity);
+    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+  });
+
+function addToCart(itemName, quantity) {
+  var existingItemIndex = cartItems.findIndex(function(item) {
+    return item.name === itemName;
+  });
+
+  if (existingItemIndex !== -1) {
+    cartItems[existingItemIndex].quantity = quantity;
+  } else {
+    cartItems.push({ name: itemName, quantity: quantity });
+  }
+
+  updateCart();
 
   var autoresponseMessage = "We have received your order and is now processing. ";
   autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
