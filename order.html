@@ -168,12 +168,42 @@
         width: calc(50% - 20px);
       }
     }
+    nav {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+    }
 
+    nav button {
+        font-family: 'Barlow Condensed';
+        font-weight: 400;
+        background-color: #FEBA4F;
+        color: white;
+        padding: 10px;
+        align-items: center;
+        text-decoration: none;
+        display: block;
+        font-size: 20px;
+        width: 40%;
+        border: black;
+        cursor: pointer;
+        transition: 0.3s;
+        margin: auto;
+    }
+
+    nav button:nth-child(2) {
+        margin-left: 10px;
+    }
   </style>
 </head>
 <body>
 
 <h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
+
+<nav>
+  <button onclick="window.location.href = 'index.html';">HOME</button>
+</nav>
+
     <div class="container">
     <h2>SELECT AVAILABLE ITEMS</h2>
     <div class="menu-container">
