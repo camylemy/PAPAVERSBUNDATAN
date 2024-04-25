@@ -1,543 +1,849 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Place an Order</title>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Barlow Condensed', sans-serif;
-      font-weight: 400;
-      background-color: #FFA600;
-      margin: 0;
-      padding: 0;
-    }
-    .container {
-      max-width: 90%;
-      margin: 20px auto;
-      padding: 20px;
-      background-color: #FEBA4F;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place an Order</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Barlow Condensed', sans-serif;
+            font-weight: 400;
+            background-color: #FFA600;
+            margin: 0;
+            padding: 0;
+        }
 
-    .card {
-  max-width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-  background-color: #FEBA4F;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  border: 8px solid black;
-}
+        .container {
+            max-width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #FEBA4F;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
 
-.form-group {
-  text-align: center;
-}
+        /* .card {
+            max-width: 80%;
+            max-height: 50%;
+            margin: 20px;
+            padding: 20px;
+            background-color: #FEBA4F;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border: 8px solid black;
+        } */
 
-    
-    .menu-item {
-      padding: 30px;
-      border: 3px solid black;
-    }
+        .form-group {
+            text-align: center;
+        }
 
-    .menu-item:last-child {
-      border-bottom: 3px solid black;
-    }
+        .reservation-form {
+            padding: 20px;
+            align-items: center;
+        }
 
-    .reservation-form {
-      padding: 20px;
-      align-items: center;
-    }
-    
-    label {
-      display: block;
-      font-weight: 500;
-      margin-bottom: 5px;
-    }
-    input[type="text"],
-    input[type="time"],
-    input[type="tel"],
-    input[type="email"],
-    input[type="date"]{
-      width: 70%;
-      padding: 10px;
-      border-radius: 5px;
-      border: 2px solid black;
-      box-sizing: border-box;
-      align-items: center;
-    }
-    input[type="submit"] {
-      background-color: #F78702;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    input[type="submit"]:hover {
-      background-color: #FFA600;
-    }
-    #cart {
-      margin-bottom: 20px;
-    }
-    .menu-container {
-    margin-bottom: 20px;
-    border: 8px solid #black;
-    }
-    .menu-item {
-      border: 8px solid #black;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    .menu-item:hover {
-      background-color: #F78702;
-    }
-    .quantity-container {
-      display: flex;
-      align-items: center;
-    }
-    .quantity-input {
-      flex: 1;
-      margin-right: 10px;
-    }
-    .quantity-button,
-.quantity-input {
-  font-size: 16px;
-  width: 30px;
-  height: 30px;
-  padding: 0;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+        label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
 
-.quantity-button {
-  background-color: #F78702;
-  color: white;
-}
+        input[type="text"],
+        input[type="time"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="date"] {
+            width: 70%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid black;
+            box-sizing: border-box;
+        }
 
-.quantity-button:hover {
-  background-color: #FFA600;
-}
+        input[type="submit"] {
+            background-color: #F78702;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-.quantity-input {
-  border: 2px solid black;
-}
+        input[type="submit"]:hover {
+            background-color: #FFA600;
+        }
 
-.quantity-container {
-  display: flex;
-  align-items: center;
-}
+        #cart {
+            margin-bottom: 20px;
+        }
 
-.quantity-button:not(:last-child) {
-  margin-right: 5px;
-}
+        .menu-container {
+            margin-bottom: 20px;
+            border: 8px solid #000;
+        }
 
-.add-button,
-.remove-button {
-  font-family: 'Barlow Condensed', sans-serif;
-  background-color: #F78702;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
+        .menu-item {
+            width: 100%;
+            border: 3px solid black;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            margin-right: 5px;
+            box-sizing: border-box;
+        }
 
-.add-button:hover,
-.remove-button:hover {
-  background-color: #FFA600;
-}
+        .menu-item:hover {
+            background-color: #F78702;
+        }
 
-.remove-button {
-  margin-left: 10px;
-}
+        .quantity-button,
+        .quantity-input {
+            font-size: 16px;
+            width: 30px;
+            height: 30px;
+            padding: 0;
+            text-align: center;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
 
-@media (min-width: 768px) {
-      .menu-container {
-        display: flex;
-        justify-content: space-between;
-      }
-      .menu-column {
-        width: calc(50% - 20px);
-      }
-    }
-    nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+        .quantity-button {
+            background-color: #F78702;
+            color: white;
+        }
 
-    nav button {
-        font-family: 'Barlow Condensed';
-        font-weight: 400;
-        background-color: #FEBA4F;
-        color: white;
-        padding: 10px;
-        align-items: center;
-        text-decoration: none;
-        display: block;
-        font-size: 20px;
-        width: 40%;
-        border: black;
-        cursor: pointer;
-        transition: 0.3s;
-        margin: auto;
-    }
+        .quantity-button:hover {
+            background-color: #FFA600;
+        }
 
-    nav button:nth-child(2) {
-        margin-left: 10px;
-    }
-  </style>
+        .quantity-input {
+            border: 2px solid black;
+        }
+
+        .quantity-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .quantity-button:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        .add-button,
+        .remove-button {
+            background-color: #F78702;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-button:hover,
+        .remove-button:hover {
+            background-color: #FFA600;
+        }
+
+        .remove-button {
+            margin-left: 10px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        nav button {
+            font-family: 'Barlow Condensed';
+            font-weight: 400;
+            background-color: #FEBA4F;
+            color: white;
+            padding: 10px;
+            align-items: center;
+            text-decoration: none;
+            display: block;
+            font-size: 20px;
+            width: 40%;
+            border: black;
+            cursor: pointer;
+            transition: 0.3s;
+            margin: auto;
+        }
+
+        nav button:nth-child(2) {
+            margin-left: 10px;
+        }
+
+        .openbtn {
+            font-size: 20px;
+            font-family: 'Barlow Condensed';
+            font-weight: 400;
+            cursor: pointer;
+            background-color: #F78702;
+            color: white;
+            padding: 10px 15px;
+            border: #F78702;
+            margin-left: 10px;
+            margin-top: 20px;
+        }
+
+        .openbtn:hover {
+            color: #FFA600;
+            transition: 0.3s;
+        }
+
+        @media (max-width: 767px) {
+            .menu-column {
+                display: block;
+                width: 100%;
+            }
+
+            .column-wrapper {
+                display: inline-block;
+                justify-content: center;
+            }
+
+            .column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .menu-item {
+                width: 80%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+        }
+    </style>
 </head>
+
 <body>
+    <button class="openbtn" onclick="window.location.href = 'index.html';">HOME</button>
+    <h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
+    <div class="container-fluid overflow-hidden px-lg-0" style="margin: 6rem 0;">
+        <div class="container px-lg-0">
+            <div class="btn-group mb-3 gap-2" style="margin-left: 10px;" role="group" aria-label="Menu category">
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('mami')">MAMI</button>
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('pares')">PARES</button>
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('meals')">MEALS</button>
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('shortorders')">SHORT ORDER</button>
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('drinks')">DRINKS</button>
+                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('extras')">EXTRAS</button>
+            </div>
 
-<h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="menu-section" id="mami" style="display: block; margin-left: 10px;">
+                      <div class="col-sm-5 mb-4">
+                        <div class="card">
+                            <img src="./menu/image1.jpg" class="card-img-top" alt="mami">
+                            <div class="card-body">
+                                <h5 class="card-title">Mami</h5>
+                                <p><strong>₱60.00</strong></p>
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-warning" onclick="decrementQuantity('paresovl')">-</button>
+                                    <input class="form-control" type="number" id="paresovl" value="1" min="1" max="5">
+                                    <button class="btn btn-warning" onclick="incrementQuantity('paresovl')">+</button>
+                                </div>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Mami', parseInt(document.getElementById('paresovl').value))">Add Order</button>
+                                  <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Mami')">Remove Order</button>
+                                </div>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
 
-<nav>
-  <button onclick="window.location.href = 'index.html';">HOME</button>
-</nav>
+                    <div class="menu-section" id="pares" style="display: none; margin-left: 10px;">
+                        <div class="row">
+                            <div class="col-sm-4 mb-4">
+                                <div class="card">
+                                    <img src="./menu/image16.png" class="card-img-top" alt="paresovl">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Pares Overload</h5>
+                                        <p><strong>₱120.00</strong></p>
+                                        <div class="input-group mb-3">
+                                            <button class="btn btn-warning" onclick="decrementQuantity('paresovl')">-</button>
+                                            <input class="form-control" type="number" id="paresovl" value="1" min="1" max="5">
+                                            <button class="btn btn-warning" onclick="incrementQuantity('paresovl')">+</button>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                          <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Pares Overload', parseInt(document.getElementById('paresovl').value))">Add Order</button>
+                                          <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Pares Overload')">Remove Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-4">
+                                <div class="card">
+                                    <img src="./menu/image12.jpg" class="card-img-top" alt="lechon pares">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Lechon Pares</h5>
+                                        <p><strong>₱100.00</strong></p>
+                                        <div class="input-group mb-3">
+                                            <button class="btn btn-warning" onclick="decrementQuantity('lechonpares')">-</button>
+                                            <input class="form-control" type="number" id="lechonpares" value="1" min="1" max="5">
+                                            <button class="btn btn-warning" onclick="incrementQuantity('lechonpares')">+</button>
+                                        </div>
+                                        <div class="d-grid gap-2">
+                                          <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="addToCart('Lechon Pares', parseInt(document.getElementById('lechonpares').value))">Add Order</button>
+                                          <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Lechon Pares')">Remove Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-4 mb-4">
+                              <div class="card">
+                                  <img src="./menu/image9.jpg" class="card-img-top" alt="Beef Pares">
+                                  <div class="card-body">
+                                      <h5 class="card-title">Beef Pares</h5>
+                                      <p><strong>₱90.00</strong></p>
+                                      <div class="input-group mb-3">
+                                          <button class="btn btn-warning" onclick="decrementQuantity('beefpares')">-</button>
+                                          <input class="form-control" type="number" id="beefpares" value="1" min="1" max="5">
+                                          <button class="btn btn-warning" onclick="incrementQuantity('beefpares')">+</button>
+                                      </div>
+                                      <div class="d-grid gap-2">
+                                        <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Beef Pares', parseInt(document.getElementById('beefpares').value))">Add Order</button>
+                                        <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Beef Pares')">Remove Order</button>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
+                    </div>
+                    
+                    <div class="menu-section" id="meals" style="display: none; margin-left: 10px;">
+                      <div class="row">
+                        <div class="col-sm-4 mb-4">
+                          <div class="card">
+                              <img src="./menu/image8.jpg" class="card-img-top" alt="Fried Chicken">
+                              <div class="card-body">
+                                  <h5 class="card-title">Fried Chicken</h5>
+                                  <p><strong>₱100.00</strong></p>
+                                  <div class="input-group mb-3">
+                                      <button class="btn btn-warning" onclick="decrementQuantity('fridchicken')">-</button>
+                                      <input class="form-control" type="number" id="fridchicken" value="1" min="1" max="5">
+                                      <button class="btn btn-warning" onclick="incrementQuantity('fridchicken')">+</button>
+                                  </div>
+                                  <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Fried Chicken', parseInt(document.getElementById('fridchicken').value))">Add Order</button>
+                                    <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Fried Chicken')">Remove Order</button>
+                                  </div>
+                              </div>
+                          </div>
+                        </div>
 
-    <div class="container">
-    <h2>SELECT AVAILABLE ITEMS</h2>
-    <div class="menu-container">
-<div class="menu-column">
-      <div class="menu-item">
-        <h3>Chicken</h3>
-        <p>Rice Meal</p>
-        <p>Price: ₱110.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity1" name="quantity 1" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity1')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity1')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Chicken', document.getElementById('quantity1').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Chicken')">REMOVE</button>
-      </div> <br>
+                        <div class="col-sm-4 mb-4">
+                          <div class="card">
+                              <img src="./menu/image13.jpg" class="card-img-top" alt="Tapa w/ Egg">
+                              <div class="card-body">
+                                  <h5 class="card-title">Tapa w/ Egg</h5>
+                                  <p><strong>₱100.00</strong></p>
+                                  <div class="input-group mb-3">
+                                      <button class="btn btn-warning" onclick="decrementQuantity('tapawegg')">-</button>
+                                      <input class="form-control" type="number" id="tapawegg" value="1" min="1" max="5">
+                                      <button class="btn btn-warning" onclick="incrementQuantity('tapawegg')">+</button>
+                                  </div>
+                                  <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Tapa w/ Egg', parseInt(document.getElementById('tapawegg').value))">Add Order</button>
+                                    <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Tapa w/ Egg')">Remove Order</button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
 
-      <div class="menu-item">
-        <h3>Tapa w/ Egg </h3>
-        <p>Rice Meal</p>
-        <p>Price: ₱100.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity2" name="quantity2" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity2')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity2')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Tapa w/ Egg', document.getElementById('quantity2').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Tapa w/ Egg')">REMOVE</button>
-      </div> <br>
+                      <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <img src="./menu/image7.png" class="card-img-top" alt="Fried Liempo">
+                            <div class="card-body">
+                                <h5 class="card-title">Fried Liempo</h5>
+                                <p><strong>₱90.00</strong></p>
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-warning" onclick="decrementQuantity('friedliempo')">-</button>
+                                    <input class="form-control" type="number" id="friedliempo" value="1" min="1" max="5">
+                                    <button class="btn btn-warning" onclick="incrementQuantity('friedliempo')">+</button>
+                                </div>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Fried Liempo', parseInt(document.getElementById('friedliempo').value))">Add Order</button>
+                                  <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Fried Liempo')">Remove Order</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-<div class="menu-item">
-        <h3>Beef Pares </h3>
-        <p>Pares</p>
-        <p>Price: ₱90.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity3" name="quantity3" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity3')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity3')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Beef Pares', document.getElementById('quantity3').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Beef Pares')">REMOVE</button>
-      </div> <br>
+                    <div class="col-sm-4 mb-4">
+                      <div class="card">
+                          <img src="./menu/image10.jpg" class="card-img-top" alt="Chicharon Bulaklak w/ Rice">
+                          <div class="card-body">
+                              <h5 class="card-title">Chicharon Bulaklak w/ Rice</h5>
+                              <p><strong>₱80.00</strong></p>
+                              <div class="input-group mb-3">
+                                  <button class="btn btn-warning" onclick="decrementQuantity('chicharonwrice')">-</button>
+                                  <input class="form-control" type="number" id="chicharonwrice" value="1" min="1" max="5">
+                                  <button class="btn btn-warning" onclick="incrementQuantity('chicharonwrice')">+</button>
+                              </div>
+                              <div class="d-grid gap-2">
+                                <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Chicharon Bulaklak w/ Rice', parseInt(document.getElementById('chicharonwrice').value))">Add Order</button>
+                                <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Chicharon Bulaklak w/ Rice')">Remove Order</button>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
 
-<div class="menu-item">
-        <h3>Lechon Pares</h3>
-        <p>Pares</p>
-        <p>Price: ₱100.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity4" name="quantity4" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity4')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity4')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Lechon Pares', document.getElementById('quantity4').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Lechon Pares')">REMOVE</button>
-      </div> <br>
+                  <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <img src="./menu/image15.jpg" class="card-img-top" alt="Fried Porkchop<">
+                        <div class="card-body">
+                            <h5 class="card-title">Fried Porkchop</h5>
+                            <p><strong>₱90.00</strong></p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-warning" onclick="decrementQuantity('paresovl')">-</button>
+                                <input class="form-control" type="number" id="paresovl" value="1" min="1" max="5">
+                                <button class="btn btn-warning" onclick="incrementQuantity('paresovl')">+</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                              <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Mami', parseInt(document.getElementById('paresovl').value))">Add Order</button>
+                              <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Mami')">Remove Order</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<div class="menu-item">
-        <h3>Mami</h3>
-        <p>Mami</p>
-        <p>Price: ₱60.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity5" name="quantity5" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity5')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity5')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Mami', document.getElementById('quantity5').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Mami')">REMOVE</button>
-      </div> <br>
-</div>
+              <div class="menu-section" id="shortorders" style="display: none; margin-left: 10px;">
+                <div class="row">
+                  <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <img src="./menu/image4.jpg" class="card-img-top" alt="Pork Sisig">
+                        <div class="card-body">
+                            <h5 class="card-title">Pork Sisig</h5>
+                            <p><strong>₱120.00</strong></p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-warning" onclick="decrementQuantity('porksisig')">-</button>
+                                <input class="form-control" type="number" id="porksisig" value="1" min="1" max="5">
+                                <button class="btn btn-warning" onclick="incrementQuantity('porksisig')">+</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                              <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Pork Sisig', parseInt(document.getElementById('porksisig').value))">Add Order</button>
+                              <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Pork Sisig')">Remove Order</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
 
-<div class="menu-column">
-<div class="menu-item">
-        <h3>Egg Pares</h3>
-        <p>Pares</p>
-        <p>Price: ₱35.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity6" name="quantity6" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity6')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity6')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Egg Pares', document.getElementById('quantity6').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Egg Pares')">REMOVE</button>
-      </div> <br>
+                  <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <img src="./menu/image3.jpg" class="card-img-top" alt="Pork Sisig">
+                        <div class="card-body">
+                            <h5 class="card-title">Chicharon Bulaklak</h5>
+                            <p><strong>₱120.00</strong></p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-warning" onclick="decrementQuantity('chichar')">-</button>
+                                <input class="form-control" type="number" id="chichar" value="1" min="1" max="5">
+                                <button class="btn btn-warning" onclick="incrementQuantity('chichar')">+</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                              <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Chicharon Bulaklak', parseInt(document.getElementById('chichar').value))">Add Order</button>
+                              <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Chicharon Bulaklak')">Remove Order</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
 
-<div class="menu-item">
-        <h3>Chicharon Bulaklak</h3>
-        <p>Short Order</p>
-        <p>Price: ₱120.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity7" name="quantity7" min="1" max="3" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity7')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity7')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Chicharon Bulaklak', document.getElementById('quantity7').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Chicharon Bulaklak')">REMOVE</button>
-      </div> <br>
+                  <div class="col-sm-4 mb-4">
+                    <div class="card">
+                        <img src="./menu/image5.jpg" class="card-img-top" alt="Lechon Kawali">
+                        <div class="card-body">
+                            <h5 class="card-title">Lechon Kawali</h5>
+                            <p><strong>₱110.00</strong></p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-warning" onclick="decrementQuantity('lechonkawalis')">-</button>
+                                <input class="form-control" type="number" id="lechonkawalis" value="1" min="1" max="5">
+                                <button class="btn btn-warning" onclick="incrementQuantity('lechonkawalis')">+</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                              <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Lechon Kawali', parseInt(document.getElementById('lechonkawalis').value))">Add Order</button>
+                              <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Lechon Kawali')">Remove Order</button>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
-<div class="menu-item">
-        <h3>Sisig</h3>
-        <p>Short Order</p>
-        <p>Price: ₱120.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity8" name="quantity8" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity8')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity8')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Sisig', document.getElementById('quantity8').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Sisig')">REMOVE</button>
-      </div> <br>
+              <div class="menu-section" id="extras" style="display: none; margin-left: 10px;">
+                <div class="row">
+                  <div class="col-sm-5 mb-4">
+                    <div class="card">
+                        <img src="./menu/image11.jpg" class="card-img-top" alt="Fried Egg">
+                        <div class="card-body">
+                            <h5 class="card-title">Fried Egg</h5>
+                            <p><strong>₱15.00</strong></p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-warning" onclick="decrementQuantity('egg')">-</button>
+                                <input class="form-control" type="number" id="egg" value="1" min="1" max="5">
+                                <button class="btn btn-warning" onclick="incrementQuantity('egg')">+</button>
+                            </div>
+                            <div class="d-grid gap-2">
+                              <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Fried Egg', parseInt(document.getElementById('egg').value))">Add Order</button>
+                              <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Fried Egg')">Remove Order</button>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
 
-<div class="menu-item">
-        <h3> Buttered Chicken</h3>
-        <p>Short Order</p>
-        <p>Price: ₱120.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity9" name="quantity9" min="1" max="5" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity9')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity9')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Buttered Chicken', document.getElementById('quantity9').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Buttered Chicken')">REMOVE</button>
-      </div> <br>
+                    <div class="col-sm-5 mb-4">
+                      <div class="card">
+                          <img src="./menu/image6.jpg" class="card-img-top" alt="Rice">
+                          <div class="card-body">
+                              <h5 class="card-title">Rice</h5>
+                              <p><strong>₱15.00</strong></p>
+                              <div class="input-group mb-3">
+                                  <button class="btn btn-warning" onclick="decrementQuantity('rice')">-</button>
+                                  <input class="form-control" type="number" id="rice" value="1" min="1" max="5">
+                                  <button class="btn btn-warning" onclick="incrementQuantity('rice')">+</button>
+                              </div>
+                              <div class="d-grid gap-2">
+                                <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Rice', parseInt(document.getElementById('rice').value))">Add Order</button>
+                                <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Rice')">Remove Order</button>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
 
-<div class="menu-item">
-        <h3>Extra Rice</h3>
-        <p>Extras</p>
-        <p>Price: ₱15.00</p>
-        <div class="quantity-container">
-          <input type="number" class="quantity-input" id="quantity10" name="quantity10" min="1" max="20" value="1">
-          <button class="quantity-button" onclick="incrementQuantity('quantity10')">+</button>
-<button class="quantity-button minus" onclick="decrementQuantity('quantity10')">-</button>
-        </div> <br>
-        <button class="add-button" onclick="addToCart('Extra Rice', document.getElementById('quantity10').value)">ADD</button>
-<button class="remove-button" onclick="removeFromCart('Extra Rice')">REMOVE</button>
-      </div>
-    </div>
-<br>
-</div>
+                  </div>
+                </div>
 
-      <div class="card">
-<h2> PLACE AN ORDER (PICK-UP ONLY) </h2>
-<p> The only available option for ordering is pick-up. <br> You'll have to visit the store to get what you ordered and pay.</h3>
-    <div id="cart"></div>
-
-    <form id="form" action="https://formsubmit.co/53b7620329259328fa104987a509b45f" method="POST">
-
- <input type="hidden" name="_autoresponse" id="autoresponse" value="">
-
-      <div class="form-group">
-        <label for="name">NAME:</label>
-        <input type="text" id="name" name="Name" required>
-      </div> <br>
-<div class="form-group">
-  <label for="address">Address:</label>
-  <input type="text" id="address" name="address" required maxlength="255">
-  <small id="address-error" style="color: red;"></small>
-</div><br>
-      <div class="form-group">
-        <label for="phone">PHONE NUMBER:</label>
-        <input type="tel" id="phone" name="Phone Number" pattern="\+63[0-9]{10}" maxlength="13" value="+63" oninput="preventPrefixRemoval(event)" required>
-      </div> <br>
-      <div class="form-group">
-        <label for="email">EMAIL:</label>
-        <input type="email" id="email" name="email" required>
-      </div> <br> <br>
-
-<p>Please give us some time to prepare (depending on your order). Thank you!</p>
-
-<br>
-
-      <div class="form-group">
-        <label for="pickup-time">PICK-UP TIME (1:30 PM - 9:30 PM):</label>
-        <input type="time" id="pickup-time" name="Pick-up Time" min="13:30" max="21:30" required> <br> <br>
-<div class="form-group">
-    <label for="pickup-date">PICK-UP DATE:</label>
-    <input type="date" id="pickup-date" name="Pick-up Date" required>
-</div> <br>
-      </div> <br>
-      <input type="hidden" id="cart-items" name="Orders">
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-  <script>
-
-    var cartItems = [];
-
-  function incrementQuantity(quantityInputId) {
-  var quantityInput = document.getElementById(quantityInputId);
-  if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
-    quantityInput.value = parseInt(quantityInput.value) + 1;
-  }
-}
-
-function decrementQuantity(quantityInputId) {
-  var quantityInput = document.getElementById(quantityInputId);
-  if (parseInt(quantityInput.value) > 1) {
-    quantityInput.value = parseInt(quantityInput.value) - 1;
-  }
-}
-
-function addToCart(itemName, quantity) {
-  var existingItemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
-  });
-
-  if (existingItemIndex !== -1) {
-    cartItems[existingItemIndex].quantity = quantity;
-  } else {
-    cartItems.push({ name: itemName, quantity: quantity });
-  }
-
-  updateCart();
-}
-
-function removeFromCart(itemName) {
-  var itemIndex = cartItems.findIndex(function(item) {
-    return item.name === itemName;
-  });
-
-  if (itemIndex !== -1) {
-    cartItems.splice(itemIndex, 1);
-    updateCart();
-  }
-}
-
-function updateCart() {
-  var cartElement = document.getElementById("cart");
-  cartElement.innerHTML = "";
-  var ul = document.createElement("ul");
-
-  var totalItems = 0;
-  var totalPrice = 0;
-
-  cartItems.forEach(function(item) {
-    var li = document.createElement("li");
-    li.textContent = item.name + " (Quantity: " + item.quantity + ")";
-    ul.appendChild(li);
-
-    totalItems += parseInt(item.quantity);
-    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-  });
-
-  cartElement.appendChild(ul);
-  cartElement.innerHTML += "<p>Total Items: " + totalItems + "</p>";
-  cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
-
-  document.getElementById("cart-items").value = JSON.stringify(cartItems);
-}
-
-function getItemPrice(itemName) {
-  switch(itemName) {
-    case "Chicken":
-      return 110.00;
-    case "Tapa w/ Egg":
-      return 100.00;
-    case "Beef Pares":
-      return 90.00;
-    case "Lechon Pares":
-      return 100.00;
-    case "Mami":
-      return 60.00;
-    case "Egg Pares":
-      return 35.00;
-    case "Chicharon Bulaklak":
-      return 120.00;
-    case "Sisig":
-      return 120.00;
-    case "Buttered Chicken":
-      return 120.00;
-    case "Extra Rice":
-      return 15.00;
-    default:
-      return 0;
-  }
-}
-
-updateCart();
-
-document.getElementById("form").addEventListener("submit", function(event) {
-  event.preventDefault();
-
-if (confirm("Are you sure you want to place this order?")) {
-
-  var totalItems = 0;
-  var totalPrice = 0;
-
-  cartItems.forEach(function(item) {
-    totalItems += parseInt(item.quantity);
-    totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
-  });
-
-  var autoresponseMessage = "We have received your order and is now processing. ";
-  autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
-  autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
-  autoresponseMessage += "Give us some time to prepare your orders and we will give you an update. Thank you for choosing Papa Ver's Bundatan!";
-
-  document.getElementById("autoresponse").value = autoresponseMessage;
-
-  this.submit();
-} else {
+                <div class="menu-section" id="drinks" style="display: none; margin-left: 10px;">
+                  <div class="row">
+                    <div class="col-sm-4 mb-4">
+                      <div class="card">
+                          <img src="./menu/water.png" class="card-img-top" alt="water">
+                          <div class="card-body">
+                              <h5 class="card-title">Bottled Water 500ml </h5>
+                              <p><strong>₱15.00</strong></p>
+                              <div class="input-group mb-3">
+                                  <button class="btn btn-warning" onclick="decrementQuantity('egg')">-</button>
+                                  <input class="form-control" type="number" id="egg" value="1" min="1" max="5">
+                                  <button class="btn btn-warning" onclick="incrementQuantity('egg')">+</button>
+                              </div>
+                              <div class="d-grid gap-2">
+                                <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Fried Egg', parseInt(document.getElementById('egg').value))">Add Order</button>
+                                <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Fried Egg')">Remove Order</button>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
   
-    alert("Order placement canceled.");
-  }
-});
+                      <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <img src="./menu/coke.png" class="card-img-top" alt="Coke">
+                            <div class="card-body">
+                                <h5 class="card-title">Coke 250ml</h5>
+                                <p><strong>₱20.00</strong></p>
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-warning" onclick="decrementQuantity('coke')">-</button>
+                                    <input class="form-control" type="number" id="coke" value="1" min="1" max="5">
+                                    <button class="btn btn-warning" onclick="incrementQuantity('coke')">+</button>
+                                </div>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Coke 250ml', parseInt(document.getElementById('coke').value))">Add Order</button>
+                                  <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Coke 250ml')">Remove Order</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+  
+                        <div class="col-sm-4 mb-4">
+                          <div class="card">
+                              <img src="./menu/image14.jpg" class="card-img-top" alt="Royal">
+                              <div class="card-body">
+                                  <h5 class="card-title">Royal 250ml</h5>
+                                  <p><strong>₱20.00</strong></p>
+                                  <div class="input-group mb-3">
+                                      <button class="btn btn-warning" onclick="decrementQuantity('royal')">-</button>
+                                      <input class="form-control" type="number" id="royal" value="1" min="1" max="5">
+                                      <button class="btn btn-warning" onclick="incrementQuantity('royal')">+</button>
+                                  </div>
+                                  <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Royal 250ml', parseInt(document.getElementById('royal').value))">Add Order</button>
+                                    <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Royal 250ml')">Remove Order</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+                    </div>
+                  </div>
 
-  </script>
+            </div>
 
-<script>
 
-function preventPrefixRemoval(event) {
-  var input = event.target;
-  var prefix = "+63";
+                <div class="col-sm-4">
+                    <div class="reservation-form text-center" id="reservationForm">
+                        <h2> PLACE AN ORDER (PICK-UP ONLY) </h2>
+                        <p> The only available option for ordering is pick-up.
+                            <br> You'll have to visit the store to get what you ordered and pay.
+                            </h3>
+                            <div id="cart"></div>
+                            <form id="form" action="https://formsubmit.co/53b7620329259328fa104987a509b45f" method="POST">
+                                <input type="hidden" name="_autoresponse" id="autoresponse" value="">
+                                <div class="form-group">
+                                    <label for="name">NAME:</label>
+                                    <input type="text" id="name" name="Name" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="address">Address:</label>
+                                    <input type="text" id="address" name="address" required maxlength="255">
+                                    <small id="address-error" style="color: red;"></small>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="phone">PHONE NUMBER:</label>
+                                    <input type="tel" id="phone" name="Phone Number" pattern="\+63[0-9]{10}" maxlength="13" value="+63" oninput="preventPrefixRemoval(event)" required>
+                                </div>
+                                <br>
+                                <div class="form-group">
+                                    <label for="email">EMAIL:</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <br>
+                                <br>
+                                <p>Please give us some time to prepare (depending on your order). Thank you!</p>
+                                <br>
+                                <div class="form-group">
+                                    <label for="pickup-time">PICK-UP TIME (1:30 PM - 9:30 PM):</label>
+                                    <input type="time" id="pickup-time" name="Pick-up Time" min="13:30" max="21:30" required>
+                                    <br>
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="pickup-date">PICK-UP DATE:</label>
+                                        <input type="date" id="pickup-date" name="Pick-up Date" required>
+                                    </div>
+                                    <br>
+                                </div>
+                                <br>
+                                <input type="hidden" id="cart-items" name="Orders">
+                                <input type="submit" value="Submit" class="btn btn-primary">
+                            </form>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  if (!input.value.startsWith(prefix)) {
-    input.value = prefix + input.value;
-  }
-}
 
-</script>
-
-<script>
-
-document.getElementById('address').addEventListener('input', function() {
-    var addressInput = this.value;
-    var addressRegex = /^[a-zA-Z0-9\s,.-]+$/;
-
-    if (!addressRegex.test(addressInput)) {
-        document.getElementById('address-error').textContent = "Invalid address format.";
-    } else {
-        document.getElementById('address-error').textContent = "";
-    }
-});
-
-</script>
-
+        <script>
+            var cartItems = [];
+             
+             function incrementQuantity(quantityInputId) {
+             var quantityInput = document.getElementById(quantityInputId);
+             if (parseInt(quantityInput.value) < parseInt(quantityInput.getAttribute('max'))) {
+             quantityInput.value = parseInt(quantityInput.value) + 1;
+             }
+             }
+             
+             function decrementQuantity(quantityInputId) {
+             var quantityInput = document.getElementById(quantityInputId);
+             if (parseInt(quantityInput.value) > 1) {
+             quantityInput.value = parseInt(quantityInput.value) - 1;
+             }
+             }
+             
+             function addToCart(itemName, quantity) {
+             var existingItemIndex = cartItems.findIndex(function(item) {
+             return item.name === itemName;
+             });
+             
+             if (existingItemIndex !== -1) {
+             cartItems[existingItemIndex].quantity = quantity;
+             } else {
+             cartItems.push({ name: itemName, quantity: quantity });
+             }
+             
+             updateCart();
+             }
+             
+             function removeFromCart(itemName) {
+             var itemIndex = cartItems.findIndex(function(item) {
+             return item.name === itemName;
+             });
+             
+             if (itemIndex !== -1) {
+             cartItems.splice(itemIndex, 1);
+             updateCart();
+             }
+             }
+             
+             function updateCart() {
+             var cartElement = document.getElementById("cart");
+             cartElement.innerHTML = "";
+             var ul = document.createElement("ul");
+             
+             var totalItems = 0;
+             var totalPrice = 0;
+             
+             cartItems.forEach(function(item) {
+             var li = document.createElement("li");
+             li.textContent = item.name + " (Quantity: " + item.quantity + ")";
+             ul.appendChild(li);
+             
+             totalItems += parseInt(item.quantity);
+             totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+             });
+             
+             cartElement.appendChild(ul);
+             cartElement.innerHTML += "<p>Total Items: " + totalItems + "</p>";
+             cartElement.innerHTML += "<p>Total Price: ₱" + totalPrice.toFixed(2) + "</p>";
+             
+             document.getElementById("cart-items").value = JSON.stringify(cartItems);
+             }
+             
+             function getItemPrice(itemName) {
+              switch(itemName) {
+              case "Chicken":
+                return 110.00;
+              case "Tapa w/ Egg":
+                return 100.00;
+              case "Beef Pares":
+                return 90.00;
+              case "Lechon Pares":
+                return 100.00;
+              case "Mami":
+                return 60.00;
+              case "Egg Pares":
+                return 35.00;
+              case "Fried Chicken":
+                return 100.00;
+              case "Chicharon Bulaklak":
+                return 120.00;
+              case "Sisig":
+                return 120.00;
+              case "Buttered Chicken":
+                return 120.00;
+              case "Pares Overload":
+                return 120.00;
+              case "Extra Rice":
+                return 15.00;
+              case "Pork Sisig":
+                return 120.00;
+              case "Lechon Kawali":
+                return 110.00;
+              case "Fried Liempo":
+                return 90.00;
+              case "Chicharon Bulaklak w/ Rice":
+                return 90.00;
+              case "Fried Porkchop":
+                return 80.00;
+              case "Rice":
+                return 15.00;
+              case "Fried Egg":
+                return 15.00;
+              case "Bottled Water 500ml":
+                return 20.00;
+              case "Coke 250ml":
+                return 20.00;
+              case "Royal 250ml":
+                return 20.00;
+              default:
+                return 0;
+              }
+             }
+             
+             updateCart();
+             
+             document.getElementById("form").addEventListener("submit", function(event) {
+             event.preventDefault();
+             
+             if (confirm("Are you sure you want to place this order?")) {
+             
+              var totalItems = 0;
+              var totalPrice = 0;
+              
+              cartItems.forEach(function(item) {
+              totalItems += parseInt(item.quantity);
+              totalPrice += parseInt(item.quantity) * getItemPrice(item.name);
+              });
+              
+              var autoresponseMessage = "We have received your order and is now processing. ";
+              autoresponseMessage += "You ordered a total of " + totalItems + " item(s), ";
+              autoresponseMessage += "with a total price of ₱" + totalPrice.toFixed(2) + ". ";
+              autoresponseMessage += "Give us some time to prepare your orders and we will give you an update. Thank you for choosing Papa Ver's Bundatan!";
+              
+              document.getElementById("autoresponse").value = autoresponseMessage;
+              
+              this.submit();
+             } else {
+             
+             alert("Order placement canceled.");
+             }
+             });
+             function showMenu(menuType) {
+                // Hide all menu sections
+                var menuSections = document.querySelectorAll('.menu-section');
+                menuSections.forEach(function(section) {
+                    section.style.display = 'none';
+                });
+                
+                // Display the selected menu section
+                var selectedSection = document.getElementById(menuType.toLowerCase());
+                if (selectedSection) {
+                    selectedSection.style.display = 'block';
+                }
+              }
+        </script>
+        <script>
+            function preventPrefixRemoval(event) {
+               var input = event.target;
+               var prefix = "+63";
+             
+               if (!input.value.startsWith(prefix)) {
+                 input.value = prefix + input.value;
+               }
+             }
+        </script>
+        <script>
+            document.getElementById('address').addEventListener('input', function() {
+                 var addressInput = this.value;
+                 var addressRegex = /^[a-zA-Z0-9\s,.-]+$/;
+             
+                 if (!addressRegex.test(addressInput)) {
+                     document.getElementById('address-error').textContent = "Invalid address format.";
+                 } else {
+                     document.getElementById('address-error').textContent = "";
+                 }
+             });
+            function adjustMenuWidth() {
+                var columns = document.querySelectorAll('.menu-column1');
+                
+                columns.forEach(function(column) {
+                    var menuItems = column.querySelectorAll('.menu-item');
+                    var numberOfColumns = column.querySelectorAll('.column').length;
+                    
+                    var widthPercentage = numberOfColumns === 1 ? '60%' : 'calc(85% - 5px)';
+                    
+                    menuItems.forEach(function(item) {
+                        item.style.width = widthPercentage;
+                    });
+                });
+            }
+    
+            adjustMenuWidth();
+    
+            window.addEventListener('resize', adjustMenuWidth);
+        </script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
-            </html>
+
+</html>
