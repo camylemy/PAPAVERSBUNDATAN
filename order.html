@@ -155,33 +155,6 @@
             margin-left: 10px;
         }
 
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        nav button {
-            font-family: 'Barlow Condensed';
-            font-weight: 400;
-            background-color: #FEBA4F;
-            color: white;
-            padding: 10px;
-            align-items: center;
-            text-decoration: none;
-            display: block;
-            font-size: 20px;
-            width: 40%;
-            border: black;
-            cursor: pointer;
-            transition: 0.3s;
-            margin: auto;
-        }
-
-        nav button:nth-child(2) {
-            margin-left: 10px;
-        }
-
         .openbtn {
             font-size: 20px;
             font-family: 'Barlow Condensed';
@@ -222,6 +195,31 @@
                 margin-left: auto;
             }
         }
+        @media (min-width: 768px) {
+          .btn-responsive {
+              font-size: 16px;
+              padding: 0.25rem 0.5rem;
+          }
+      }
+
+      @media (min-width: 992px) {
+        .navbar .nav-item .dropdown-menu {
+            display: block;
+            border: none;
+            margin-top: 0;
+            top: 150%;
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s;
+        }
+
+        .navbar .nav-item:hover .dropdown-menu {
+            top: 100%;
+            visibility: visible;
+            transition: .5s;
+            opacity: 1;
+        }
+    }
     </style>
 </head>
 
@@ -230,15 +228,42 @@
     <h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
     <div class="container-fluid overflow-hidden px-lg-0" style="margin: 6rem 0;">
         <div class="container px-lg-0">
-            <div class="btn-group mb-3 gap-2" style="margin-left: 10px;" role="group" aria-label="Menu category">
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('mami')">MAMI</button>
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('pares')">PARES</button>
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('meals')">MEALS</button>
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('shortorders')">SHORT ORDER</button>
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('drinks')">DRINKS</button>
-                <button type="button" class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px" onclick="showMenu('extras')">EXTRAS</button>
+          <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="navbar-nav ms-auto p-4 p-lg-0">
+                    <li class="nav-item">
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('mami')">MAMI</button>
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('pares')">PARES</button>
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('meals')">MEALS</button>
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('shortorders')">SHORT ORDER</button>
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('drinks')">DRINKS</button>
+                            <button type="button" class="nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('extras')">EXTRAS</button>
+                    </ul>
+                </div>
             </div>
-
+        </nav> -->
+        <nav class="navbar navbar-expand-lg p-0" style="margin-bottom: 10px; margin-left: 10px;">
+          <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav p-4 p-lg-0">
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('mami')">MAMI</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('pares')">PARES</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('meals')">MEALS</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('shortorders')">SHORT ORDER</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('drinks')">DRINKS</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('extras')">EXTRAS</button>
+              </div>
+          </div>
+      </nav>
+      
+        
+        
             <div class="row">
                 <div class="col-sm-8">
                     <div class="menu-section" id="mami" style="display: block; margin-left: 10px;">
