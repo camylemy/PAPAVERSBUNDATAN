@@ -326,10 +326,27 @@ color:#FFA600;
     }
 
     .video-container {
-      width: 70%;
+      width: 60%;
       display: flex;
       justify-content: center; 
       align-items: center; 
+    }
+    @media screen and (max-width: 768px) {
+      .video-container {
+        width: 90%;
+      }
+    }
+
+    @media screen and (max-width: 576px) {
+      .video-container {
+        width: 95%;
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .video-container {
+        width: 98%;
+      }
     }
 </style>
 </head>
@@ -390,7 +407,7 @@ The business started in April 25, 2022, and is currently located at 2531 San Ped
 <div class="main-content">
 <div class="card2">
   <div class="video-container">
-    <video width="70%" autoplay muted loop>
+    <video width="100%" autoplay muted loop>
       <source src="start.mp4" type="video/mp4">
     </video>
   </div>
