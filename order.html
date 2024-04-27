@@ -811,56 +811,53 @@
              
              function getItemPrice(itemName) {
               switch(itemName) {
-                case "Chicken":
-                  return 110.00;
-                case "Tapa w/ Egg":
-                  return 100.00;
-                case "Beef Pares":
-                  return 90.00;
-                case "Lechon Pares":
-                  return 100.00;
+                // MAMI
                 case "Mami":
                   return 60.00;
-                case "Egg Pares":
-                  return 35.00;
-                case "Fried Chicken":
+                // Pares
+                case "Pares Overload": 
+                  return 120.00;
+                case "Lechon Pares": 
                   return 100.00;
-                case "Chicharon Bulaklak":
-                  return 120.00;
-                case "Sisig":
-                  return 120.00;
-                case "Buttered Chicken":
-                  return 120.00;
-                case "Pares Overload":
-                  return 120.00;
-                case "Extra Rice":
-                  return 15.00;
-                case "Pork Sisig":
-                  return 120.00;
-                case "Lechon Kawali":
+                case "Beef Pares": 
                   return 110.00;
-                case "Fried Liempo":
+                // Meals
+                case "Fried Chicken": 
+                  return 100.00
+                case "Tapa w/ Egg": 
+                  return 100.00
+                case "Fried Liempo": 
                   return 90.00;
-                case "Chicharon Bulaklak w/ Rice":
+                case "Chicharon Bulaklak w/ Rice": 
                   return 80.00;
-                case "Fried Porkchop":
+                case "Fried Porkchop": 
                   return 90.00;
-                case "Rice":
-                  return 15.00;
-                case "Fried Egg":
-                  return 15.00;
-                case "Bottled Water 500ml":
-                  return 20.00;
-                case "Coke 250ml":
-                  return 20.00;
-                case "Royal 250ml":
-                  return 20.00;
+                // Sizzling
                 case "Sizzling Porkchop":
                   return 99.00;
                 case "Sizzling Chicken":
                   return 99.00;
                 case "Sizzling Liempo":
                   return 99.00;
+                // Short Orders
+                case "Pork Sisig":
+                  return 120.00;
+                case "Chicharon Bulaklak":
+                  return 120.00;
+                case "Lechon Kawali":
+                  return 110.00;
+                // Drinks 
+                case "Bottled Water 500ml":
+                  return 20.00;
+                case "Coke 250ml":
+                  return 20.00;
+                case "Royal 250ml":
+                  return 20.00;
+                // Extras
+                case "Rice":
+                  return 15.00;
+                case "Fried Egg":
+                  return 15.00;
                 default:
                   return 0;
               }
