@@ -224,7 +224,15 @@
             opacity: 1;
         }
     }
-    
+
+    .nav-item.nav-link.btn.btn-primary.btn-sm.active {
+      background-color: #ffcc00; 
+      /* color: #ffffff;  */
+      font-weight: bold;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+      transform: scale(1.1); 
+      transition: transform 0.2s ease;
+    }
     </style>
 </head>
 
@@ -253,20 +261,20 @@
         </nav> -->
         <nav class="navbar navbar-expand-lg p-0" style="margin-bottom: 10px; margin-left: 10px;">
           <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-              <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
-              <div class="navbar-nav p-4 p-lg-0 gap-2">
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('mami')">MAMI</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('pares')">PARES</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('meals')">MEALS</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('sizzling')">SIZZLING</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('shortorders')">SHORT ORDER</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('drinks')">DRINKS</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('extras')">EXTRAS</button>
-              </div>
+            <div class="navbar-nav p-4 p-lg-0 gap-2">
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm active" style="background-color: #e99000;" onclick="showMenu('mami')">MAMI</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('pares')">PARES</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('meals')">MEALS</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('sizzling')">SIZZLING</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('shortorders')">SHORT ORDER</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('drinks')">DRINKS</button>
+              <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('extras')">EXTRAS</button>
+            </div>
           </div>
-      </nav>
+        </nav>
       
         
         
@@ -887,17 +895,24 @@
              }
              });
              function showMenu(menuType) {
-                // Hide all menu sections
                 var menuSections = document.querySelectorAll('.menu-section');
                 menuSections.forEach(function(section) {
                     section.style.display = 'none';
                 });
                 
-                // Display the selected menu section
                 var selectedSection = document.getElementById(menuType.toLowerCase());
                 if (selectedSection) {
                     selectedSection.style.display = 'block';
                 }
+
+                var buttons = document.querySelectorAll('.nav-item.nav-link.btn.btn-primary.btn-sm');
+                
+                buttons.forEach(function(btn) {
+                  btn.classList.remove('active');
+                });
+                
+                event.currentTarget.classList.add('active');
+                
               }
         </script>
         <script>
