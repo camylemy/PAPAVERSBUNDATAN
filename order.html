@@ -10,18 +10,22 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            font-family: 'Barlow Condensed', sans-serif;
-            font-weight: 400;
-            background-color: #FFA600;
-            margin: 0;
-            padding: 0;
+          font-family: 'Barlow Condensed', sans-serif;
+          font-weight: 400;
+          background-image: url('bg.jpg');
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          background-size: cover;
+          margin: 10px;
+          overflow-x: hidden;
         }
+
 
         .container {
             max-width: 90%;
             margin: 20px auto;
             padding: 20px;
-            background-color: #FEBA4F;
+            background-color: #e99000;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
@@ -220,12 +224,13 @@
             opacity: 1;
         }
     }
+    
     </style>
 </head>
 
 <body>
     <button class="openbtn" onclick="window.location.href = 'index.html';">HOME</button>
-    <h1 style="font-size: 10vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Place an Order</h1>
+    <h1 style="font-size: 12vw !important; font-family: 'Style Script', cursive !important; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011 !important; font-weight: bold !important;">Place an Order</h1>
     <div class="container-fluid overflow-hidden px-lg-0" style="margin: 6rem 0;">
         <div class="container px-lg-0">
           <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -252,12 +257,13 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
               <div class="navbar-nav p-4 p-lg-0 gap-2">
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('mami')">MAMI</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('pares')">PARES</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('meals')">MEALS</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('shortorders')">SHORT ORDER</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('drinks')">DRINKS</button>
-                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #FEBA4F;" onclick="showMenu('extras')">EXTRAS</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('mami')">MAMI</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('pares')">PARES</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('meals')">MEALS</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('sizzling')">SIZZLING</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('shortorders')">SHORT ORDER</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('drinks')">DRINKS</button>
+                  <button type="button" class="nav-item nav-link btn btn-primary btn-sm" style="background-color: #e99000;" onclick="showMenu('extras')">EXTRAS</button>
               </div>
           </div>
       </nav>
@@ -549,6 +555,68 @@
                   </div>
                 </div>
 
+                <div class="menu-section" id="sizzling" style="display: none; margin-left: 10px;">
+                  <div class="row">
+                    <div class="col-sm-4 mb-4">
+                      <div class="card">
+                          <img src="./menu/sizzling1.png" class="card-img-top" alt="Sizzling Liempo">
+                          <div class="card-body">
+                              <h5 class="card-title">Sizzling Liempo</h5>
+                              <p><strong>₱99.00</strong></p>
+                              <div class="input-group mb-3">
+                                  <button class="btn btn-warning" onclick="decrementQuantity('liemps')">-</button>
+                                  <input class="form-control" type="number" id="liemps" value="1" min="1" max="5">
+                                  <button class="btn btn-warning" onclick="incrementQuantity('liemps')">+</button>
+                              </div>
+                              <div class="d-grid gap-2">
+                                <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Sizzling Liempo', parseInt(document.getElementById('liemps').value))">Add Order</button>
+                                <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Sizzling Liempo')">Remove Order</button>
+                              </div>
+                            </div>
+                          </div>
+                      </div>
+  
+                      <div class="col-sm-4 mb-4">
+                        <div class="card">
+                            <img src="./menu/sizzling2.png" class="card-img-top" alt="porkchopsizzling">
+                            <div class="card-body">
+                                <h5 class="card-title">Sizzling Porkchop</h5>
+                                <p><strong>₱99.00</strong></p>
+                                <div class="input-group mb-3">
+                                    <button class="btn btn-warning" onclick="decrementQuantity('porkchopsizzling')">-</button>
+                                    <input class="form-control" type="number" id="porkchopsizzling" value="1" min="1" max="5">
+                                    <button class="btn btn-warning" onclick="incrementQuantity('porkchopsizzling')">+</button>
+                                </div>
+                                <div class="d-grid gap-2">
+                                  <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Sizzling Porkchop', parseInt(document.getElementById('porkchopsizzling').value))">Add Order</button>
+                                  <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Sizzling Porkchop')">Remove Order</button>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+
+                        <div class="col-sm-4 mb-4">
+                          <div class="card">
+                              <img src="./menu/sizzling3.png" class="card-img-top" alt="Rice">
+                              <div class="card-body">
+                                  <h5 class="card-title">Sizzling Chicken</h5>
+                                  <p><strong>₱99.00</strong></p>
+                                  <div class="input-group mb-3">
+                                      <button class="btn btn-warning" onclick="decrementQuantity('chickensizzling')">-</button>
+                                      <input class="form-control" type="number" id="chickensizzling" value="1" min="1" max="5">
+                                      <button class="btn btn-warning" onclick="incrementQuantity('chickensizzling')">+</button>
+                                  </div>
+                                  <div class="d-grid gap-2">
+                                    <button class="btn btn-primary" style="background-color: #FEBA4F; font-size: 20px;" onclick="addToCart('Sizzling Chicken', parseInt(document.getElementById('chickensizzling').value))">Add Order</button>
+                                    <button class="btn btn-secondary" style="background-color: #FEBA4F; font-size: 20px;"  onclick="removeFromCart('Sizzling Chicken')">Remove Order</button>
+                                  </div>
+                                </div>
+                              </div>
+                          </div>
+
+                    </div>
+                  </div>
+
                 <div class="menu-section" id="drinks" style="display: none; margin-left: 10px;">
                   <div class="row">
                     <div class="col-sm-4 mb-4">
@@ -779,6 +847,12 @@
                 return 20.00;
               case "Royal 250ml":
                 return 20.00;
+              case "Sizzling Porkchop":
+                return 99.00;
+              case "Sizzling Chicken":
+                return 99.00;
+              case "Sizzling Liempo":
+                return 99.00;
               default:
                 return 0;
               }
