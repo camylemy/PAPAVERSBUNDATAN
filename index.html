@@ -3,16 +3,15 @@
 <head>
 <title>Home</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
-
 body {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
-  background-color: #FFE4B5;
+  background-color: #EEB82E;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -20,17 +19,17 @@ body {
   overflow-x: hidden;
 }
 
-*{box-sizing: border-box;}
+* { box-sizing: border-box; }
 
 .sidebar {
-  cursor:pointer;
+  cursor: pointer;
   height: 100%;
   width: 0;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FFE4B5;
+  background-color: #F78702;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
@@ -47,14 +46,14 @@ body {
 .sidebar a {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
-  text-decoration:none;
-  color: black;
+  text-decoration: none;
+  color: white;
   display: block;
   transition: 0.5s;
 }
 
 .sidebar a:hover {
-  color: #FFE4B5;
+  color: #FFDAB9;
 }
 
 .sidebar .closebtn {
@@ -77,14 +76,14 @@ body {
   font-family: 'Barlow Condensed';
   font-weight: 400;
   cursor: pointer;
-  background-color: #FF8C00;
+  background-color: #F78702;
   color: white;
   padding: 10px 15px;
-  border: #F78702;
+  border: none;
 }
 
 .openbtn:hover {
-  color: #FFE4B5;
+  color: #FFDAB9;
   transition: 0.3s;
 }
 
@@ -105,7 +104,7 @@ body {
 }
 
 .modal-content {
-  background-color: #FF8C00;
+  background-color: #F78702;
   margin: 5% auto;
   padding: 20px;
   width: 80%;
@@ -124,8 +123,9 @@ body {
     transform: scale(1);
   }
 }
+
 .close {
-  color: black;
+  color: white;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -133,40 +133,39 @@ body {
 
 .close:hover,
 .close:focus {
-  color: #FFE4B5;
+  color: #FFDAB9;
   text-decoration: none;
   cursor: pointer;
 }
 
 .contact-number {
   font-size: 20px;
-  color: black;
+  color: white;
   text-decoration: none;
-
 }
 
 .contact-number:hover {
-  color: #FF8C00;
+  color: #FFDAB9;
 }
 
 .contact-info {
   font-size: 20px;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
 .contact-info:hover {
-  color: #FF8C00;
+  color: #FFDAB9;
 }
 
 .contact-facebook {
   font-size: 20px;
-  color: black;
+  color: white;
   text-decoration: none;
 }
 
 .contact-facebook:hover {
-  color: #FF711A;
+  color: #FFDAB9;
 }
 
 @media screen and (max-width: 768px) {
@@ -203,23 +202,25 @@ body {
 }
 
 .card {
-  background-color: #FF8C00;
+  background-color: #EEB82E;
   padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: solid 5px;
+  border-color: #F78702;
   flex-basis: calc(50% - 20px);
-  margin-bottom: 2
+  margin-bottom: 2%;
   width: 100%;
 }
 
 .card h2 {
-  color: rgb(255, 203, 120);
+  color: #F78702;
   font-size: 4vh;
 }
 
 .card p {
   font-size: 20px;
   margin-top: 10px;
+  font-weight: 400;
+  color: black;
 }
 
 @media screen and (max-width: 768px) {
@@ -255,27 +256,6 @@ body {
 .button {
   font-family: 'Barlow Condensed';
   font-weight: 400;
-  background-color: #FF8C00;
-  color: white;
-  padding: 10px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 40%;
-  border: black;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: auto;
-}
-
-.button:hover {
-color:#FFA600;
-}
-
-.button1 {
-  font-family: 'Barlow Condensed';
-  font-weight: 400;
   background-color: #F78702;
   color: white;
   padding: 10px;
@@ -284,81 +264,105 @@ color:#FFA600;
   display: block;
   font-size: 20px;
   width: 40%;
-  border: black;
+  border: none;
   cursor: pointer;
   transition: 0.3s;
   margin: auto;
+}
+
+.button:hover {
+  color: #EEB82E;
+}
+
+.button1 {
+  font-family: 'Barlow Condensed';
+  font-weight: 400;
+  background-color: #FF6347;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  width: 40%;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: auto;
+}
+
+.button1:hover {
+  color: #FFDAB9;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+nav button {
+  font-family: 'Barlow Condensed';
+  font-weight: 400;
+  background-color: #FF4500;
+  color: white;
+  padding: 10px;
+  align-items: center;
+  text-decoration: none;
+  display: block;
+  font-size: 20px;
+  width: 40%;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  margin: auto;
+}
+
+nav button:nth-child(2) {
+  margin-left: 10px;
+}
+
+.contact-info,
+.contact-facebook,
+.contact-number {
+  font-size: 40px;
+  font-family: 'Barlow Condensed';
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.video-container {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+}
+
+@media screen and (max-width: 768px) {
+  .video-container {
+    width: 90%;
   }
+}
 
-  .button1:hover {
-color:#FFA600;
+@media screen and (max-width: 576px) {
+  .video-container {
+    width: 95%;
   }
-  nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-    }
+}
 
-    nav button {
-        font-family: 'Barlow Condensed';
-        font-weight: 400;
-        background-color: #FF8C00;
-        color: white;
-        padding: 10px;
-        align-items: center;
-        text-decoration: none;
-        display: block;
-        font-size: 20px;
-        width: 40%;
-        border: black;
-        cursor: pointer;
-        transition: 0.3s;
-        margin: auto;
-    }
-
-    nav button:nth-child(2) {
-        margin-left: 10px;
-    }
-    .contact-info,
-    .contact-facebook,
-    .contact-number {
-        font-size: 40px;
-        font-family: 'Barlow Condensed';
-        text-align: center;
-        display: block;
-        margin-bottom: 10px;
-    }
-
-    .video-container {
-      width: 100%;
-      display: flex;
-      justify-content: center; 
-      align-items: center; 
-    }
-    @media screen and (max-width: 768px) {
-      .video-container {
-        width: 90%;
-      }
-    }
-
-    @media screen and (max-width: 576px) {
-      .video-container {
-        width: 95%;
-      }
-    }
-
-    @media screen and (max-width: 480px) {
-      .video-container {
-        width: 98%;
-      }
-    }
+@media screen and (max-width: 480px) {
+  .video-container {
+    width: 98%;
+  }
+}
 </style>
 </head>
 <body>
 
 <button class="openbtn" onclick="openNav()">LEARN MORE</button>
 
-<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#FF8C00; text-shadow: 0px 3px 1px #000011;">Papa Ver's Bundatan</h1>
+<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1>
 <nav>
   <button class="button" onclick= "window.location.href = 'order.html';">MENU</button>
 </nav>
