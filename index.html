@@ -12,7 +12,7 @@
 body {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
-  background-color: #E8BD24;
+  background-color: #FFE4B5;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -30,7 +30,7 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #FCDF55;
+  background-color: #FFE4B5;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
@@ -54,7 +54,7 @@ body {
 }
 
 .sidebar a:hover {
-  color: #FFA600;
+  color: #FFE4B5;
 }
 
 .sidebar .closebtn {
@@ -70,7 +70,6 @@ body {
   height: auto;
   margin: 20px auto;
   display: block;
-  border-radius: 50%;
 }
 
 .openbtn {
@@ -78,14 +77,14 @@ body {
   font-family: 'Barlow Condensed';
   font-weight: 400;
   cursor: pointer;
-  background-color: #E65C08;
+  background-color: #FF8C00;
   color: white;
   padding: 10px 15px;
   border: #F78702;
 }
 
 .openbtn:hover {
-  color: #FFA600;
+  color: #FFE4B5;
   transition: 0.3s;
 }
 
@@ -106,7 +105,7 @@ body {
 }
 
 .modal-content {
-  background-color: #E8BD24;
+  background-color: #FF8C00;
   margin: 5% auto;
   padding: 20px;
   width: 80%;
@@ -134,7 +133,7 @@ body {
 
 .close:hover,
 .close:focus {
-  color: #FF711A;
+  color: #FFE4B5;
   text-decoration: none;
   cursor: pointer;
 }
@@ -147,7 +146,7 @@ body {
 }
 
 .contact-number:hover {
-  color: #FF711A;
+  color: #FF8C00;
 }
 
 .contact-info {
@@ -157,7 +156,7 @@ body {
 }
 
 .contact-info:hover {
-  color: #FF711A;
+  color: #FF8C00;
 }
 
 .contact-facebook {
@@ -204,17 +203,18 @@ body {
 }
 
 .card {
-  background-color: #e99000;
+  background-color: #FF8C00;
   padding: 10px;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   flex-basis: calc(50% - 20px);
   margin-bottom: 2
+  width: 100%;
 }
 
 .card h2 {
   color: rgb(255, 203, 120);
-  font-size: 25px;
+  font-size: 4vh;
 }
 
 .card p {
@@ -255,7 +255,7 @@ body {
 .button {
   font-family: 'Barlow Condensed';
   font-weight: 400;
-  background-color: #F78702;
+  background-color: #FF8C00;
   color: white;
   padding: 10px;
   align-items: center;
@@ -302,7 +302,7 @@ color:#FFA600;
     nav button {
         font-family: 'Barlow Condensed';
         font-weight: 400;
-        background-color: #FEBA4F;
+        background-color: #FF8C00;
         color: white;
         padding: 10px;
         align-items: center;
@@ -323,25 +323,14 @@ color:#FFA600;
     .contact-facebook,
     .contact-number {
         font-size: 40px;
+        font-family: 'Barlow Condensed';
         text-align: center;
         display: block;
         margin-bottom: 10px;
     }
 
-    .card2 {
-      display: flex;
-      justify-content: center; 
-      align-items: center; 
-      background-color: #e99000;
-      padding: 10px;
-      border-radius: 5px;
-      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-      flex-basis: calc(50% - 20px);
-      margin-bottom: 20px;
-    }
-
     .video-container {
-      width: 60%;
+      width: 100%;
       display: flex;
       justify-content: center; 
       align-items: center; 
@@ -369,12 +358,12 @@ color:#FFA600;
 
 <button class="openbtn" onclick="openNav()">LEARN MORE</button>
 
-<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 1px 1px 2px #000011;">Papa Ver's Bundatan</h1>
+<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#FF8C00; text-shadow: 0px 3px 1px #000011;">Papa Ver's Bundatan</h1>
 <nav>
   <button class="button" onclick= "window.location.href = 'order.html';">MENU</button>
 </nav>
 
-  
+
 <div id="mySidebar" class="sidebar">
  <img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
   <a href="#" class="closebtn" onclick="closeNav()">×</a>
