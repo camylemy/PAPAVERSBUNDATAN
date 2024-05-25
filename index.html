@@ -796,54 +796,45 @@ document.addEventListener("DOMContentLoaded", function() {
 
   storedFeedback.forEach(function(feedback) {
     var feedbackElement = document.createElement("p");
-    feedbackElement.textContent = `"${feedback.text}" - ${feedback.name}`;
+    feedbackElement.textContent = feedback;
     feedbackDisplay.appendChild(feedbackElement);
   });
-
-  showSlides(0); // Initialize slider with the first slide
 });
 
-// Handle form submission
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
   event.preventDefault();
-  
-  // Get user input
+
   var userName = document.getElementById("userName").value;
   var userFeedback = document.getElementById("userFeedback").value;
 
-  // Create new feedback element
+  var feedbackDisplay = document.getElementById("feedbackDisplay");
   var feedbackElement = document.createElement("p");
-  feedbackElement.textContent = `"${userFeedback}" - ${userName}`;
-  document.getElementById("feedbackDisplay").appendChild(feedbackElement);
+  feedbackElement.textContent = userName + ": " + userFeedback;
+  feedbackDisplay.appendChild(feedbackElement);
 
-  // Save feedback to local storage
   var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
-  storedFeedback.push({ name: userName, text: userFeedback });
+  storedFeedback.push(userName + ": " + userFeedback);
   localStorage.setItem("feedback", JSON.stringify(storedFeedback));
 
-  // Clear the form
-  document.getElementById("feedbackForm").reset();
-  
-  showSlides(storedFeedback.length - 1); // Show the newly added slide
+  document.getElementById("userName").value = "";
+  document.getElementById("userFeedback").value = "";
 });
 
-// Slider functionality
-var slideIndex = 0;
+var currentSlideIndex = 0;
+showFeedbackSlides(currentSlideIndex);
 
 function moveSlides(n) {
-  var slides = document.getElementsByClassName("feedback-slides")[0];
-  var totalSlides = slides.children.length;
-
-  slideIndex += n;
-  if (slideIndex >= totalSlides) { slideIndex = 0; }
-  if (slideIndex < 0) { slideIndex = totalSlides - 1; }
-
-  showSlides(slideIndex);
+  showFeedbackSlides(currentSlideIndex += n);
 }
 
-function showSlides(n) {
-  var slides = document.getElementsByClassName("feedback-slides")[0];
-  slides.style.transform = `translateX(-${n * 100}%)`;
+function showFeedbackSlides(n) {
+  var slides = document.getElementsByClassName("feedback-slides")[0].getElementsByTagName("p");
+  if (n >= slides.length) { currentSlideIndex = 0 }
+  if (n < 0) { currentSlideIndex = slides.length - 1 }
+  for (var i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[currentSlideIndex].style.display = "block";
 }
 </script>
 </body>
