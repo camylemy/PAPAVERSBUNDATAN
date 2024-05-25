@@ -739,18 +739,20 @@ function closePopup(popupId) {
   modal.style.display = "none";
 }
 
-// FAQ dropdown functionality
 document.addEventListener('DOMContentLoaded', function() {
   var faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(function(question) {
     question.addEventListener('click', function() {
-      this.nextElementSibling.style.display = 
-        this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+      var answer = this.nextElementSibling;
+      if (answer.style.display === 'block') {
+        answer.style.display = 'none';
+      } else {
+        answer.style.display = 'block';
+      }
     });
   });
 });
 
-// Slider functionality
 document.addEventListener("DOMContentLoaded", function() {
   var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
   var feedbackDisplay = document.getElementById("feedbackDisplay");
