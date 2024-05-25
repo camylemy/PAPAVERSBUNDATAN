@@ -12,11 +12,7 @@ body {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 400;
   background-color: #EEB82E;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
   margin: 10px;
-  overflow-x: hidden;
 }
 
 * { box-sizing: border-box; }
@@ -29,7 +25,8 @@ body {
   z-index: 1;
   top: 0;
   left: 0;
-  background-color: #F78702;
+  background-color: #EEB82E;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 80px;
@@ -47,7 +44,7 @@ body {
   padding: 8px 8px 8px 32px;
   font-size: 25px;
   text-decoration: none;
-  color: white;
+  color: black;
   display: block;
   transition: 0.5s;
 }
@@ -69,6 +66,7 @@ body {
   height: auto;
   margin: 20px auto;
   display: block;
+  border-radius: 5px;
 }
 
 .openbtn {
@@ -101,6 +99,7 @@ body {
   border-radius: 5px;
   padding-top: 100px;
   animation: bounceIn 0.5s ease-in-out;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -220,6 +219,8 @@ body {
   margin-top: 10px;
   font-weight: 400;
   color: black;
+  text-indent: 50px;
+  text-align: justify; 
 }
 
 @media screen and (max-width: 768px) {
@@ -273,54 +274,6 @@ body {
   color: #EEB82E;
 }
 
-.button1 {
-  font-family: 'Barlow Condensed';
-  font-weight: 400;
-  background-color: #FF6347;
-  color: white;
-  padding: 10px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 40%;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: auto;
-}
-
-.button1:hover {
-  color: #FFDAB9;
-}
-
-nav {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-nav button {
-  font-family: 'Barlow Condensed';
-  font-weight: 400;
-  background-color: #FF4500;
-  color: white;
-  padding: 10px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 40%;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-  margin: auto;
-}
-
-nav button:nth-child(2) {
-  margin-left: 10px;
-}
-
 .contact-info,
 .contact-facebook,
 .contact-number {
@@ -349,266 +302,22 @@ nav button:nth-child(2) {
   }
 }
 
-.faq-section {
-  padding: 20px;
-  background-color: #EEB82E;
-  margin-bottom: 10px;
-}
-
-.faq-question {
-  font-size: 25px;
-  cursor: pointer;
-  padding: 10px;
-  color: white;
-  border: none;
-  outline: none;
-  text-align: left;
-  transition: 0.4s;
-  width: 100%;
-}
-
-.faq-answer {
-  padding: 10px;
-  background-color: black;
-  display: none;
-  font-size: 20px;
-}
-
-.faq-question:hover {
-  background-color: #FFDAB9;
-}
-
-.dropdown-container {
-  background-color: #EEB82E;
-  padding: 8px;
-  display: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
-.dropdown-btn {
-  font-size: 25px;
-  font-family: 'Barlow Condensed', sans-serif;
-  color: white;
-  background-color: #F78702;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  text-align: left;
-  outline: none;
-  transition: 0.3s;
-}
-
-.dropdown-btn:hover {
-  background-color: #EEB82E;
-  color: white;
-}
-
-.dropdown-btn:after {
-  content: '\25BC';
-  font-size: 18px;
-  color: white;
-  float: right;
-  margin-left: 10px;
-}
-
-.dropdown-btn.active:after {
-  content: '\25B2';
-}
-
-@media screen and (max-width: 768px) {
-  .dropdown-btn {
-    font-size: 20px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .dropdown-btn {
-    font-size: 18px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .dropdown-btn {
-    font-size: 16px;
-  }
-}
-
-.feedback-section {
-  padding: 20px;
-  background-color: #F78702;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.feedback-section h3 {
-  font-size: 25px;
-  font-family: 'Barlow Condensed', sans-serif;
-  color: white;
-  margin-bottom: 10px;
-}
-
-.feedback-section form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.feedback-section input, .feedback-section textarea {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-family: 'Barlow Condensed', sans-serif;
-}
-
-.feedback-section button {
-  padding: 10px;
-  background-color: #EEB82E;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 18px;
-  font-family: 'Barlow Condensed', sans-serif;
-}
-
-.feedback-section button:hover {
-  background-color: #FFDAB9;
-}
-
-.feedback-section .feedback {
-  margin-top: 20px;
-  font-size: 18px;
-  font-family: 'Barlow Condensed', sans-serif;
-  color: white;
-  border-top: 1px solid #FFDAB9;
-  padding-top: 10px;
-}
-
-.feedback-section .feedback p {
-  margin: 10px 0;
-}
-
-@media screen and (max-width: 768px) {
-  .feedback-section h3 {
-    font-size: 22px;
-  }
-
-  .feedback-section .feedback {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .feedback-section h3 {
-    font-size: 20px;
-  }
-
-  .feedback-section .feedback {
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .feedback-section h3 {
-    font-size: 18px;
-  }
-
-  .feedback-section .feedback {
-    font-size: 14px;
-  }
-}
-
-.feedback-container {
-  position: relative;
-  max-width: 100%;
-  margin: 20px 0px;
-  overflow: hidden;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  display: flex;
-  
-}
-
-.feedback-slides {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.feedback-slides p {
-  min-width: 100%;
-  box-sizing: border-box;
-  padding: 10px;
-  text-align: center;
-  transition: transform 0.5s ease-in-out;
-  color: white;
-  font-size: 20px;
-  font-family: 'Barlow Condensed', sans-serif;
-}
-
-.prev, .next { cursor: pointer; position: absolute; top: 45%; width: auto; margin-top: -19px; padding: 16px; color: white; font-weight: bold; font-size: 18px; border-radius: 0 3px 3px 0; user-select: none; transition: 0.6s ease; outline: none; }
-
-.next {
-  opacity: 0.5;
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev {
-  opacity: 0.5;
-  left: 0;
-  border-radius: 3px 3px 0 0;
-}
-
-.prev:hover, .next:hover {
-  background-color: #F78702;
-  color: black;
-}
-
-@media screen and (max-width: 768px) {
-  .feedback-section h3 {
-    font-size: 22px;
-  }
-
-  .feedback-section .feedback-slides p {
-    font-size: 16px;
-  }
-}
-
-@media screen and (max-width: 576px) {
-  .feedback-section h3 {
-    font-size: 20px;
-  }
-
-  .feedback-section .feedback-slides p {
-    font-size: 15px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .feedback-section h3 {
-    font-size: 18px;
-  }
-
-  .feedback-section .feedback-slides p {
-    font-size: 14px;
-  }
-}
-
 </style>
 </head>
+
 <body>
 
 <button class="openbtn" onclick="openNav()">LEARN MORE</button>
 
 <h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1>
-<nav>
+
   <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
-</nav>
+
+<br>
+
+<video width="100%" autoplay muted loop>
+  <source src="./imgs/start.mp4" type="video/mp4">
+</video>
 
 <div id="mySidebar" class="sidebar">
   <img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
@@ -617,37 +326,22 @@ nav button:nth-child(2) {
   <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
   <a id="findLink" onclick="openPopup('findPopup')">FIND US</a> <br>
   <img src="./imgs/Messenger_creation_8ae05554-9b2b-4e36-ae03-61ea096d5e3c.jpeg" alt="Image" class="navbar-image"> <br>
-  <a id="faqLink" onclick="openPopup('faqPopup')">FREQUENTLY ASKED QUESTIONS</a>
-  <br>
- <div class="feedback-section">
-    <h3>FEEDBACK</h3>
-    <form id="feedbackForm">
-      <input type="text" id="userName" placeholder="Your Name" required>
-      <textarea id="userFeedback" placeholder="Your Feedback" required></textarea>
-      <button type="submit">Submit</button>
-    </form>
-    <div class="feedback-container">
-      <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
-      <div class="feedback-slides" id="feedbackDisplay">
-      </div>
-<button class="prev" onclick="moveSlides(-1)">&#10094;</button>
-      <button class="next" onclick="moveSlides(1)">&#10095;</button>
-  </div>
+
 </div>
 </div>
 
 <div id="aboutPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('aboutPopup')">×</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
-    <p style="font-size: 35px";>Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
+    <p style="font-size: 30px; text-indent: 50px; text-align: justify; ">Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
   </div>
 </div>
 
 <div id="contactPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('contactPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
     <a href="tel:+639453746617" class="contact-number">
       <i class="fas fa-phone"></i> +63 908 963 0064
     </a> <br>
@@ -664,37 +358,11 @@ nav button:nth-child(2) {
 <div id="findPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('findPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">We are located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila</h1>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">We are located at...</h1>
+    <p style="font-size: 30px;">2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila.</p>
     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
-
-<div id="faqPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('faqPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Frequently Asked Questions</h1>
-
-    <button class="dropdown-btn">What is your operating hours?
-    </button>
-    <div class="dropdown-container">
-      <p>We are open from 1 PM to 10 PM, Monday to Saturday.</p>
-    </div>
-
-    <button class="dropdown-btn">Do you offer delivery services?</button>
-    <div class="dropdown-container">
-      <p>No, we do not offer delivery services. Customers can place an order online, but will visit the eatery to pick-up their order and pay.</p>
-    </div>
-
-    <button class="dropdown-btn">What are your payment methods?</button>
-    <div class="dropdown-container">
-      <p>For now, we are only accepting cash. Online payment transactions are unavailable.</p> 
-    </div>
-  </div>
-</div>
-
-<video width="100%" autoplay muted loop>
-  <source src="./imgs/start.mp4" type="video/mp4">
-</video>
 
 <div class="card-section">
   <div class="card">
@@ -702,14 +370,14 @@ nav button:nth-child(2) {
     <video width="100%" autoplay muted loop>
       <source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4">
     </video>
-    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares (pares overload, lechon pares, beef pares), rice meals (fried chicken, tapa w/ egg, fried liempo, chicharon bulaklak w/ rice, fried porkchop), sizzling (liempo, pork chop, chicken), short orders (chicharon bulaklak, pork sisig, lechon kawali), drinks, and extras (rice and egg).</p>
+    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares, rice meals, sizzling,  short orders, drinks, and extras. Starting at PHP 99.00, you can eat a meal in Papa Ver's Bundatan for an affordable price.</p>
   </div>
   <div class="card">
     <h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
     <video width="100%" autoplay muted loop>
       <source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4">
     </video>
-    <p>The overall atmosphere in Papa Ver’s Bundatan suggests a casual dining experience, offering meals that are good value for money which caused customers to come back.</p>
+    <p>Papa Ver’s Bundatan offer meals that are good value for money which caused customers to come back.</p>
   </div>
 </div>
 
@@ -718,7 +386,7 @@ nav button:nth-child(2) {
 </footer>
 
 <script>
-// Open and close sidebar
+
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
 }
@@ -727,7 +395,6 @@ function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
 }
 
-// Popup functionality
 function openPopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "block";
@@ -738,70 +405,6 @@ function closePopup(popupId) {
   modal.style.display = "none";
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  var faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(function(question) {
-    question.addEventListener('click', function() {
-      var answer = this.nextElementSibling;
-      if (answer.style.display === 'block') {
-        answer.style.display = 'none';
-      } else {
-        answer.style.display = 'block';
-      }
-    });
-  });
-});
-
-document.addEventListener("DOMContentLoaded", function() {
-  var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
-  var feedbackDisplay = document.getElementById("feedbackDisplay");
-
-  storedFeedback.forEach(function(feedback) {
-    var feedbackElement = document.createElement("p");
-    feedbackElement.textContent = `"${feedback.text}" - ${feedback.name}`;
-    feedbackDisplay.appendChild(feedbackElement);
-  });
-
-  showSlides(0);
-});
-
-document.getElementById("feedbackForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  
-  var userName = document.getElementById("userName").value;
-  var userFeedback = document.getElementById("userFeedback").value;
-
-  var feedbackElement = document.createElement("p");
-  feedbackElement.textContent = `"${userFeedback}" - ${userName}`;
-  document.getElementById("feedbackDisplay").appendChild(feedbackElement);
-
-  var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
-  storedFeedback.push({ name: userName, text: userFeedback });
-  localStorage.setItem("feedback", JSON.stringify(storedFeedback));
-
-  document.getElementById("feedbackForm").reset();
-  
-  showSlides(storedFeedback.length - 1);
-});
-
-var slideIndex = 0;
-
-function moveSlides(n) {
-  var slides = document.getElementsByClassName("feedback-slides")[0];
-  var totalSlides = slides.children.length;
-
-  slideIndex += n;
-  if (slideIndex >= totalSlides) { slideIndex = 0; }
-  if (slideIndex < 0) { slideIndex = totalSlides - 1; }
-
-  showSlides(slideIndex);
-}
-
-function showSlides(n) {
-  var slides = document.getElementsByClassName("feedback-slides")[0];
-  slides.style.transform = `translateX(-${n * 100}%)`;
-}
 </script>
 </body>
 </html>
-  
