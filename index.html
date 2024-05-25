@@ -140,7 +140,7 @@ body {
 
 .contact-number {
   font-size: 20px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -150,7 +150,7 @@ body {
 
 .contact-info {
   font-size: 20px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -160,7 +160,7 @@ body {
 
 .contact-facebook {
   font-size: 20px;
-  color: white;
+  color: black;
   text-decoration: none;
 }
 
@@ -348,6 +348,264 @@ nav button:nth-child(2) {
     width: 98%;
   }
 }
+
+.faq-section {
+  padding: 20px;
+  background-color: #EEB82E;
+  margin-bottom: 10px;
+}
+
+.faq-question {
+  font-size: 25px;
+  cursor: pointer;
+  padding: 10px;
+  color: white;
+  border: none;
+  outline: none;
+  text-align: left;
+  transition: 0.4s;
+  width: 100%;
+}
+
+.faq-answer {
+  padding: 10px;
+  background-color: black;
+  display: none;
+  font-size: 20px;
+}
+
+.faq-question:hover {
+  background-color: #FFDAB9;
+}
+
+.dropdown-container {
+  background-color: #EEB82E;
+  padding: 8px;
+  display: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dropdown-btn {
+  font-size: 25px;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  background-color: #F78702;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  outline: none;
+  transition: 0.3s;
+}
+
+.dropdown-btn:hover {
+  background-color: #EEB82E;
+  color: white;
+}
+
+.dropdown-btn:after {
+  content: '\25BC';
+  font-size: 18px;
+  color: white;
+  float: right;
+  margin-left: 10px;
+}
+
+.dropdown-btn.active:after {
+  content: '\25B2';
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown-btn {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .dropdown-btn {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .dropdown-btn {
+    font-size: 16px;
+  }
+}
+
+.feedback-section {
+  padding: 20px;
+  background-color: #F78702;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.feedback-section h3 {
+  font-size: 25px;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.feedback-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.feedback-section input, .feedback-section textarea {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.feedback-section button {
+  padding: 10px;
+  background-color: #EEB82E;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.feedback-section button:hover {
+  background-color: #FFDAB9;
+}
+
+.feedback-section .feedback {
+  margin-top: 20px;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+  color: white;
+  border-top: 1px solid #FFDAB9;
+  padding-top: 10px;
+}
+
+.feedback-section .feedback p {
+  margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+  .feedback-section h3 {
+    font-size: 22px;
+  }
+
+  .feedback-section .feedback {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .feedback-section h3 {
+    font-size: 20px;
+  }
+
+  .feedback-section .feedback {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .feedback-section h3 {
+    font-size: 18px;
+  }
+
+  .feedback-section .feedback {
+    font-size: 14px;
+  }
+}
+
+.feedback-container {
+  position: relative;
+  max-width: 100%;
+  margin: 20px 0px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.feedback-slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.feedback-slides p {
+  min-width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  font-size: 18px;
+  font-family: 'Barlow Condensed', sans-serif;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 60%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  transition: 0.6s ease;
+  outline: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 3px 0 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+@media screen and (max-width: 768px) {
+  .feedback-section h3 {
+    font-size: 22px;
+  }
+
+  .feedback-section .feedback-slides p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .feedback-section h3 {
+    font-size: 20px;
+  }
+
+  .feedback-section .feedback-slides p {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .feedback-section h3 {
+    font-size: 18px;
+  }
+
+  .feedback-section .feedback-slides p {
+    font-size: 14px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -356,43 +614,55 @@ nav button:nth-child(2) {
 
 <h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1>
 <nav>
-  <button class="button" onclick= "window.location.href = 'order.html';">PLACE AN ORDER</button>
+  <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
 </nav>
 
-
 <div id="mySidebar" class="sidebar">
- <img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
+  <img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
   <a href="#" class="closebtn" onclick="closeNav()">×</a>
   <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
   <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
-  <a id="findLink" onclick="openPopup('findPopup')">FIND US</a>
-
-<br> <br>
-
-<img src="./imgs/Messenger_creation_8ae05554-9b2b-4e36-ae03-61ea096d5e3c.jpeg" alt="Image" class="navbar-image">
+  <a id="findLink" onclick="openPopup('findPopup')">FIND US</a> <br>
+  <img src="./imgs/Messenger_creation_8ae05554-9b2b-4e36-ae03-61ea096d5e3c.jpeg" alt="Image" class="navbar-image"> <br>
+  <a id="faqLink" onclick="openPopup('faqPopup')">FREQUENTLY ASKED QUESTIONS</a>
+  <br>
+ <div class="feedback-section">
+    <h3>FEEDBACK</h3>
+    <form id="feedbackForm">
+      <input type="text" id="userName" placeholder="Your Name" required>
+      <textarea id="userFeedback" placeholder="Your Feedback" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+    <div class="feedback-container">
+      <button class="prev" onclick="moveSlides(-1)">&#10094;</button>
+      <div class="feedback-slides" id="feedbackDisplay">
+      </div>
+      <button class="next" onclick="moveSlides(1)">&#10095;</button>
+  </div>
+</div>
 </div>
 
 <div id="aboutPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('aboutPopup')">×</span>
     <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
-    <p style="font-size: 35px";>Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started in April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.
-</p>
+    <p style="font-size: 35px";>Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
   </div>
 </div>
 
 <div id="contactPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('contactPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 5vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Reach out to us!<h1>
-    <a href="tel:+639453746617"  class="contact-number">
+    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
+    <a href="tel:+639453746617" class="contact-number">
       <i class="fas fa-phone"></i> +63 908 963 0064
     </a> <br>
     <a href="mailto: tudacamillered@gmail.com" class="contact-info">
       <i class="fas fa-envelope"></i> dino.clemente06@gmail.com
     </a> <br>
     <a href="https://www.facebook.com/marverslafang?mibextid=YMEMSu" class="contact-facebook">
-      <i class="fab fa-facebook"> Facebook Page</i> 
+      <i class="fab fa-facebook"></i>
+      facebook
     </a>
   </div>
 </div>
@@ -400,34 +670,58 @@ nav button:nth-child(2) {
 <div id="findPopup" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closePopup('findPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 5vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">We are located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila</h1>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">We are located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila</h1>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </div>
 
-    <video width="100%" autoplay muted loop>
-      <source src="./imgs/start.mp4" type="video/mp4">
-    </video>
+<div id="faqPopup" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closePopup('faqPopup')">&times;</span>
+    <h1 style="font-family: 'Style Script', cursive; font-size: 5vw; text-align: center; color: #FF711A; text-shadow: 2px 2px 4px #000000;">Frequently Asked Questions</h1>
+    
+    <button class="dropdown-btn">What are your operating hours?
+    </button>
+    <div class="dropdown-container">
+      <p>We are open from 7 AM to 10 PM daily.</p>
+    </div>
+    
+    <button class="dropdown-btn">Do you offer delivery services?</button>
+    <div class="dropdown-container">
+      <p>Yes, we offer delivery through various food delivery platforms.</p>
+    </div>
+    
+    <button class="dropdown-btn">What are your payment methods?</button>
+    <div class="dropdown-container">
+      <p>We accept cash, credit cards, and various online payment methods.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<video width="100%" autoplay muted loop>
+  <source src="./imgs/start.mp4" type="video/mp4">
+</video>
 
 <div class="card-section">
-      <div class="card">
-        <h2>WHY CHOOSE PAPA VER'S BUNDATAN?</h2>
-<video width="100%" autoplay muted loop>
-    <source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4"></video>
-        <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares (pares overload, lechon pares, beef pares), rice meals (fried chicken, tapa w/ egg, fried liempo, chicharon bulaklak w/ rice, fried porkchop), sizzling (liempo, pork chop, chicken), short orders (chicharon bulaklak, pork sisig, lechon kawali), drinks, and extras (rice and egg).</p>
-</div>
-      <div class="card">
-  <h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
-  <video width="100%" autoplay muted loop>
-    <source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4"></video>
-        <p>The overall atmosphere in Papa Ver’s Bundatan suggests a casual dining experience, offering meals that are good value for money which caused customers to come back.</p>
-    </div>
+  <div class="card">
+    <h2>WHY CHOOSE PAPA VER'S BUNDATAN?</h2>
+    <video width="100%" autoplay muted loop>
+      <source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4">
+    </video>
+    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares (pares overload, lechon pares, beef pares), rice meals (fried chicken, tapa w/ egg, fried liempo, chicharon bulaklak w/ rice, fried porkchop), sizzling (liempo, pork chop, chicken), short orders (chicharon bulaklak, pork sisig, lechon kawali), drinks, and extras (rice and egg).</p>
+  </div>
+  <div class="card">
+    <h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
+    <video width="100%" autoplay muted loop>
+      <source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4">
+    </video>
+    <p>The overall atmosphere in Papa Ver’s Bundatan suggests a casual dining experience, offering meals that are good value for money which caused customers to come back.</p>
   </div>
 </div>
 
 <footer style="background-color: #F78702; color: white; text-align: center; padding: 20px;">
-  &copy; 2024 Papa Ver's Bundatan. <br>
-All Rights Reserved.
+  &copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.
 </footer>
 
 <script>
@@ -438,7 +732,7 @@ function openNav() {
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft= "0";
+  document.getElementById("main").style.marginLeft = "0";
 }
 
 function openPopup(popupId) {
@@ -451,9 +745,16 @@ function closePopup(popupId) {
   modal.style.display = "none";
 }
 
-</script>
-
-<script>
+// FAQ dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+  var faqQuestions = document.querySelectorAll('.faq-question');
+  faqQuestions.forEach(function(question) {
+    question.addEventListener('click', function() {
+      this.nextElementSibling.style.display = 
+        this.nextElementSibling.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+});
 
 var slideIndex = 0;
 showSlides();
@@ -467,10 +768,84 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000);
+  setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
-
 </script>
 
+<script>
+var dropdown = document.getElementsByClassName("dropdown-btn");
+var i;
+
+for (i = 0; i < dropdown.length; i++) {
+  dropdown[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var dropdownContent = this.nextElementSibling;
+    if (dropdownContent.style.display === "block") {
+      dropdownContent.style.display = "none";
+    } else {
+      dropdownContent.style.display = "block";
+    }
+  });
+}
+</script>
+<script>
+// Load feedback from local storage when the page loads
+document.addEventListener("DOMContentLoaded", function() {
+  var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
+  var feedbackDisplay = document.getElementById("feedbackDisplay");
+
+  storedFeedback.forEach(function(feedback) {
+    var feedbackElement = document.createElement("p");
+    feedbackElement.textContent = `"${feedback.text}" - ${feedback.name}`;
+    feedbackDisplay.appendChild(feedbackElement);
+  });
+
+  showSlides(0); // Initialize slider with the first slide
+});
+
+// Handle form submission
+document.getElementById("feedbackForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+  
+  // Get user input
+  var userName = document.getElementById("userName").value;
+  var userFeedback = document.getElementById("userFeedback").value;
+
+  // Create new feedback element
+  var feedbackElement = document.createElement("p");
+  feedbackElement.textContent = `"${userFeedback}" - ${userName}`;
+  document.getElementById("feedbackDisplay").appendChild(feedbackElement);
+
+  // Save feedback to local storage
+  var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
+  storedFeedback.push({ name: userName, text: userFeedback });
+  localStorage.setItem("feedback", JSON.stringify(storedFeedback));
+
+  // Clear the form
+  document.getElementById("feedbackForm").reset();
+  
+  showSlides(storedFeedback.length - 1); // Show the newly added slide
+});
+
+// Slider functionality
+var slideIndex = 0;
+
+function moveSlides(n) {
+  var slides = document.getElementsByClassName("feedback-slides")[0];
+  var totalSlides = slides.children.length;
+
+  slideIndex += n;
+  if (slideIndex >= totalSlides) { slideIndex = 0; }
+  if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+
+  showSlides(slideIndex);
+}
+
+function showSlides(n) {
+  var slides = document.getElementsByClassName("feedback-slides")[0];
+  slides.style.transform = `translateX(-${n * 100}%)`;
+}
+</script>
 </body>
-      </html>
+</html>
+  
