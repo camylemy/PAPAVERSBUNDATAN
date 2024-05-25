@@ -726,16 +726,16 @@ nav button:nth-child(2) {
 </footer>
 
 <script>
+// Open and close sidebar
 function openNav() {
   document.getElementById("mySidebar").style.width = "300px";
-  document.getElementById("main").style.marginLeft = "0px";
 }
 
 function closeNav() {
   document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
 }
 
+// Popup functionality
 function openPopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "block";
@@ -757,85 +757,55 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2000); // Change image every 2 seconds
-}
-</script>
-
-<script>
-var dropdown = document.getElementsByClassName("dropdown-btn");
-var i;
-
-for (i = 0; i < dropdown.length; i++) {
-  dropdown[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var dropdownContent = this.nextElementSibling;
-    if (dropdownContent.style.display === "block") {
-      dropdownContent.style.display = "none";
-    } else {
-      dropdownContent.style.display = "block";
-    }
-  });
-}
-</script>
-<script>
-// Load feedback from local storage when the page loads
+// Slider functionality
 document.addEventListener("DOMContentLoaded", function() {
   var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
   var feedbackDisplay = document.getElementById("feedbackDisplay");
 
   storedFeedback.forEach(function(feedback) {
     var feedbackElement = document.createElement("p");
-    feedbackElement.textContent = feedback;
+    feedbackElement.textContent = `"${feedback.text}" - ${feedback.name}`;
     feedbackDisplay.appendChild(feedbackElement);
   });
+
+  showSlides(0);
 });
 
 document.getElementById("feedbackForm").addEventListener("submit", function(event) {
   event.preventDefault();
-
+  
   var userName = document.getElementById("userName").value;
   var userFeedback = document.getElementById("userFeedback").value;
 
-  var feedbackDisplay = document.getElementById("feedbackDisplay");
   var feedbackElement = document.createElement("p");
-  feedbackElement.textContent = userName + ": " + userFeedback;
-  feedbackDisplay.appendChild(feedbackElement);
+  feedbackElement.textContent = `"${userFeedback}" - ${userName}`;
+  document.getElementById("feedbackDisplay").appendChild(feedbackElement);
 
   var storedFeedback = JSON.parse(localStorage.getItem("feedback")) || [];
-  storedFeedback.push(userName + ": " + userFeedback);
+  storedFeedback.push({ name: userName, text: userFeedback });
   localStorage.setItem("feedback", JSON.stringify(storedFeedback));
 
-  document.getElementById("userName").value = "";
-  document.getElementById("userFeedback").value = "";
+  document.getElementById("feedbackForm").reset();
+  
+  showSlides(storedFeedback.length - 1);
 });
 
-var currentSlideIndex = 0;
-showFeedbackSlides(currentSlideIndex);
+var slideIndex = 0;
 
 function moveSlides(n) {
-  showFeedbackSlides(currentSlideIndex += n);
+  var slides = document.getElementsByClassName("feedback-slides")[0];
+  var totalSlides = slides.children.length;
+
+  slideIndex += n;
+  if (slideIndex >= totalSlides) { slideIndex = 0; }
+  if (slideIndex < 0) { slideIndex = totalSlides - 1; }
+
+  showSlides(slideIndex);
 }
 
-function showFeedbackSlides(n) {
-  var slides = document.getElementsByClassName("feedback-slides")[0].getElementsByTagName("p");
-  if (n >= slides.length) { currentSlideIndex = 0 }
-  if (n < 0) { currentSlideIndex = slides.length - 1 }
-  for (var i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  slides[currentSlideIndex].style.display = "block";
+function showSlides(n) {
+  var slides = document.getElementsByClassName("feedback-slides")[0];
+  slides.style.transform = `translateX(-${n * 100}%)`;
 }
 </script>
 </body>
