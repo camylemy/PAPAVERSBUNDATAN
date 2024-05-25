@@ -550,14 +550,16 @@ nav button:nth-child(2) {
   font-family: 'Barlow Condensed', sans-serif;
 }
 
-.prev, .next { cursor: pointer; position: absolute; top: 45%; width: auto; margin-top: -19px; padding: 16px; color: white; font-weight: bold; font-size: 18px; border-radius: 0 3px 3px 0; user-select: none; transition: 0.6s ease; outline: none; opacity: 0.5; }
+.prev, .next { cursor: pointer; position: absolute; top: 45%; width: auto; margin-top: -19px; padding: 16px; color: white; font-weight: bold; font-size: 18px; border-radius: 0 3px 3px 0; user-select: none; transition: 0.6s ease; outline: none; }
 
 .next {
+  opacity: 0.5;
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
 .prev {
+  opacity: 0.5;
   left: 0;
   border-radius: 3px 3px 0 0;
 }
@@ -685,7 +687,7 @@ nav button:nth-child(2) {
     
     <button class="dropdown-btn">What are your payment methods?</button>
     <div class="dropdown-container">
-      <p>For now, we are only accepting cash. Online payment transactions are unavailable.</p>
+      <p>For now, we are only accepting cash. Online payment transactions are unavailable.</p> </div>
     </div>
   </div>
 </div>
