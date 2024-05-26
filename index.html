@@ -210,9 +210,16 @@ body {
   background-color: #EEB82E;
   padding: 10px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  flex-basis: calc(50% - 20px);
+  flex-basis: calc(33% - 20px);
   margin-bottom: 2%;
   width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 .card h2 {
@@ -241,22 +248,189 @@ body {
   }
 }
 
-.mySlides {
+.faq h3 {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #F78702;
+  color: white;
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq p {
+  display: none;
+  padding: 10px;
+  background-color: #FFDAB9;
+  margin: 0;
+  font-size: 18px;
+}
+
+.faq h3.active + p {
+  display: block;
+}
+
+.faq h3:hover {
+  background-color: #EEB82E;
+}
+
+.faq h3 .icon {
+  transition: transform 0.3s ease;
+}
+
+.faq h3.active .icon {
+  transform: rotate(180deg);
+}
+
+.feedback-display {
+  position: relative;
+  max-width: 100%;
+  margin-top: 20px;
+}
+
+.feedback-slide {
+  display: none;
+  text-align: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+
+.feedback-slide.active {
+  display: block;
+}
+
+.feedback-display .prev,
+.feedback-display .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.feedback-display .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.feedback-display .prev {
+  left: 0;
+}
+
+.feedback-display .prev:hover,
+.feedback-display .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.star {
+  font-size: 30px;
+  cursor: pointer;
+  color: #ddd;
+  transition: color 0.2s;
+}
+
+.star.selected,
+.star.hover {
+  color: #FFD700;
+}
+.feedback-display {
+  margin-top: 20px;
+}
+
+.feedback-slides {
+  position: relative;
+}
+
+.feedback-slide {
   display: none;
 }
 
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+.feedback-slide.active {
+  display: block;
 }
 
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#feedbackForm {
+  display: flex;
+  flex-direction: column;
+}
+
+#feedbackForm label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+#feedbackForm input,
+#feedbackForm textarea {
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#feedbackForm button {
+  font-size: 18px;
+  background-color: #F78702;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#feedbackForm button:hover {
+  background-color: #EEB82E;
 }
 
 .button {
@@ -362,7 +536,7 @@ body {
     font-size: 18px;
     opacity: 0.5;
     transition: 0.3s;
-    
+
 }
 
 #scrollTopBtn:hover {
@@ -435,7 +609,7 @@ body {
     <video width="100%" autoplay muted loop>
       <source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4">
     </video>
-    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares, rice meals, sizzling,  short orders, drinks, and extras.</p>
+    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares, rice meals, sizzling, short orders, drinks, and extras.</p>
   </div>
   <div class="card">
     <h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
@@ -443,6 +617,46 @@ body {
       <source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4">
     </video>
     <p>Papa Ver’s Bundatan offer meals that are good value for money which caused customers to come back. You can taste a delicious meal for as low as PHP. 99.00!</p>
+  </div>
+  <div class="card">
+    <h2>FREQUENTLY ASKED QUESTIONS</h2>
+    <div class="faq">
+      <h3>What are your operating hours?
+        <i class="fas fa-chevron-down icon"></i>
+      </h3>
+      <p>We are open from 10 AM to 10 PM daily.</p>
+      <h3>Do you offer delivery?
+        <i class="fas fa-chevron-down icon"></i>
+      </h3>
+      <p>Yes, we offer delivery services within a 5km radius.</p>
+      <h3>What payment methods do you accept?
+        <i class="fas fa-chevron-down icon"></i>
+      </h3>
+      <p>We accept cash, credit cards, and popular e-wallets.</p>
+    </div>
+  </div>
+  <div class="card">
+  <h2>Rate Us</h2>
+  <form id="feedbackForm">
+    <div class="rating">
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <span class="star">&#9733;</span>
+      <input type="hidden" id="rating" name="rating" value="0">
+    </div>
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="message">Message:</label>
+    <textarea id="message" name="message" required></textarea>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div class="feedback-display">
+    <div class="feedback-slides"></div>
+    <a class="prev" onclick="changeSlide(-1)" style="display: none;">&#10094;</a>
+    <a class="next" onclick="changeSlide(1)" style="display: none;">&#10095;</a>
   </div>
 </div>
 
@@ -505,6 +719,147 @@ function topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  var faqHeaders = document.querySelectorAll('.faq h3');
+  
+  faqHeaders.forEach(function(header) {
+    header.addEventListener('click', function() {
+      faqHeaders.forEach(function(h) {
+        if (h !== header) {
+          h.classList.remove('active');
+          h.nextElementSibling.style.display = "none";
+        }
+      });
+      
+      this.classList.toggle('active');
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const stars = document.querySelectorAll('.star');
+  const ratingInput = document.getElementById('rating');
+
+  stars.forEach((star, index) => {
+    star.addEventListener('click', function () {
+      const rating = index + 1;
+      ratingInput.value = rating;
+      stars.forEach((s, i) => {
+        s.classList.toggle('selected', i < rating);
+      });
+    });
+
+    star.addEventListener('mouseover', function () {
+      const rating = index + 1;
+      stars.forEach((s, i) => {
+        s.classList.toggle('hover', i < rating);
+      });
+    });
+
+    star.addEventListener('mouseout', function () {
+      stars.forEach((s, i) => {
+        s.classList.remove('hover');
+      });
+    });
+  });
+
+  const feedbackForm = document.getElementById('feedbackForm');
+  feedbackForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitFeedback();
+  });
+});
+
+let feedbacks = [];
+let currentSlide = 0;
+
+function submitFeedback() {
+  const rating = document.getElementById('rating').value;
+  const name = document.getElementById('name').value;
+  const message = document.getElementById('message').value;
+
+  feedbacks.push({ rating, name, message });
+  displayFeedback(currentSlide = feedbacks.length - 1);
+
+  document.getElementById('feedbackForm').reset();
+  document.querySelectorAll('.star').forEach(star => star.classList.remove('selected'));
+  document.getElementById('rating').value = '0';
+
+  const prevButton = document.querySelector('.prev');
+  const nextButton = document.querySelector('.next');
+
+  if (feedbacks.length > 1) {
+    prevButton.style.display = 'block';
+    nextButton.style.display = 'block';
+  }
+}
+
+function displayFeedback(index) {
+  const feedbackContainer = document.querySelector('.feedback-slides');
+  feedbackContainer.innerHTML = feedbacks.map((feedback, i) => `
+    <div class="feedback-slide ${i === index ? 'active' : ''}">
+      <p>Rating: ${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
+      <p><strong>${feedback.name}</strong></p>
+      <p>${feedback.message}</p>
+    </div>
+  `).join('');
+}
+
+function changeSlide(direction) {
+  currentSlide = (currentSlide + direction + feedbacks.length) % feedbacks.length;
+  displayFeedback(currentSlide);
+}
+
+</script>
+
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+  const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+
+  displayFeedbacks();
+
+  const feedbackForm = document.getElementById('feedbackForm');
+  feedbackForm.addEventListener('submit', function (event) {
+    event.preventDefault();
+    submitFeedback();
+  });
+
+  function submitFeedback() {
+    const rating = document.getElementById('rating').value;
+    const name = document.getElementById('name').value;
+    const message = document.getElementById('message').value;
+
+    const feedback = { rating, name, message };
+    feedbacks.push(feedback);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+
+    displayFeedbacks();
+    feedbackForm.reset();
+  }
+
+  function displayFeedbacks() {
+    const feedbackContainer = document.getElementById('feedbackContainer');
+    feedbackContainer.innerHTML = '';
+
+    feedbacks.forEach(feedback => {
+      const div = document.createElement('div');
+      div.innerHTML = `
+        <p><strong>Name:</strong> ${feedback.name}</p>
+        <p><strong>Rating:</strong> ${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
+        <p><strong>Message:</strong> ${feedback.message}</p>
+      `;
+      feedbackContainer.appendChild(div);
+    });
+  }
+});
 
 </script>
 </body>
