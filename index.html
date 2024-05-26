@@ -188,14 +188,11 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 <script>
 
-function openNav() {document.getElementById("mySidebar").style.width = "300px";}
-function closeNav() {
-document.getElementById("mySidebar").style.width = "0";}
+function openNav() {document.getElementById("mySidebar").classList.add("open");}
+function closeNav() {document.getElementById("mySidebar").classList.remove("open");}
+
 function openPopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "block";}
-function closePopup(popupId) {
-  var modal = document.getElementById(popupId);
-  modal.style.display = "none";
-}
+function closePopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "none";}
 
 let lastScrollTop = 0;
 const footer = document.getElementById("footer");
