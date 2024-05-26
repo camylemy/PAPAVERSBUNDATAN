@@ -861,6 +861,13 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
+try {
+  const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
+  // Perform operations on feedbacks array
+} catch (error) {
+  console.error('Error accessing local storage:', error);
+}
+
 </script>
 </body>
 </html>
