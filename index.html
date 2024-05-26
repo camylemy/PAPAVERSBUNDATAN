@@ -421,9 +421,9 @@ body {
   &copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.
 </footer>
 
-<footer class="footer">
-  <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
-</footer>
+ <footer class="footer" id="footer">
+    <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
+  </footer>
 
 <script>
 
@@ -444,6 +444,19 @@ function closePopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "none";
 }
+
+let lastScrollTop = 0;
+    const footer = document.getElementById("footer");
+
+    window.addEventListener("scroll", function() {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      if (currentScroll > lastScrollTop) {
+        footer.style.transform = "translateY(100%)";
+      } else {
+        footer.style.transform = "translateY(0)";
+      }
+      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+    });
 
 </script>
 </body>
