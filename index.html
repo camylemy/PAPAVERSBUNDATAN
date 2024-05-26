@@ -252,10 +252,9 @@ body {
   cursor: pointer;
   padding: 10px;
   background-color: #F78702;
-  color: white;
+  color: black;
   margin: 0;
   font-size: 20px;
-  font-weight: bold;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -264,7 +263,8 @@ body {
 .faq p {
   display: none;
   padding: 10px;
-  background-color: #FFDAB9;
+  background-color: #EEB82E;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   margin: 0;
   font-size: 18px;
 }
@@ -285,153 +285,6 @@ body {
   transform: rotate(180deg);
 }
 
-.feedback-display {
-  position: relative;
-  max-width: 100%;
-  margin-top: 20px;
-}
-
-.feedback-slide {
-  display: none;
-  text-align: center;
-  padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
-}
-
-.feedback-slide.active {
-  display: block;
-}
-
-.feedback-display .prev,
-.feedback-display .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.feedback-display .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.feedback-display .prev {
-  left: 0;
-}
-
-.feedback-display .prev:hover,
-.feedback-display .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-}
-
-.rating {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.star {
-  font-size: 30px;
-  cursor: pointer;
-  color: #ddd;
-  transition: color 0.2s;
-}
-
-.star.selected,
-.star.hover {
-  color: #FFD700;
-}
-.feedback-display {
-  margin-top: 20px;
-}
-
-.feedback-slides {
-  position: relative;
-}
-
-.feedback-slide {
-  display: none;
-}
-
-.feedback-slide.active {
-  display: block;
-}
-
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: black;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.prev {
-  left: 0;
-  border-radius: 3px 3px 3px 3px;
-}
-
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-#feedbackForm {
-  display: flex;
-  flex-direction: column;
-}
-
-#feedbackForm label {
-  font-size: 20px;
-  margin-bottom: 5px;
-}
-
-#feedbackForm input,
-#feedbackForm textarea {
-  font-size: 16px;
-  margin-bottom: 10px;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-#feedbackForm button {
-  font-size: 18px;
-  background-color: #F78702;
-  color: white;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-#feedbackForm button:hover {
-  background-color: #EEB82E;
-}
 
 .button {
   font-family: 'Barlow Condensed';
@@ -635,29 +488,6 @@ body {
       <p>We accept cash, credit cards, and popular e-wallets.</p>
     </div>
   </div>
-  <div class="card">
-  <h2>Rate Us</h2>
-  <form id="feedbackForm">
-    <div class="rating">
-      <span class="star">&#9733;</span>
-      <span class="star">&#9733;</span>
-      <span class="star">&#9733;</span>
-      <span class="star">&#9733;</span>
-      <span class="star">&#9733;</span>
-      <input type="hidden" id="rating" name="rating" value="0">
-    </div>
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name" required>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message" required></textarea>
-    <button type="submit">Submit</button>
-  </form>
-
-  <div class="feedback-display"; id="feedbackContainer">
-    <div class="feedback-slides"></div>
-    <a class="prev" onclick="changeSlide(-1)" style="display: none;">&#10094;</a>
-    <a class="next" onclick="changeSlide(1)" style="display: none;">&#10095;</a>
-  </div>
 </div>
 
 <footer style="background-color: #F78702; color: white; text-align: center; padding: 18px; width: 100%;">
@@ -742,131 +572,6 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
-
-document.addEventListener('DOMContentLoaded', function () {
-  const stars = document.querySelectorAll('.star');
-  const ratingInput = document.getElementById('rating');
-
-  stars.forEach((star, index) => {
-    star.addEventListener('click', function () {
-      const rating = index + 1;
-      ratingInput.value = rating;
-      stars.forEach((s, i) => {
-        s.classList.toggle('selected', i < rating);
-      });
-    });
-
-    star.addEventListener('mouseover', function () {
-      const rating = index + 1;
-      stars.forEach((s, i) => {
-        s.classList.toggle('hover', i < rating);
-      });
-    });
-
-    star.addEventListener('mouseout', function () {
-      stars.forEach((s, i) => {
-        s.classList.remove('hover');
-      });
-    });
-  });
-
-  const feedbackForm = document.getElementById('feedbackForm');
-  feedbackForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    submitFeedback();
-  });
-});
-
-let feedbacks = [];
-let currentSlide = 0;
-
-function submitFeedback() {
-  const rating = document.getElementById('rating').value;
-  const name = document.getElementById('name').value;
-  const message = document.getElementById('message').value;
-
-  feedbacks.push({ rating, name, message });
-  displayFeedback(currentSlide = feedbacks.length - 1);
-
-  document.getElementById('feedbackForm').reset();
-  document.querySelectorAll('.star').forEach(star => star.classList.remove('selected'));
-  document.getElementById('rating').value = '0';
-
-  const prevButton = document.querySelector('.prev');
-  const nextButton = document.querySelector('.next');
-
-  if (feedbacks.length > 1) {
-    prevButton.style.display = 'block';
-    nextButton.style.display = 'block';
-  }
-}
-
-function displayFeedback(index) {
-  const feedbackContainer = document.querySelector('.feedback-slides');
-  feedbackContainer.innerHTML = feedbacks.map((feedback, i) => `
-    <div class="feedback-slide ${i === index ? 'active' : ''}">
-      <p>Rating: ${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
-      <p><strong>${feedback.name}</strong></p>
-      <p>${feedback.message}</p>
-    </div>
-  `).join('');
-}
-
-function changeSlide(direction) {
-  currentSlide = (currentSlide + direction + feedbacks.length) % feedbacks.length;
-  displayFeedback(currentSlide);
-}
-
-</script>
-
-<script>
-
-document.addEventListener('DOMContentLoaded', function () {
-  const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-
-  displayFeedbacks();
-
-  const feedbackForm = document.getElementById('feedbackForm');
-  feedbackForm.addEventListener('submit', function (event) {
-    event.preventDefault();
-    submitFeedback();
-  });
-
-  function submitFeedback() {
-    const rating = document.getElementById('rating').value;
-    const name = document.getElementById('name').value;
-    const message = document.getElementById('message').value;
-
-    const feedback = { rating, name, message };
-    feedbacks.push(feedback);
-    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
-
-    displayFeedbacks();
-    feedbackForm.reset();
-  }
-
-  function displayFeedbacks() {
-    const feedbackContainer = document.getElementById('feedbackContainer');
-    feedbackContainer.innerHTML = '';
-
-    feedbacks.forEach(feedback => {
-      const div = document.createElement('div');
-      div.innerHTML = `
-        <p><strong>Name:</strong> ${feedback.name}</p>
-        <p><strong>Rating:</strong> ${'★'.repeat(feedback.rating)}${'☆'.repeat(5 - feedback.rating)}</p>
-        <p><strong>Message:</strong> ${feedback.message}</p>
-      `;
-      feedbackContainer.appendChild(div);
-    });
-  }
-});
-
-try {
-  const feedbacks = JSON.parse(localStorage.getItem('feedbacks')) || [];
-  // Perform operations on feedbacks array
-} catch (error) {
-  console.error('Error accessing local storage:', error);
-}
 
 </script>
 </body>
