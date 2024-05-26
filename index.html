@@ -14,7 +14,7 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 * { box-sizing: border-box; }
 
-.sidebar {cursor: pointer; height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); overflow-x: hidden; transition: 0.5s; padding-top: 80px;}
+.sidebar {cursor: pointer; height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); overflow-x: hidden; transition: width 0.5s; padding-top: 80px;}
 
 .sidebar-logo {width: 60%; height: auto; margin: 20px auto; display: block; border-radius: 50%;}
 
@@ -73,14 +73,12 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 @media screen and (max-width: 768px) {
 .card {flex-basis: 100%; margin-bottom: 20px;}}
-
 .card h2 {color: #F78702; font-size: 25px;}
-
 .card p {font-size: 20px; margin-top: 10px; font-weight: 400; color: black; text-indent: 50px; text-align: justify;}
 
-@media screen and (max-width: 768px) {
-.card-section {flex-direction: column; align-items: center;}
-.card {flex-basis: 100%; margin-bottom: 20px;}}
+@media screen and (min-width: 768px) {
+.card-section {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
+.card { background-color: #EEB82E; padding: 10px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); flex-basis: calc(50% - 20px); margin-bottom: 2%; width: 100%;}}
 
 .faq h3 {cursor: pointer; padding: 10px; background-color: #F78702; color: black; margin: 0; font-size: 20px; display: flex; justify-content: space-between; align-items: center;}
 .faq p {display: none; padding: 10px; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); margin: 0; font-size: 18px;}
