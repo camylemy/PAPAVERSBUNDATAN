@@ -7,394 +7,109 @@
 <link href="https://fonts.googleapis.com/css2?family=Style+Script&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
-body {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 400;
-  background-color: #EEB82E;
-  margin: 10px;
-}
+
+body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-color: #EEB82E; margin: 10px;}
 
 * { box-sizing: border-box; }
 
-.sidebar {
-  cursor: pointer;
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  background-color: #EEB82E;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 80px;
-}
+.sidebar {cursor: pointer;height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); overflow-x: hidden; transition: 0.5s; padding-top: 80px;}
 
-.sidebar-logo {
-  width: 60%; 
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  border-radius: 50%;
-}
+.sidebar-logo {width: 60%; height: auto; margin: 20px auto; display: block; border-radius: 50%;}
 
-.sidebar a {
-  padding: 8px 8px 8px 32px;
-  font-size: 25px;
-  text-decoration: none;
-  color: black;
-  display: block;
-  transition: 0.5s;
-}
+.sidebar a {padding: 8px 8px 8px 32px; font-size: 25px; text-decoration: none; color: black; display: block; transition: 0.5s;}
 
-.sidebar a:hover {
-  color: #FFDAB9;
-}
+.sidebar a:hover {color: #FFDAB9;}
 
-.sidebar .closebtn {
-  position: absolute;
-  top: 0px;
-  right: 15px;
-  font-size: 50px;
-  margin-left: 50px;
-}
+.sidebar .closebtn {position: absolute; top: 0px; right: 15px; font-size: 50px; margin-left: 50px;}
 
-.navbar-image {
-  width: 80%;
-  height: auto;
-  margin: 20px auto;
-  display: block;
-  border-radius: 5px;
-}
+.navbar-image {width: 80%; height: auto; margin: 20px auto; display: block; border-radius: 5px;}
 
-.openbtn {
-  font-size: 20px;
-  font-family: 'Barlow Condensed';
-  font-weight: 400;
-  cursor: pointer;
-  background-color: #F78702;
-  color: white;
-  top: 15px;
-  left: 10px;
-  bottom: auto;
-  left: auto;
-  width: auto;
-  padding: 10px 15px;
-  border: none;
-  align-items: center;
-}
+.openbtn {font-size: 20px; font-family: 'Barlow Condensed'; font-weight: 400; cursor: pointer; background-color: #F78702; color: white; top: 15px; left: 10px; bottom: auto; left: auto; width: auto; padding: 10px 15px; border: none; align-items: center;}
 
-.openbtn:hover {
-  color: #EEB82E;
-  transition: 0.3s;
-}
+.openbtn:hover {color: #EEB82E; transition: 0.3s;}
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.4);
-  border: 3px;
-  border-radius: 5px;
-  padding-top: 100px;
-  animation: bounceIn 0.5s ease-in-out;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
+.modal {display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); padding-top: 100px; animation: bounceIn 0.5s ease-in-out;}
 
-.modal-content {
-  background-color: #EEB82E;
-  margin: 5% auto;
-  padding: 20px;
-  width: 90%;
-}
+.modal-content {background-color: #EEB82E; margin: 5% auto; padding: 20px; width: 90%;}
 
 @keyframes bounceIn {
-  0% {
-    transform: scale(0.1);
-    opacity: 0;
-  }
-  60% {
-    transform: scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+0% {transform: scale(0.1); opacity: 0;}
+60% {transform: scale(1.2); opacity: 1;}
+100% {transform: scale(1);}}
 
-.close {
-  color: black;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
+.close {color: black; float: right; font-size: 28px; font-weight: bold;}
 
 .close:hover,
-.close:focus {
-  color: #EEB82E;
-  text-decoration: none;
-  cursor: pointer;
-}
+.close:focus {color: #EEB82E; text-decoration: none; cursor: pointer;}
 
-.contact-number {
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-}
+.contact-number {font-size: 20px; color: black; text-decoration: none;}
 
-.contact-number:hover {
-  color: #FFDAB9;
-}
+.contact-number:hover {color: #FFDAB9;}
 
-.contact-info {
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-}
+.contact-info {font-size: 20px; color: black; text-decoration: none;}
 
-.contact-info:hover {
-  color: #FFDAB9;
-}
+.contact-info:hover {color: #FFDAB9;}
 
-.contact-facebook {
-  font-size: 20px;
-  color: black;
-  text-decoration: none;
-}
+.contact-facebook {font-size: 20px; color: black;  text-decoration: none;}
 
-.contact-facebook:hover {
-  color: #EEB82E;
-}
+.contact-facebook:hover {color: #EEB82E;}
 
 @media screen and (max-width: 768px) {
-  .modal-content {
-    width: 90%;
-    margin: 10% auto;
-  }
-}
+.modal-content {width: 90%; margin: 10% auto;}}
 
 @media screen and (max-width: 576px) {
-  .modal-content {
-    width: 95%;
-    margin: 15% auto;
-  }
-}
+.modal-content {width: 95%; margin: 15% auto;}}
 
 @media screen and (max-width: 480px) {
-  .modal-content {
-    width: 98%;
-    margin: 20% auto;
-  }
-}
+.modal-content {width: 98%; margin: 20% auto;}}
 
-.main-content {
-  transition: margin-left 0.5s;
-  padding: 50px;
-}
+.main-content {transition: margin-left 0.5s; padding: 50px;}
 
-.card-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-top: 20px;
-}
+.card-section {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
 
-.card {
-  background-color: #EEB82E;
-  padding: 10px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  flex-basis: calc(33% - 20px);
-  margin-bottom: 2%;
-  width: 100%;
-}
+.card {background-color: #EEB82E; padding: 10px;  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); flex-basis: calc(33% - 20px); margin-bottom: 2%; width: 100%;}
 
 @media screen and (max-width: 768px) {
-  .card {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-  }
-}
+.card {flex-basis: 100%; margin-bottom: 20px;}}
 
-.card h2 {
-  color: #F78702;
-  font-size: 25px;
-}
+.card h2 {color: #F78702; font-size: 25px;}
 
-.card p {
-  font-size: 20px;
-  margin-top: 10px;
-  font-weight: 400;
-  color: black;
-  text-indent: 50px;
-  text-align: justify; 
-}
+.card p {font-size: 20px; margin-top: 10px; font-weight: 400; color: black; text-indent: 50px; text-align: justify;}
 
 @media screen and (max-width: 768px) {
-  .card-section {
-    flex-direction: column;
-    align-items: center;
-  }
+.card-section {flex-direction: column; align-items: center;}
+.card {flex-basis: 100%; margin-bottom: 20px;}}
 
-  .card {
-    flex-basis: 100%;
-    margin-bottom: 20px;
-  }
-}
+.faq h3 {cursor: pointer; padding: 10px; background-color: #F78702; color: black; margin: 0; font-size: 20px; display: flex; justify-content: space-between; align-items: center;}
+.faq p {display: none; padding: 10px; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); margin: 0; font-size: 18px;}
+.faq h3.active + p {display: block;}
+.faq h3:hover {background-color: #EEB82E;}
+.faq h3 .icon {transition: transform 0.3s ease;}
+.faq h3.active .icon {transform: rotate(180deg);}
 
-.faq h3 {
-  cursor: pointer;
-  padding: 10px;
-  background-color: #F78702;
-  color: black;
-  margin: 0;
-  font-size: 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.faq p {
-  display: none;
-  padding: 10px;
-  background-color: #EEB82E;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  margin: 0;
-  font-size: 18px;
-}
-
-.faq h3.active + p {
-  display: block;
-}
-
-.faq h3:hover {
-  background-color: #EEB82E;
-}
-
-.faq h3 .icon {
-  transition: transform 0.3s ease;
-}
-
-.faq h3.active .icon {
-  transform: rotate(180deg);
-}
-
-
-.button {
-  font-family: 'Barlow Condensed';
-  font-weight: 400;
-  text-align: center;
-  background-color: #F78702;
-  color: white;
-  padding: 10px 15px;
-  align-items: center;
-  text-decoration: none;
-  display: block;
-  font-size: 20px;
-  width: 40%;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.button:hover {
-  color: #EEB82E;
-}
+.button {font-family: 'Barlow Condensed'; font-weight: 400; text-align: center; background-color: #F78702; color: white; padding: 10px 15px; align-items: center; text-decoration: none; display: block; font-size: 20px; width: 40%; border: none; cursor: pointer; transition: 0.3s;}
+.button:hover {color: #EEB82E;}
 
 @media screen and (min-width: 768px) {
-  .button {
-    top: 15px;
-    right: 10px;
-    bottom: auto;
-    left: auto;
-    width: auto;
-    padding: 10px 15px;
-  }
-}
+.button {top: 15px; right: 10px; bottom: auto; left: auto; width: auto; padding: 10px 15px;}}
 
-.contact-info,
-.contact-facebook,
-.contact-number {
-  font-size: 30px;
-  font-family: 'Barlow Condensed';
-  text-align: center;
-  display: block;
-  margin-bottom: 10px;
-}
+.contact-info,.contact-facebook,.contact-number {font-size: 30px; font-family: 'Barlow Condensed'; text-align: center; display: block; margin-bottom: 10px;}
 
 @media screen and (max-width: 768px) {
-  .video-container {
-    width: 90%;
-  }
-}
-
+.video-container {width: 90%;}}
 @media screen and (max-width: 576px) {
-  .video-container {
-    width: 95%;
-  }
-}
-
+.video-container {width: 95%;}}
 @media screen and (max-width: 480px) {
-  .video-container {
-    width: 98%;
-  }
-}
+.video-container {width: 98%;}}
 
-.footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #EEB82E;
-  color: white;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  z-index: 999;
-  display: flex;
-}
-
+.footer {position: fixed; bottom: 0; left: 0; width: 100%; background-color: #EEB82E; color: white; align-items: center; justify-content: center; padding: 15px; z-index: 999; display: flex;}
 @media screen and (min-width: 768px) {
-  .footer {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    bottom: auto;
-    left: auto;
-    width: auto;
-    padding: 10px 15px;
-    border: 2px solid #F78702;
-  }
-}
+.footer {position: fixed; top: 10px; right: 10px; bottom: auto; left: auto; width: auto; padding: 10px 15px; border: 2px solid #F78702;}}
 
-#scrollTopBtn {
-    font-family: 'Barlow Condensed';
-    display: none; 
-    position: fixed;
-    bottom: 110px;
-    right: 20px;
-    z-index: 99;
-    border: none; 
-    outline: none; 
-    background-color: #F78702;
-    color: white;
-    cursor: pointer;
-    padding: 14px;
-    font-size: 18px;
-    opacity: 0.5;
-    transition: 0.3s;
-
-}
-
-#scrollTopBtn:hover {
-    background-color: #EEB82E;
-}
+#scrollTopBtn {font-family: 'Barlow Condensed'; display: none; position: fixed; bottom: 110px; right: 20px; z-index: 99; border: none; outline: none; background-color: #F78702; color: white; cursor: pointer; padding: 14px; font-size: 18px; opacity: 0.5; transition: 0.3s;}
+#scrollTopBtn:hover {background-color: #EEB82E;}
 
 </style>
 </head>
@@ -403,174 +118,106 @@ body {
 
 <button class="openbtn" onclick="openNav()">≡</button>
 
-<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1>
-
-<br>
+<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1> <br>
 
 <video width="100%" autoplay muted loop>
-  <source src="./imgs/start.mp4" type="video/mp4">
-</video>
+  <source src="./imgs/start.mp4" type="video/mp4"></video>
 
 <div id="mySidebar" class="sidebar">
-  <img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
-  <a href="#" class="closebtn" onclick="closeNav()">×</a>
-  <a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
-  <a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
-  <a id="findLink" onclick="openPopup('findPopup')">FIND US</a> <br>
-  <img src="./imgs/Messenger_creation_8ae05554-9b2b-4e36-ae03-61ea096d5e3c.jpeg" alt="Image" class="navbar-image"> <br>
-
+<img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
+<a href="#" class="closebtn" onclick="closeNav()">×</a>
+<a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
+<a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
+<a id="findLink" onclick="openPopup('findPopup')">FIND US</a> <br>
+<img src="./imgs/Messenger_creation_8ae05554-9b2b-4e36-ae03-61ea096d5e3c.jpeg" alt="Image" class="navbar-image"> <br>
 </div>
 </div>
 
 <div id="aboutPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('aboutPopup')">×</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
-    <p style="font-size: 30px; text-indent: 50px; text-align: justify; ">Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
-  </div>
+<div class="modal-content">
+<span class="close" onclick="closePopup('aboutPopup')">×</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
+<p style="font-size: 30px; text-indent: 50px; text-align: justify; ">Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
 </div>
-
+</div>
 <div id="contactPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('contactPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
-    <a href="tel:+639453746617" class="contact-number">
-      <i class="fas fa-phone"></i> +63 908 963 0064
-    </a> <br>
-    <a href="mailto: tudacamillered@gmail.com" class="contact-info">
-      <i class="fas fa-envelope"></i> dino.clemente06@gmail.com
-    </a> <br>
-    <a href="https://www.facebook.com/marverslafang?mibextid=YMEMSu" class="contact-facebook">
-      <i class="fab fa-facebook"></i>
-      facebook
-    </a>
-  </div>
+<div class="modal-content">
+<span class="close" onclick="closePopup('contactPopup')">&times;</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
+<a href="tel:+639453746617" class="contact-number"><i class="fas fa-phone"></i> +63 908 963 0064</a> <br>
+<a href="mailto: tudacamillered@gmail.com" class="contact-info"><i class="fas fa-envelope"></i> dino.clemente06@gmail.com</a> <br> 
+<ahref="https://www.facebook.com/marverslafang?mibextid=YMEMSu" class="contact-facebook"><i class="fab fa-facebook"></i>facebook</a>
 </div>
-
+</div>
 <div id="findPopup" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closePopup('findPopup')">&times;</span>
-    <h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">We are located at...</h1>
-    <p style="font-size: 30px;">2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila.</p>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+<div class="modal-content">
+<span class="close" onclick="closePopup('findPopup')">&times;</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">We are located at...</h1>
+<p style="font-size: 30px;">2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila.</p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 </div>
 
 <div class="card-section">
-  <div class="card">
-    <h2>WHY CHOOSE PAPA VER'S BUNDATAN?</h2>
-    <video width="100%" autoplay muted loop>
-      <source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4">
-    </video>
-    <p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares, rice meals, sizzling, short orders, drinks, and extras.</p>
-  </div>
-  <div class="card">
-    <h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
-    <video width="100%" autoplay muted loop>
-      <source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4">
-    </video>
-    <p>Papa Ver’s Bundatan offer meals that are good value for money which caused customers to come back. You can taste a delicious meal for as low as PHP. 99.00!</p>
-  </div>
-  <div class="card">
-    <h2>FREQUENTLY ASKED QUESTIONS</h2>
-    <div class="faq">
-      <h3>What are your operating hours?
-        <i class="fas fa-chevron-down icon"></i>
-      </h3>
-      <p>We are open from 10 AM to 10 PM daily.</p>
-      <h3>Do you offer delivery?
-        <i class="fas fa-chevron-down icon"></i>
-      </h3>
-      <p>Yes, we offer delivery services within a 5km radius.</p>
-      <h3>What payment methods do you accept?
-        <i class="fas fa-chevron-down icon"></i>
-      </h3>
-      <p>We accept cash, credit cards, and popular e-wallets.</p>
-    </div>
-  </div>
+<div class="card">
+<h2>WHY CHOOSE PAPA VER'S BUNDATAN?</h2>
+<video width="100%" autoplay muted loop>
+<source src="./imgs/InShot_20240422_082715644.mp4" type="video/mp4"></video>
+<p>In Papa Ver's Bundatan, you can order different kinds of meals such as silog, mami, pares, rice meals, sizzling, short orders, drinks, and extras.</p>
+</div>
+<div class="card">
+<h2>WHAT MAKES OUR EATERY SPECIAL?</h2>
+<video width="100%" autoplay muted loop>
+<source src="./imgs/InShot_20240422_082912259.mp4" type="video/mp4"></video>
+<p>Papa Ver’s Bundatan offer meals that are good value for money which caused customers to come back. You can taste a delicious meal for as low as PHP. 99.00!</p>
+</div>
+<div class="card">
+<h2>FREQUENTLY ASKED QUESTIONS</h2>
+<div class="faq">
+<h3>What are your operating hours?
+<i class="fas fa-chevron-down icon"></i></h3><p>We are open from 1 PM to 10 PM, Monday to Saturday.</p>
+<h3>Do you offer delivery?<i class="fas fa-chevron-down icon"></i></h3><p>No, we do not offer delivery. Customers can place orders online, but will pick-up it up in the eatery and pay.</p>
+<h3>What payment methods do you accept?<i class="fas fa-chevron-down icon"></i></h3><p>For now, we only accept cash. Online payment transactions are unavailable.</p>
+</div>
+</div>
 </div>
 
-<footer style="background-color: #F78702; color: white; text-align: center; padding: 18px; width: 100%;">
-  &copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.
-</footer>
-
- <footer class="footer" id="footer">
-    <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
-  </footer>
+<footer style="background-color: #F78702; color: white; text-align: center; padding: 18px; width: 100%;">&copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.</footer>
+<footer class="footer" id="footer">
+<button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button></footer>
 
 <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">TOP</button>
 
 <script>
 
-function openNav() {
-  document.getElementById("mySidebar").style.width = "300px";
-}
-
+function openNav() {document.getElementById("mySidebar").style.width = "300px";}
 function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-}
-
-function openPopup(popupId) {
-  var modal = document.getElementById(popupId);
-  modal.style.display = "block";
-}
-
+document.getElementById("mySidebar").style.width = "0";}
+function openPopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "block";}
 function closePopup(popupId) {
   var modal = document.getElementById(popupId);
   modal.style.display = "none";
 }
 
 let lastScrollTop = 0;
-    const footer = document.getElementById("footer");
-
-    window.addEventListener("scroll", function() {
-      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      if (currentScroll > lastScrollTop) {
-        footer.style.transform = "translateY(100%)";
-      } else {
-        footer.style.transform = "translateY(0)";
-      }
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-    });
-
+const footer = document.getElementById("footer");
+window.addEventListener("scroll", function() {
+const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+if (currentScroll > lastScrollTop) {footer.style.transform = "translateY(100%)";} else{footer.style.transform = "translateY(0)";}
+lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;});
 let scrollTopBtn = document.getElementById("scrollTopBtn");
-
 window.onscroll = function() {scrollFunction()};
+function scrollFunction() {if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20){scrollTopBtn.style.display = "block";} else {scrollTopBtn.style.display = "none";}}
+function topFunction() {document.body.scrollTop = 0; document.documentElement.scrollTop = 0;}
 
-function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        scrollTopBtn.style.display = "block";
-    } else {
-        scrollTopBtn.style.display = "none";
-    }
-}
-
-function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-  var faqHeaders = document.querySelectorAll('.faq h3');
-  
-  faqHeaders.forEach(function(header) {
-    header.addEventListener('click', function() {
-      faqHeaders.forEach(function(h) {
-        if (h !== header) {
-          h.classList.remove('active');
-          h.nextElementSibling.style.display = "none";
-        }
-      });
-      
-      this.classList.toggle('active');
-      var content = this.nextElementSibling;
-      if (content.style.display === "block") {
-        content.style.display = "none";
-      } else {
-        content.style.display = "block";
-      }
-    });
-  });
+document.addEventListener("DOMContentLoaded", function() {var faqHeaders = document.querySelectorAll('.faq h3'); faqHeaders.forEach(function(header) {header.addEventListener('click', function() {faqHeaders.forEach(function(h) {if (h !== header){
+h.classList.remove('active');
+h.nextElementSibling.style.display ="none";}});    
+this.classList.toggle('active');
+var content = this.nextElementSibling;
+if (content.style.display === "block") {content.style.display = "none";} else {content.style.display = "block";}
+});
+});
 });
 
 </script>
