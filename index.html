@@ -77,9 +77,6 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 .button {font-family: 'Barlow Condensed'; font-weight: 400; text-align: center; background-color: #F78702; color: white; padding: 10px 15px; align-items: center; text-decoration: none; display: block; font-size: 20px; width: 40%; border: none; cursor: pointer; transition: 0.3s;}
 .button:hover {color: #EEB82E;}
 
-@media screen and (min-width: 768px) {
-.button {top: 15px; right: 10px; bottom: auto; left: auto; width: auto; padding: 10px 15px;}}
-
 .contact-info,.contact-facebook,.contact-number {font-size: 30px; font-family: 'Barlow Condensed'; text-align: center; display: block; margin-bottom: 10px;}
 
 @media screen and (max-width: 768px) {
@@ -88,10 +85,6 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 .video-container {width: 95%;}}
 @media screen and (max-width: 480px) {
 .video-container {width: 98%;}}
-
-.footer {position: fixed; bottom: 0; left: 0; width: 100%; background-color: #EEB82E; color: white; align-items: center; justify-content: center; padding: 15px; z-index: 999; display: flex;}
-@media screen and (min-width: 768px) {
-.footer {position: fixed; top: 10px; right: 10px; bottom: auto; left: auto; width: auto; padding: 10px 15px; border: 2px solid #F78702;}}
 
 #scrollTopBtn {font-family: 'Barlow Condensed'; display: none; position: fixed; bottom: 110px; right: 20px; z-index: 99; border: none; outline: none; background-color: #F78702; color: white; cursor: pointer; padding: 14px; font-size: 18px; opacity: 0.5; transition: 0.3s;}
 #scrollTopBtn:hover {background-color: #EEB82E;}
@@ -104,6 +97,8 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 <button class="openbtn" onclick="openNav()">≡</button>
 
 <h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1> <br>
+
+button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button> <br>
 
 <video width="100%" autoplay muted loop>
   <source src="./imgs/start.mp4" type="video/mp4"></video>
@@ -168,8 +163,6 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 </div>
 
 <footer style="background-color: #F78702; color: white; text-align: center; padding: 18px; width: 100%;">&copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.</footer>
-<footer class="footer" id="footer">
-<button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button></footer>
 
 <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">TOP</button>
 
