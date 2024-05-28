@@ -74,7 +74,9 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 .faq h3:hover {background-color: #EEB82E;}
 .faq h3 .icon {transition: transform 0.3s ease;}
 .faq h3.active .icon {transform: rotate(180deg);}
-
+@media screen and (min-width: 992px) {
+.faq-container { justify-content: center; width: 100%;}
+.faq { max-width: 800px;}}
 @media screen and (max-width: 768px) {
 .faq-container {display: flex; width: 100%; justify-content: center;}}
 
