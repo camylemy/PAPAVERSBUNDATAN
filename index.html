@@ -16,8 +16,6 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 .sidebar {cursor: pointer; height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); overflow-x: hidden; transition: width 0.5s ease-in-out; padding-top: 80px;}
 .sidebar.open {width: 300px;}
-@media screen and (max-width: 768px){
-.sidebar.open {width: 500px;}}
 .sidebar-logo {width: 60%; height: auto; margin: 20px auto; display: block; border-radius: 50%;}
 .sidebar a {padding: 8px 8px 8px 32px; font-size: 25px; text-decoration: none; color: black; display: block; transition: 0.5s;}
 .sidebar a:hover {color: #FFDAB9;}
@@ -172,7 +170,7 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 <script>
 
-function openNav() {document.getElementById("mySidebar").style.width = "500px";}
+function openNav() {document.getElementById("mySidebar").style.width = "300px";}
 function closeNav() {document.getElementById("mySidebar").style.width = "0";}
 
 function openPopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "block";}
