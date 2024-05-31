@@ -14,17 +14,14 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 *{ box-sizing: border-box; }
 
-.sidebar {cursor: pointer; height: 100%; width: 0; position: fixed; z-index: 1; top: 0; left: 0; background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); overflow-x: hidden; transition: width 0.5s ease-in-out; padding-top: 80px;}
-.sidebar.open {width: 300px;}
-.sidebar-logo {width: 60%; height: auto; margin: 20px auto; display: block; border-radius: 50%;}
-.sidebar a {padding: 8px 8px 8px 32px; font-size: 25px; text-decoration: none; color: black; display: block; transition: 0.5s;}
-.sidebar a:hover {color: #FFDAB9;}
-.sidebar .closebtn {position: absolute; top: 0px; right: 15px; font-size: 50px; margin-left: 50px;}
+.header {background-color: #EEB82E; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); padding: 20px; text-align: center; position: relative;}
+.header h1 {font-size: 8vw; font-family: 'Style Script', cursive; color: #F78702; text-shadow: 0px 2px 1px #000010; margin: 0;}
+.header .nav-links {display: flex; justify-content: center; margin-top: 10px;}
+.header .nav-links a {font-size: 20px; font-weight: 500; color: #F78702; padding: 10px 15px; text-decoration: none; transition: 0.3s;}
+.header .nav-links a:hover {color: #EEB82E;}
+.header .nav-links a:not(:last-child) {border-right: 1px solid #F78702;}
 
 .navbar-image {width: 80%; height: auto; margin: 20px auto; display: block; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
-
-.openbtn {font-size: 20px; font-family: 'Barlow Condensed'; cursor: pointer; background-color: #F78702; color: white; top: 15px; left: 10px; padding: 10px 15px; border: none; align-items: center; transition: 0.3s;}
-.openbtn:hover {color: #EEB82E;}
 
 .modal {display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); padding-top: 100px; animation: bounceIn 0.5s ease-in-out;}
 .modal-content {background-color: #EEB82E; margin: 5% auto; padding: 20px; width: 90%;}
@@ -99,46 +96,58 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 <body>
 
-<button class="openbtn" onclick="openNav()">≡</button>
+<div class="header">
+    <h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1> <br>
+    <div class="nav-links">
+        <a href="#" onclick="openPopup('aboutPopup')">ABOUT US</a>
+        <a href="#" onclick="openPopup('contactPopup')">CONTACT US</a>
+        <a href="#" onclick="openPopup('findPopup')">FIND US</a>
+    </div> <br>
+    <div class="button-container">
+    <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
+</div>
+</div>
 
-<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1>
-
-<div class="button-container"><button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button></div> <br>
-
+<br>
 <video width="100%" autoplay muted loop>
-  <source src="./imgs/InShot_20240531_095227424.mp4" type="video/mp4"></video>
-
-<div id="mySidebar" class="sidebar">
-<img src="./imgs/verslogo.jpg" alt="Papa Ver's Bundatan Logo" class="sidebar-logo">
-<a href="#" class="closebtn" onclick="closeNav()">×</a>
-<a id="aboutLink" onclick="openPopup('aboutPopup')">ABOUT US</a>
-<a id="contactLink" onclick="openPopup('contactPopup')">CONTACT US</a>
-<a id="findLink" onclick="openPopup('findPopup')">FIND US</a> <br>
-<img src="./imgs/operating hours.png" alt="Image" class="navbar-image"> <br>
-</div></div>
+    <source src="./imgs/InShot_20240531_095227424.mp4" type="video/mp4">
+</video>
 
 <div id="aboutPopup" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closePopup('aboutPopup')">×</span>
-<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;"> Our Story </h1>
-<p style="font-size: 30px; text-indent: 50px; text-align: justify; ">Papa Ver’s Bundatan is an eatery that sells foods such as silog, mami, pares, rice meals, sizzling, short orders, and drinks. The business started on April 25, 2022, and is currently located at 2531 San Pedro St. Pinoy Cor. Balut, Tondo, Manila. According to the business’ owner, Mark Clemente, the one who encouraged him to establish a business was his late father. By the concept of Filipinos loving rice, this gave him the idea to start an eatery.</p>
-<p style="font-size: 30px; text-indent: 50px; text-align: justify;">Mr. Clemente is very passionate when it comes to cooking, as it became one of his hobbies. There’s this one time when he decided to cook for his friends and they told him that it tasted delicious. According to him, he got motivated by the praises he always gets when people taste his food. For him, his late father’s encouragement was enough to start his own business.</p>
-</div></div>
+    <div class="modal-content">
+        <span class="close" onclick="closePopup('aboutPopup')">×</span>
+        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">About Us</h1>
+        <p style="font-size: 20px; color: black; text-align: justify; text-indent: 50px;">Papa Ver's Bundatan is committed to bringing you the best quality food made with love and care. Our mission is to create delicious meals that will keep you coming back for more. With a focus on fresh ingredients and traditional recipes, we strive to offer a unique culinary experience to our customers.</p>
+    </div>
+</div>
+
 <div id="contactPopup" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closePopup('contactPopup')">&times;</span>
-<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">Reach out to us!</h1>
-<a href="tel:+639453746617" class="contact-number"><i class="fas fa-phone"></i> +63 908 963 0064</a> <br>
-<a href="mailto: tudacamillered@gmail.com" class="contact-info"><i class="fas fa-envelope"></i> dino.clemente06@gmail.com</a> <br> 
-<ahref="https://www.facebook.com/marverslafang?mibextid=YMEMSu" class="contact-facebook"><i class="fab fa-facebook"></i> facebook</a>
-</div></div>
+    <div class="modal-content">
+        <span class="close" onclick="closePopup('contactPopup')">×</span>
+        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Contact Us</h1>
+        <p class="contact-info">For inquiries, please reach out to us at:</p>
+        <p class="contact-number">Phone: (123) 456-7890</p>
+        <p class="contact-facebook">Facebook: <a href="https://www.facebook.com/papaversbundatan" target="_blank" style="color: black; text-decoration: underline;">Papa Ver's Bundatan</a></p>
+    </div>
+</div>
+
 <div id="findPopup" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closePopup('findPopup')">&times;</span>
-<h1 style="font-family: 'Style Script', cursive; font-size: 7vw; text-align: center; color: #F78702; text-shadow: 2px 2px 4px #000000;">We are located at...</h1>
-<p style="font-size: 30px; text-align: center;">2531 SAN PEDRO ST. PINOY COR. BALUT, TONDO, MANILA.</p>
-<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15441.695841268387!2d120.968017!3d14.631859!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397b54ed46113ed%3A0x81f8609c789462a9!2sPapa%20Ver&#39;s%20bundatan!5e0!3m2!1sen!2sus!4v1713743324974!5m2!1sen!2sus" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div></div>
+    <div class="modal-content">
+        <span class="close" onclick="closePopup('findPopup')">×</span>
+        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Find Us</h1>
+        <p class="contact-info">Visit us at our location:</p>
+        <p class="contact-number">123 Delicious Street, Foodville, FV 12345</p>
+        <div class="mapouter">
+            <div class="gmap_canvas">
+                <iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=123%20Delicious%20Street,%20Foodville&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+            </div>
+            <style>
+                .mapouter {position: relative; text-align: right; height: 300px; width: 100%;}
+                .gmap_canvas {overflow: hidden; background: none!important; height: 300px; width: 100%;}
+            </style>
+        </div>
+    </div>
+</div>
 
 <div class="card-section">
 <div class="card">
@@ -169,36 +178,47 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">TOP</button>
 
 <script>
+    // Function to open popup
+    function openPopup(popupId) {
+        document.getElementById(popupId).style.display = "block";
+    }
 
-function openNav() {document.getElementById("mySidebar").style.width = "300px";}
-function closeNav() {document.getElementById("mySidebar").style.width = "0";}
+    // Function to close popup
+    function closePopup(popupId) {
+        document.getElementById(popupId).style.display = "none";
+    }
 
-function openPopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "block";}
-function closePopup(popupId) {var modal = document.getElementById(popupId); modal.style.display = "none";}
+    // Get the scroll button
+    let scrollTopBtn = document.getElementById("scrollTopBtn");
 
-let lastScrollTop = 0;
-const footer = document.getElementById("footer");
-window.addEventListener("scroll", function() {const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-if(currentScroll > lastScrollTop) {footer.style.transform = "translateY(100%)";} 
-else {footer.style.transform = "translateY(0)";}
-lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;});
-let scrollTopBtn = document.getElementById("scrollTopBtn");
-window.onscroll = function() { scrollFunction() };
-function scrollFunction() {
-if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-if(document.getElementById("mySidebar").style.width === "0px" || document.getElementById("mySidebar").style.width === "") {scrollTopBtn.style.display = "block";}} else {scrollTopBtn.style.display = "none";}}
-function topFunction() {document.body.scrollTop = 0; document.documentElement.scrollTop = 0;}
+    // Show the button when scrolling down 20px from the top
+    window.onscroll = function() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            scrollTopBtn.style.display = "block";
+        } else {
+            scrollTopBtn.style.display = "none";
+        }
+    };
 
-document.addEventListener("DOMContentLoaded", function() {var faqHeaders = document.querySelectorAll('.faq h3'); faqHeaders.forEach(function(header) {header.addEventListener('click', function() {faqHeaders.forEach(function(h) {if (h !== header){
-h.classList.remove('active');
-h.nextElementSibling.style.display ="none";}});    
-this.classList.toggle('active');
-var content = this.nextElementSibling;
-if (content.style.display === "block") {content.style.display = "none";} else {content.style.display = "block";}
-});
-});
-});
+    // Scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 
+    // FAQ accordion functionality
+    document.querySelectorAll('.faq h3').forEach(function(item) {
+        item.addEventListener('click', function() {
+            this.classList.toggle('active');
+            let panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    });
 </script>
+
 </body>
 </html>
