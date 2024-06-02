@@ -21,11 +21,8 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 .header .nav-links a:hover {color: #EEB82E;}
 .header .nav-links a:not(:last-child) {border-right: 1px solid #F78702;}
 
-.navbar-image {width: 80%; height: auto; margin: 20px auto; display: block; border-radius: 5px; box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);}
-
 .modal {display: none; position: fixed; z-index: 1; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); padding-top: 100px; animation: bounceIn 0.5s ease-in-out;}
 .modal-content {background-color: #EEB82E; margin: 5% auto; padding: 20px; width: 90%;}
-
 @keyframes bounceIn {
 0% {transform: scale(0.1); opacity: 0;}
 60% {transform: scale(1.2); opacity: 1;}
@@ -34,14 +31,12 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 .close {color: black; float: right; font-size: 28px; font-weight: bold;}
 .close:hover,
 .close:focus {color: #EEB82E; text-decoration: none; cursor: pointer;}
-
 .contact-number {font-size: 20px; color: black; text-decoration: none;}
 .contact-number:hover {color: #FFDAB9;}
 .contact-info {font-size: 20px; color: black; text-decoration: none;}
 .contact-info:hover {color: #FFDAB9;}
 .contact-facebook {font-size: 20px; color: black;  text-decoration: none;}
 .contact-facebook:hover {color: #EEB82E;}
-
 @media screen and (max-width: 768px) {
 .modal-content {width: 90%; margin: 10% auto;}}
 @media screen and (max-width: 576px) {
@@ -52,7 +47,6 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 
 .card-section {display: flex; flex-wrap: wrap; justify-content: space-between; margin-top: 20px;}
 .card {background-color: #EEB82E; padding: 10px;  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); flex-basis: calc(33% - 20px); margin-bottom: 2%; width: 100%;}
-
 @media screen and (max-width: 768px) {
 .card {flex-basis: 100%; margin-bottom: 20px;}}
 .card h2 {color: #F78702; font-size: 25px;}
@@ -97,57 +91,32 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 <body>
 
 <div class="header">
-    <h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1> <br>
-    <div class="nav-links">
-        <a href="#" onclick="openPopup('aboutPopup')">ABOUT US</a>
-        <a href="#" onclick="openPopup('contactPopup')">CONTACT US</a>
-        <a href="#" onclick="openPopup('findPopup')">FIND US</a>
-    </div> <br>
-    <div class="button-container">
-    <button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
-</div>
-</div>
-
+<h1 style="font-size: 12vw; font-family: 'Style Script', cursive; text-align: center; color:#F78702; text-shadow: 0px 2px 1px #000010;">Papa Ver's Bundatan</h1> <br>
+<div class="nav-links">
+<a href="#" onclick="openPopup('aboutPopup')">ABOUT US</a>
+<a href="#" onclick="openPopup('contactPopup')">CONTACT US</a>
+<a href="#" onclick="openPopup('findPopup')">FIND US</a></div> <br>
+<div class="button-container">
+<button class="button" onclick="window.location.href = 'order.html';">PLACE AN ORDER</button>
+</div></div>
 <br>
 <video width="100%" autoplay muted loop>
-    <source src="./imgs/InShot_20240531_095227424.mp4" type="video/mp4">
-</video>
+<source src="./imgs/InShot_20240531_095227424.mp4" type="video/mp4"></video>
 
 <div id="aboutPopup" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePopup('aboutPopup')">×</span>
-        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">About Us</h1>
-        <p style="font-size: 20px; color: black; text-align: justify; text-indent: 50px;">Papa Ver's Bundatan is committed to bringing you the best quality food made with love and care. Our mission is to create delicious meals that will keep you coming back for more. With a focus on fresh ingredients and traditional recipes, we strive to offer a unique culinary experience to our customers.</p>
-    </div>
-</div>
-
+<div class="modal-content"><span class="close" onclick="closePopup('aboutPopup')">×</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">About Us</h1>
+<p style="font-size: 20px; color: black; text-align: justify; text-indent: 50px;">Papa Ver's Bundatan is committed to bringing you the best quality food made with love and care. Our mission is to create delicious meals that will keep you coming back for more. With a focus on fresh ingredients and traditional recipes, we strive to offer a unique culinary experience to our customers.</p></div></div>
 <div id="contactPopup" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePopup('contactPopup')">×</span>
-        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Contact Us</h1>
-        <p class="contact-info">For inquiries, please reach out to us at:</p>
-        <p class="contact-number">Phone: (123) 456-7890</p>
-        <p class="contact-facebook">Facebook: <a href="https://www.facebook.com/papaversbundatan" target="_blank" style="color: black; text-decoration: underline;">Papa Ver's Bundatan</a></p>
-    </div>
-</div>
-
+<div class="modal-content">
+<span class="close" onclick="closePopup('contactPopup')">×</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Contact Us</h1>
+<p class="contact-info">For inquiries, please reach out to us at:</p><p class="contact-number">Phone: (123) 456-7890</p><p class="contact-facebook">Facebook: <a href="https://www.facebook.com/papaversbundatan" target="_blank" style="color: black; text-decoration: underline;">Papa Ver's Bundatan</a></p></div></div>
 <div id="findPopup" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closePopup('findPopup')">×</span>
-        <h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Find Us</h1>
-        <p class="contact-info">Visit us at our location:</p>
-        <p class="contact-number">123 Delicious Street, Foodville, FV 12345</p>
-        <div class="mapouter">
-            <div class="gmap_canvas">
-                <iframe width="100%" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=123%20Delicious%20Street,%20Foodville&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-            </div>
-            <style>
-                .mapouter {position: relative; text-align: right; height: 300px; width: 100%;}
-                .gmap_canvas {overflow: hidden; background: none!important; height: 300px; width: 100%;}
-            </style>
-        </div>
-    </div>
-</div>
+<div class="modal-content">
+<span class="close" onclick="closePopup('findPopup')">×</span>
+<h1 style="font-family: 'Style Script', cursive; font-size: 8vw; text-align: center; color: #F78702; text-shadow: 0px 2px 1px #000010;">Find Us</h1>
+<p class="contact-info">Visit us at our location:</p><p class="contact-number">123 Delicious Street, Foodville, FV 12345</p></div></div></div></div>
 
 <div class="card-section">
 <div class="card">
@@ -174,50 +143,17 @@ body {font-family: 'Barlow Condensed', sans-serif; font-weight: 400; background-
 </div></div></div></div>
 
 <footer style="background-color: #F78702; color: white; text-align: center; padding: 18px; width: 100%;">&copy; 2024 Papa Ver's Bundatan. <br> All Rights Reserved.</footer>
-
 <button onclick="topFunction()" id="scrollTopBtn" title="Go to top">TOP</button>
 
 <script>
-    // Function to open popup
-    function openPopup(popupId) {
-        document.getElementById(popupId).style.display = "block";
-    }
+function openPopup(popupId) {document.getElementById(popupId).style.display = "block";}
+function closePopup(popupId){document.getElementById(popupId).style.display = "none";}
 
-    // Function to close popup
-    function closePopup(popupId) {
-        document.getElementById(popupId).style.display = "none";
-    }
-
-    // Get the scroll button
-    let scrollTopBtn = document.getElementById("scrollTopBtn");
-
-    // Show the button when scrolling down 20px from the top
-    window.onscroll = function() {
-        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-            scrollTopBtn.style.display = "block";
-        } else {
-            scrollTopBtn.style.display = "none";
-        }
-    };
-
-    // Scroll to the top of the document
-    function topFunction() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-    }
-
-    // FAQ accordion functionality
-    document.querySelectorAll('.faq h3').forEach(function(item) {
-        item.addEventListener('click', function() {
-            this.classList.toggle('active');
-            let panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    });
+let scrollTopBtn = document.getElementById("scrollTopBtn");
+window.onscroll = function() {if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {scrollTopBtn.style.display = "block";} else {scrollTopBtn.style.display = "none";}};
+function topFunction() {document.body.scrollTop = 0; document.documentElement.scrollTop = 0;}
+document.querySelectorAll('.faq h3').forEach(function(item) {item.addEventListener('click', function() {this.classList.toggle('active');
+let panel = this.nextElementSibling; if (panel.style.display === "block") {panel.style.display = "none";} else {panel.style.display = "block";}});});
 </script>
 
 </body>
