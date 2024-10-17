@@ -13,6 +13,8 @@
 select {width: 60%; padding: 10px; margin: 5px 0 10px 0; border: 1px solid rgb(129, 79, 131); border-radius: 5px; box-sizing: border-box;}
 
 input[type="submit"]  {background-color: rgb(129, 79, 131); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;}
+
+
 </style>
 <body> <center>
         <div class="card"> 
@@ -24,11 +26,10 @@ input[type="submit"]  {background-color: rgb(129, 79, 131); color: white; paddin
                 <input type="email" name="email"> <br>
                 <label>Phone Number:</label> <br>
                 <input type="tel" name="fon"> <br>
-            <h2> Product Selection </h2>
+            <h2> Product Seletion </h2>
                 <label>Select Product:</label> <br>
                 <select id="camy" name="lemy" class="form-control">
-                    <option value="Shabu">Choose a product</option> 
-                </select> <br> 
+                    <option value="Shabu">Choose a product</option> </select> <br> 
                 <label>Quantity:</label> <br>
                 <input type="number" name="numbah" min="1" max="5"> <br>
             <h2>Shipping Information:</h2><br>
@@ -36,7 +37,7 @@ input[type="submit"]  {background-color: rgb(129, 79, 131); color: white; paddin
                 <input type="text" name="address"> <br>
                 <label>City:</label> <br>
                 <input type="text" name="city"> <br> <br>
-                <select id="state" name="state" class="form-control">
+                <select id="state" name="state" class="form-control" value="Select your state">
                     <option value="Cocaine">Select your state</option>
                 </select> <br> <br>
                 <label>Zip Code:</label> <br>
@@ -47,26 +48,9 @@ input[type="submit"]  {background-color: rgb(129, 79, 131); color: white; paddin
             <label>Expiration Date:</label> <br>
             <select id="month" name="month" class="form-control">
                 <option value="Month">Month</option>
-                <option value="01">January</option>
-                <option value="02">February</option>
-                <option value="03">March</option>
-                <option value="04">April</option>
-                <option value="05">May</option>
-                <option value="06">June</option>
-                <option value="07">July</option>
-                <option value="08">August</option>
-                <option value="09">September</option>
-                <option value="10">October</option>
-                <option value="11">November</option>
-                <option value="12">December</option>
             </select>
             <select id="year" name="year" class="form-control">
-                <option value="Year">Year</option>
-                <option value="2024">2024</option>
-                <option value="2025">2025</option>
-                <option value="2026">2026</option>
-                <option value="2027">2027</option>
-                <option value="2028">2028</option>
+                <option value="year">Year</option>
             </select> <br>
             <label>CVV:</label> <br>
             <input type="text" name="cvv">
