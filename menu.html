@@ -1,30 +1,62 @@
-input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
-    border: 1px solid rgb(129, 79, 131);
-    border-radius: 5px;
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+    body {background-color: rgb(190, 151, 190); text-align: left; padding: 10px;}
+    .card {background-color: rgb(224, 183, 226); padding: 10px; width: 30%; height: auto; text-align: left; border-radius: 5px; border: 3px solid rgb(129, 79, 131);}
+    input[type="text"], input[type="email"], input[type="tel"], input[type="number"] {width: 100%; padding: 10px; margin: 5px 0 10px 0; border: 1px solid rgb(129, 79, 131); border-radius: 5px; box-sizing: border-box;}
 
-select {
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0 10px 0;
-    border: 1px solid rgb(129, 79, 131);
-    border-radius: 5px;
-    box-sizing: border-box;
-}
+select {width: 60%; padding: 10px; margin: 5px 0 10px 0; border: 1px solid rgb(129, 79, 131); border-radius: 5px; box-sizing: border-box;}
 
-button {
-    background-color: rgb(129, 79, 131);
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
+input[type="submit"]  {background-color: rgb(129, 79, 131); color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;}
 
-button:hover {
-    background-color: rgb(150, 100, 150);
-}
+
+</style>
+<body> <center>
+        <div class="card"> 
+            <form>
+        <h2> Customer Information </h2> <br>
+                <label>Full Name:</label> <br>
+                <input type="text" name="fname"> <br>
+                <label>Email Address:</label> <br>
+                <input type="email" name="email"> <br>
+                <label>Phone Number:</label> <br>
+                <input type="tel" name="fon"> <br>
+            <h2> Product Seletion </h2>
+                <label>Select Product:</label> <br>
+                <select id="camy" name="lemy" class="form-control">
+                    <option value="Shabu">Choose a product</option> </select> <br> 
+                <label>Quantity:</label> <br>
+                <input type="number" name="numbah" min="1" max="5"> <br>
+            <h2>Shipping Information:</h2><br>
+                <label>Address:</label> <br>
+                <input type="text" name="address"> <br>
+                <label>City:</label> <br>
+                <input type="text" name="city"> <br> <br>
+                <select id="state" name="state" class="form-control" value="Select your state">
+                    <option value="Cocaine">Select your state</option>
+                </select> <br> <br>
+                <label>Zip Code:</label> <br>
+                <input type="text" name="zipcode"> <br>
+            <h2> Payment Information </h2>
+            <label>Credit Card Number:</label> <br>
+            <input type="text" name="creditcard"> <br>
+            <label>Expiration Date:</label> <br>
+            <select id="month" name="month" class="form-control">
+                <option value="Month">Month</option>
+            </select>
+            <select id="year" name="year" class="form-control">
+                <option value="year">Year</option>
+            </select> <br>
+            <label>CVV:</label> <br>
+            <input type="text" name="cvv">
+            <br> <br>
+            <input type="submit" value="Submit">
+            </form>
+        </div> </center>
+</body>
+</html>
